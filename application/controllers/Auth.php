@@ -268,7 +268,7 @@ class Auth extends CI_Controller
         // KONFIGURASI UNTUK MENGIRIMAN EMAIL
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.hostinger.com',
+            'smtp_host' => 'smtp.hostinger.com',
             'smtp_user' => 'admin@physicsyourself.com',
             'smtp_pass' => '123@physicsyourself.comD1d2e3n4',
             'smtp_port' => 465,
@@ -284,7 +284,7 @@ class Auth extends CI_Controller
         $this->email->initialize($config);
 
         // Pengirim dan alias pengirim email
-        $this->email->from('info.physicsyourself@gmail.com', 'Admin Physics Yourself');
+        $this->email->from('admin@physicsyourself.com', 'Admin Physics Yourself');
 
         // Alamat email yang dituju
         $this->email->to($email);
