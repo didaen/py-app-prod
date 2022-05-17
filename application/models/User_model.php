@@ -26,6 +26,8 @@ class User_model extends CI_model
         $query = $this->db->get();
         if ($query->num_rows() != 0) {
             return $query->row_array();
+        } else {
+            return false;
         }
     }
 }
