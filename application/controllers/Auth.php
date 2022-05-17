@@ -268,7 +268,7 @@ class Auth extends CI_Controller
         // KONFIGURASI UNTUK MENGIRIMAN EMAIL
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'smtp.hostinger.com',
+            'smtp_host' => 'ssl://smtp.hostinger.com',
             'smtp_user' => 'admin@physicsyourself.com',
             'smtp_pass' => '123@physicsyourself.comD1d2e3n4',
             'smtp_port' => 465,
