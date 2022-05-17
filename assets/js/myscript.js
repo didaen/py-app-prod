@@ -121,7 +121,7 @@ function kirimDataCard() {
 			postData.append('card_number', cardNumber.value);
 			
 			
-			fetch('http://localhost/py-app/materi/dataPembelajaranTerakhir', {
+			fetch('https://www.physicsyourself.com/materi/dataPembelajaranTerakhir', {
 				method: 'POST',
 				mode: 'no-cors',
 				headers: {
@@ -220,7 +220,7 @@ function tekanEnter() {
 			answValue = pertanyaan.value;
 			console.log(answValue);
 
-			fetch('http://localhost/py-app/materi/answers', {
+			fetch('https://www.physicsyourself.com/materi/answers', {
 				method: 'POST',
 				credentials: 'same-origin',
 				mode: 'no-cors',
@@ -266,7 +266,7 @@ function tekanEnter() {
 								postData.append(pertanyaan.id, pertanyaan.value);
 							});
 							
-							fetch('http://localhost/py-app/materi/jawabanUser', {
+							fetch('https://www.physicsyourself.com/materi/jawabanUser', {
 								method: 'POST',
 								mode: 'no-cors',
 								headers: {
@@ -412,7 +412,7 @@ function tombolReset() {
 					postData.append(pertanyaan.id, pertanyaan.value = "");
 				});
 				
-				fetch('http://localhost/py-app/materi/hapusJawabanCard', {
+				fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
 					method: 'POST',
 					mode: 'no-cors',
 					headers: {
