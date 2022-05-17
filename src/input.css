@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	/* FONT-FACE */
+	@font-face {
+		font-family: "Lovelo-LineBold";
+		font-style: bold;
+		src: url("http://localhost/py-app/assets/fonts/Lovelo-LineBold.woff")
+			format("woff");
+	}
+
+	@font-face {
+		font-family: "Lovelo-LineBold";
+		font-style: bold;
+		src: url("http://localhost/py-app/assets/fonts/Lovelo-LineBold.woff2")
+			format("woff2");
+	}
+
+	@font-face {
+		font-family: "KaTeX_Math-Italic";
+		font-style: italic;
+		src: url("http://localhost/py-app/assets/fonts/KaTeX_Math-Italic.woff")
+			format("woff");
+	}
+
+	@font-face {
+		font-family: "KaTeX_Math-Italic";
+		font-style: italic;
+		src: url("http://localhost/py-app/assets/fonts/KaTeX_Math-Italic.woff2")
+			format("woff2");
+	}
+
+	@font-face {
+		font-family: "KaTeX_Main-Regular";
+		font-style: normal;
+		src: url("http://localhost/py-app/assets/fonts/KaTeX_Main-Regular.woff")
+			format("woff");
+	}
+
+	@font-face {
+		font-family: "KaTeX_Main-Regular";
+		font-style: normal;
+		src: url("http://localhost/py-app/assets/fonts/KaTeX_Main-Regular.woff2")
+			format("woff2");
+	}
+
+	@font-face {
+		font-family: "KaTeX_Main-Italic";
+		font-style: normal;
+		src: url("http://localhost/py-app/assets/fonts/KaTeX_Main-Italic.woff")
+			format("woff");
+	}
+
+	@font-face {
+		font-family: "KaTeX_Main-Italic";
+		font-style: normal;
+		src: url("http://localhost/py-app/assets/fonts/KaTeX_Main-Italic.woff2")
+			format("woff2");
+	}
+
+	@font-face {
+		font-family: "KaTeX_Main-Bold";
+		font-style: bold;
+		src: url("http://localhost/py-app/assets/fonts/KaTeX_Main-Bold.woff")
+			format("woff");
+	}
+
+	@font-face {
+		font-family: "KaTeX_Main-Bold";
+		font-style: bold;
+		src: url("http://localhost/py-app/assets/fonts/KaTeX_Main-Bold.woff2")
+			format("woff2");
+	}
+
+	body {
+		background-image: url("http://localhost/py-app/assets/img/memphis.png");
+		background-attachment: fixed;
+	}
+
+	/* STYLE */
+
+	.lovelo-bold {
+		font-family: "Lovelo-LineBold", Arial, Helvetica, sans-serif;
+	}
+
+	.katex-italic {
+		font-family: "KaTeX_Main-Italic", Arial, Helvetica, sans-serif;
+	}
+
+	.katex-regular {
+		font-family: "KaTeX_Main-Regular", Arial, Helvetica, sans-serif;
+	}
+
+	.katex-bold {
+		font-family: "KaTeX_Main-Bold", Arial, Helvetica, sans-serif;
+	}
+
+	.katex-math-italic {
+		font-family: "KaTeX_Math-Italic", Arial, Helvetica, sans-serif;
+	}
+
+	.times-new-roman {
+		font-family: "Times New Roman", Times, serif;
+	}
+}
+
+@layer components {
+	.btn {
+		@apply px-6 py-2 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300;
+	}
+
+	.btn-full {
+		@apply w-full py-2 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300;
+	}
+
+	.btn-kecil {
+		@apply px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300;
+	}
+
+	.btn-kecil-merah {
+		@apply px-2 py-2 bg-red-700 hover:bg-red-400 text-white text-center rounded transition duration-300;
+	}
+
+	.pertanyaan {
+		@apply w-5 h-5 text-center bg-gray-300 focus:bg-yellow-200 shadow-sm focus:outline-none;
+	}
+
+	.pertanyaan-tk1 {
+		@apply text-base;
+	}
+
+	.pertanyaan-tk2 {
+		@apply text-sm;
+	}
+
+	.input {
+		@apply w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200;
+	}
+}
