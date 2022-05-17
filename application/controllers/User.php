@@ -33,7 +33,8 @@ class User extends CI_Controller
         // Mendapatkan data aktifitas belajar terakhir user
         $user_id = $data['user']['id'];
         $data['belajar'] = $this->User_model->getRecentLearningActivity($user_id);
-
+        var_dump($data['belajar']);
+        die;
         // Untuk title bar
         $data["judul"] = "Profil";
 
