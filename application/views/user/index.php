@@ -141,9 +141,9 @@
 
     <!-- ________________________________HIDDEN FORM_____________________________-->
     <form method="post" id="form-card-lanjutkan-belajar">
-        <input type="hidden" name="materi-id" value="<?= $belajar['materi_id'] ?>" />
-        <input type="hidden" name="sub-materi-id" value="<?= $belajar['sub_materi_id'] ?>" />
-        <input type="hidden" name="total-card" value="<?= $belajar['total_card'] ?>" />
+        <input type="hidden" name="materi-id" value="<?= $belajar['materi_id']; ?>" />
+        <input type="hidden" name="sub-materi-id" value="<?= $belajar['sub_materi_id']; ?>" />
+        <input type="hidden" name="total-card" value="<?= $belajar['total_card']; ?>" />
         <input type="hidden" id="card-lanjutkan-belajar" value="<?= $belajar['card_number']; ?>" />
 
         <!-- TOMBOL LANJUTKAN BELAJAR -->
