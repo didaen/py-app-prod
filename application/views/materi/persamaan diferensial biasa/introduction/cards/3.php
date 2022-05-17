@@ -52,7 +52,8 @@
 
             <!-- MATERI DAN PERSAMAAN -->
             <div>
-                Ini adalah CARD 3.
+                Ini adalah introduction dari Persamaan diferensial biasa.
+
                 <!-- PERSAMAAN BIASA TANPA PERTANYAAN -->
                 <div class="white-box overscroll-auto overflow-auto text-sm">
                   
