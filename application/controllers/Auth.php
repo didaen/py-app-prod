@@ -253,7 +253,7 @@ class Auth extends CI_Controller
             $this->_sendEmail($email, $token, 'verify');
 
             // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
-            $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Lakukan aktivasi akun via email lebih dulu.');
+            $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan cek kotak masuk email Anda/spam untuk melakukan verifikasi akun.');
 
             // Kembali ke controller Auth saat berhasil akun
             redirect('auth');
@@ -295,7 +295,7 @@ class Auth extends CI_Controller
             $this->email->subject('Verifikasi Akun');
     
             // Isi dari email
-            $this->email->message('Klik link berikut untuk mengaktifkan akun Anda : <a href="'. base_url() . 'auth/verify?email=' .  $email . '&token=' . urlencode($token) . '">AKTIFKAN</a>');
+            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Klik link berikut untuk mengaktifkan akun Anda : <b><a href="'. base_url() . 'auth/verify?email=' .  $email . '&token=' . urlencode($token) . '">AKTIFKAN</a></b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
 
         } else if($type == 'forgot') {
 
@@ -303,7 +303,7 @@ class Auth extends CI_Controller
             $this->email->subject('Reset Password');
     
             // Isi dari email
-            $this->email->message('Klik link berikut untuk memperbarui password akun Anda : <a href="'. base_url() . 'auth/resetpassword?email=' .  $email . '&token=' . urlencode($token) . '">RESET PASSWORD</a>');
+            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Klik link berikut untuk memperbarui password akun Anda : <b><a href="'. base_url() . 'auth/resetpassword?email=' .  $email . '&token=' . urlencode($token) . '">RESET PASSWORD</a></b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
         }
 
 
@@ -468,7 +468,7 @@ class Auth extends CI_Controller
                 $this->_sendEmail($email, $token, 'forgot');
 
                 // Tampilkan pesan berhasil forgot password
-                $this->session->set_flashdata('forgot_berhasil', 'Silahkan cek kotak masuk email atau spam untuk memperbarui password Anda.');
+                $this->session->set_flashdata('forgot_berhasil', 'Silahkan cek kotak masuk email Anda/spam untuk memperbarui password Anda.');
 
                 // Kembali ke halam forgot password
                 redirect('auth/forgotpassword');
