@@ -268,9 +268,9 @@ class Auth extends CI_Controller
         // KONFIGURASI UNTUK MENGIRIMAN EMAIL
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.hostinger.com',
-            'smtp_user' => 'admin@physicsyourself.com',
-            'smtp_pass' => 'VqJ@mAf_&faqx7M',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'info.physicsyourself@gmail.com',
+            'smtp_pass' => 'AdminPhysicsYourself',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
