@@ -1,11 +1,5 @@
 <div class="min-h-screen flex items-center justify-center bg-blue-1000">
 
-    <!-- LOGO DAN JUDUL PHYSICS YOURSELF -->
-    <div>
-    </div>
-    <!-- AKHIR LOGO DAN JUDUL PHYSICS YOURSELF -->
-
-
     <div class="bg-white py-6 px-10 rounded shadow-2xl w-4/5 sm:w-1/2 lg:w-1/4">
 
         <!-- LOGO DAN JUDUL PHYSICS YOURSELF -->
@@ -96,6 +90,11 @@
                 <?= form_error('password', '<p class="text-sm text-red-600 italic">', '</p>'); ?>
 
             </div>
+
+            <!-- G-RECAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="6LfTGQQgAAAAALEmpkANpNm2NJaarXXR2zrB3E9V" name="g-recaptcha"></div>
+            <!-- AKHIR G-RECAPTCHA -->
+
             <div class="flex justify-end">
                 <button type="submit" class="btn">Login</button>
             </div>
