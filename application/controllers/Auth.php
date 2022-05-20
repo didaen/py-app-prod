@@ -64,7 +64,7 @@ class Auth extends CI_Controller
         } else {
 
             // GOOGLE RECAPTCHA
-            $secret = "6LcLkP4fAAAAAL9L-gfA-TF-6-4Hf5_CrnspAYv8";
+            $secret = "6LfTGQQgAAAAAH2nzj4wAXrqGlWmmecT46aGx9gP";
             $verify = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
             $recaptcha_result = json_decode($verify, 1);
 

@@ -92,7 +92,7 @@
             </div>
 
             <!-- G-RECAPTCHA -->
-            <div class="g-recaptcha" data-sitekey="6LcLkP4fAAAAAECi7KIXyJ7g5_4z6_MSkwxKXQ5I" name="g-recaptcha"></div>
+            <div class="g-recaptcha" data-sitekey="6LfTGQQgAAAAALEmpkANpNm2NJaarXXR2zrB3E9V" name="g-recaptcha"></div>
             <!-- AKHIR G-RECAPTCHA -->
 
             <div class="flex justify-end">
