@@ -63,8 +63,28 @@ class Auth extends CI_Controller
         // Apabila validasi berhasil
         } else {
 
-            // maka masuk ke method private login untuk memproses data user yang login
-            $this->_login();
+            // GOOGLE RECAPTCHA
+            $secret = "6LcLkP4fAAAAAL9L-gfA-TF-6-4Hf5_CrnspAYv8";
+            $verify = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+            $recaptcha_result = json_decode($verify, 1);
+
+            // Jika user gagal melakukan validasi bukan robot
+            if($recaptcha_result['success'] == false) {
+
+                // Judul
+                $data['title'] = 'Login';
+
+                // Isi
+                $this->load->view('templates/auth_header', $data);
+                $this->load->view('auth/login');
+                $this->load->view('templates/auth_footer');
+
+            // Jika user berhasil melakukan validasi bukan robot
+            } else {
+                
+                // maka masuk ke method private login untuk memproses data user yang login
+                $this->_login();
+            }
         }
     }
 
@@ -268,9 +288,9 @@ class Auth extends CI_Controller
         // KONFIGURASI UNTUK MENGIRIMAN EMAIL
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.hostinger.com',
-            'smtp_user' => 'admin@physicsyourself.com',
-            'smtp_pass' => 'VqJ@mAf_&faqx7M',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'info.physicsyourself@gmail.com',
+            'smtp_pass' => 'AdminPhysicsYourself',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
@@ -284,7 +304,7 @@ class Auth extends CI_Controller
         $this->email->initialize($config);
 
         // Pengirim dan alias pengirim email
-        $this->email->from('admin@physicsyourself.com', 'Admin Physics Yourself');
+        $this->email->from('info.physicsyourself@gmail.com', 'Admin Physics Yourself');
 
         // Alamat email yang dituju
         $this->email->to($email);
