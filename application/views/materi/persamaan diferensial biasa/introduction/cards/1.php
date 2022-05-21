@@ -16,7 +16,7 @@
         <!-- AKHIR JUDUL MATERI, SUB MATERI ID, DAN SUB MATERI -->
 
         <!-- PEMBUNGKUS NOMOR CARD -->
-        <div class="flex bg-indigo-300 rounded-tr-xl">
+        <div class="flex bg-blue-300 rounded-tr-xl">
 
             <!-- NOMOR CARD -->
             <div class="bg-gray-400 px-6 py-1 text-white font-bold text-center">
@@ -341,6 +341,23 @@
     </div>
     <!-- ________________________________AKHIR PEMBUNGKUS SUB MATERI DAN ISI CARD_____________________________-->
 
+    <!-- PEMBUNGKUS NOMOR CARD -->
+    <div class="flex bg-blue-300 rounded-bl-xl justify-end">
+
+        <!-- NOMOR CARD -->
+        <div class="bg-gray-400 px-6 py-1 text-white font-bold text-center">
+            <h3 class="text-xs">
+                Card
+            </h3>
+            <h1 class="text-lg" id="card-number-judul">
+                <?= $belajar['card_number']; ?>
+            </h1>
+        </div>
+        <!-- AKHIR NOMOR CARD -->
+
+    </div>
+    <!-- AKHIR PEMBUNGKUS NOMOR CARD -->
+
     <!-- _____________________________PEMBUNGKUS PERINGATAN, TOMBOL-TOMBOL, DAN DROPDOWN__________________________-->
     <div>
 
@@ -424,7 +441,7 @@
 
                     <!-- SELECT -->
                     <select class="w-full h-6 px-2 rounded" id="card-internal" name="card-number">
-                        <?php for ($i = 1; $i < $belajar['total_card']; $i++) : ?>
+                        <?php for ($i = 1; $i <= $belajar['total_card']; $i++) : ?>
                             <option value="<?= $i; ?>"><?= $i; ?></option>
                         <?php endfor; ?>
                     </select>
