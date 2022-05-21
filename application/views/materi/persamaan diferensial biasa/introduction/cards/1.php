@@ -342,16 +342,13 @@
     <!-- ________________________________AKHIR PEMBUNGKUS SUB MATERI DAN ISI CARD_____________________________-->
 
     <!-- PEMBUNGKUS NOMOR CARD -->
-    <div class="flex bg-blue-300 rounded-bl-xl justify-end">
+    <div class="flex bg-blue-300 rounded-bl-xl rounded-br-xl justify-center">
 
         <!-- NOMOR CARD -->
-        <div class="bg-gray-400 px-6 py-1 text-white font-bold text-center">
-            <h3 class="text-xs">
-                Card
+        <div class="px-6 py-1 text-white font-bold text-center">
+            <h3 class="text-base tracking-widest">
+                Card <?= $belajar['card_number']; ?>
             </h3>
-            <h1 class="text-lg" id="card-number-judul">
-                <?= $belajar['card_number']; ?>
-            </h1>
         </div>
         <!-- AKHIR NOMOR CARD -->
 
