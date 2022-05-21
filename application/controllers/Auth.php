@@ -609,7 +609,7 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('email');
 
         // Tampilkan pesan flash pada controller Auth
-        redirect('user');
+        redirect('auth');
     }
 
 
