@@ -1,17 +1,23 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-// class User adalah class untuk data-data user
+// Controller User mengatur menu-menu untuk menampilkan data user, edit profil, dan edit password, serta untuk menampilkan pembelajaran terakhir user.
 class User extends CI_Controller
 {
+    // Method construct
     public function __construct()
     {
+        // Kalau membuat method construct harus ada bari code di bawah ini
         parent::__construct();
+
+        // Meload controller User_model
         $this->load->model('User_model');
+
+        // Meload library form_validation
         $this->load->library('form_validation');
     }
 
-    // Method default index()
+    // Method default index ini memuat data pribadi user dan data belajar terakhi user
     public function index()
     {
 
@@ -43,6 +49,9 @@ class User extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+
+
+    // Method untuk melakukan edit username dan foto profil
     public function editProfil()
     {
         // Mengambil baris data yang ada di database
@@ -130,57 +139,6 @@ class User extends CI_Controller
     }
 
 
-    // Method untuk mengubah password dari user
-    public function ubahPassword()
-    {
-        // Mengambil baris data yang ada di database
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $user_id = $data['user']['id'];
-
-        // 4. Password
-        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
-            'required' => 'Perlu diisi.',
-            'min_length' => 'Password terlalu pendek.',
-            'matches' => 'Password tidak cocok.',
-        ]);
-
-        // 5. Ulangi Password
-        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
-            'required' => 'Perlu diisi.',
-            'matches' => 'Password tidak cocok.'
-        ]);
-
-        // Pengkondisian form_validation apabila validasi gagal
-        // maka kembalikan form ke halaman itu
-        if ($this->form_validation->run() == false) {
-
-            // Untuk title bar
-            $data["judul"] = "Ubah Password";
-
-            // header, body, footer
-            $this->load->view('templates/header', $data);
-            $this->load->view('user/ubahpassword', $data);
-            $this->load->view('templates/footer');
-        } else {
-
-            // Jika data berhasil ditambahkan
-            $data = [
-                'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
-            ];
-
-            // Memasukkan $data ke tabel user db pyapp
-            $this->db->where('id', $user_id);
-            $this->db->update('user', $data);
-
-            // Menampilkan pesan dulu sebelum redirect
-            $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password. Silahkan login kembali.');
-
-            // Kembali ke controller Auth saat berhasil
-            redirect('user');
-        }
-        
-    }
-
 
     // Method untuk mengubah password dari user
     public function konfirmasiPassword()
@@ -188,7 +146,7 @@ class User extends CI_Controller
         // Mengambil baris data yang ada di database
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        // 2. Password
+        // Password
         $this->form_validation->set_rules('password', 'Password', 'required|trim', [
             'required' => 'Perlu diisi.'
         ]);
@@ -243,4 +201,58 @@ class User extends CI_Controller
         }
             
     }
+
+
+
+    // Method untuk mengubah password dari dalam
+    public function ubahPassword()
+    {
+        // Mengambil baris data yang ada di database
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $user_id = $data['user']['id'];
+
+        // 4. Password
+        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
+            'required' => 'Perlu diisi.',
+            'min_length' => 'Password terlalu pendek.',
+            'matches' => 'Password tidak cocok.',
+        ]);
+
+        // 5. Ulangi Password
+        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
+            'required' => 'Perlu diisi.',
+            'matches' => 'Password tidak cocok.'
+        ]);
+
+        // Pengkondisian form_validation apabila validasi gagal
+        // maka kembalikan form ke halaman itu
+        if ($this->form_validation->run() == false) {
+
+            // Untuk title bar
+            $data["judul"] = "Ubah Password";
+
+            // header, body, footer
+            $this->load->view('templates/header', $data);
+            $this->load->view('user/ubahpassword', $data);
+            $this->load->view('templates/footer');
+        } else {
+
+            // Jika data berhasil ditambahkan
+            $data = [
+                'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
+            ];
+
+            // Memasukkan $data ke tabel user db pyapp
+            $this->db->where('id', $user_id);
+            $this->db->update('user', $data);
+
+            // Menampilkan pesan dulu sebelum redirect
+            $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password. Silahkan login kembali.');
+
+            // Kembali ke controller Auth saat berhasil
+            redirect('user');
+        }
+        
+    }
+
 }
