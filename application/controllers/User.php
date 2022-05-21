@@ -247,7 +247,7 @@ class User extends CI_Controller
             $this->db->update('user', $data);
 
             // Menampilkan pesan dulu sebelum redirect
-            $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password. Silahkan login kembali.');
+            $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password.');
 
             // Kembali ke controller Auth saat berhasil
             redirect('user');
