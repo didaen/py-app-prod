@@ -132,21 +132,13 @@
                         </a>
                         <!-- AKHIR BERANDA -->
 
-                        <!-- MATERI -->
+                        <!-- Belajar -->
                         <a href="<?= base_url('materi'); ?>">
                             <li class="p-1 mx-1 sm:p-1 border-b sm:border-0 border-white hover:bg-blue-1100 hover:text-white">
-                                Materi
+                                Belajar
                             </li>
                         </a>
-                        <!-- AKHIR MATERI -->
-
-                        <!-- LATIHAN -->
-                        <a href="#" class="flex-shrink-0">
-                            <li class="p-1 mx-1 sm:p-1 border-b sm:border-0 border-white hover:bg-blue-1100 hover:text-white">
-                                Latihan
-                            </li>
-                        </a>
-                        <!-- AKHIR LATIHAN -->
+                        <!-- AKHIR Belajar -->
 
                         <!-- TENTANG -->
                         <a href="<?= base_url('tentang'); ?>" class="flex-shrink-0">
