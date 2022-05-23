@@ -1320,6 +1320,11 @@ body {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-blue-1400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(189 220 255 / var(--tw-border-opacity));
+}
+
 .bg-blue-1000 {
   --tw-bg-opacity: 1;
   background-color: rgb(195 224 229 / var(--tw-bg-opacity));
@@ -1778,6 +1783,11 @@ body {
 
   .sm\:border-0 {
     border-width: 0px;
+  }
+
+  .sm\:border-blue-1000 {
+    --tw-border-opacity: 1;
+    border-color: rgb(195 224 229 / var(--tw-border-opacity));
   }
 
   .sm\:p-1 {

@@ -34,7 +34,7 @@
         <!-- AKHIR PEMBUNGKUS NOMOR CARD -->
 
         <!-- ___FORM DAN ISI___ -->
-        <div class="isi-card flex flex-col text-base text-justify bg-white text-gray-600 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1000">
+        <div class="isi-card flex flex-col text-base text-justify bg-white text-gray-600 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400 sm:border-blue-1000">
             
             <!-- VARIABEL UNTUK JAWABAN -->
             <?php $box_number = 1; ?>
