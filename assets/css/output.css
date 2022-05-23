@@ -1375,6 +1375,11 @@ body {
   background-color: rgb(39 68 114 / var(--tw-bg-opacity));
 }
 
+.bg-blue-1400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(189 220 255 / var(--tw-bg-opacity));
+}
+
 .bg-blue-1200 {
   --tw-bg-opacity: 1;
   background-color: rgb(65 114 159 / var(--tw-bg-opacity));

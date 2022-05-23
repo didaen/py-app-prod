@@ -53,7 +53,7 @@
 <body>
 
     <!-- PEMBUNGKUS HEADER, ISI DENGAN FOOTER -->
-    <div class="lg:w-3/5 flex flex-col min-h-screen mx-auto justify-between bg-blue-1000">
+    <div class="lg:w-3/5 flex flex-col min-h-screen mx-auto justify-between bg-blue-1400">
 
 
         <!-- LATAR BELAKANG BIRU MUDA -->
