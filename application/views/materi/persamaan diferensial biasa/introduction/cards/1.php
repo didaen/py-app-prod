@@ -274,7 +274,7 @@
 
                 <!-- TOMBOL TUNJUKKAN JAWABAN -->
                 <div class="mt-10 flex flex-row justify-end">
-                    <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-1500" onclick="tunjukkanJawaban()">
+                    <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-300" onclick="tunjukkanJawaban()">
                         Tunjukkan jawaban
                     </button>
                 </div>
@@ -342,7 +342,7 @@
     <!-- ________________________________AKHIR PEMBUNGKUS SUB MATERI DAN ISI CARD_____________________________-->
 
     <!-- PEMBUNGKUS NOMOR CARD -->
-    <div class="flex bg-blue-300 rounded-bl-xl rounded-br-xl justify-center">
+    <div class="flex bg-blue-1500 rounded-bl-xl rounded-br-xl justify-center">
 
         <!-- NOMOR CARD -->
         <div class="px-6 py-1 text-white font-bold text-center">
