@@ -372,7 +372,7 @@
             <input type="hidden" name="total-card" id="total-card" value="<?= $belajar['total_card'] ?>" />
 
             <!-- PEMBUNGKUS PROGRESS BAR DAN TOMBOL-TOMBOL -->
-            <div class="w-full grid grid-rows-2 gap-2 sm:gap-0 grid-cols-3 sm:flex sm:flex-row">
+            <div class="w-full grid grid-rows-2 gap-2 sm:gap-0 grid-cols-3 sm:flex sm:flex-row mt-2">
 
                 <!-- TOMBOL RESET -->
                 <div class="row-start-2 sm:flex-none">
@@ -406,7 +406,7 @@
                 <!-- AKHIR PEMBUNGKUS PROGRESS BAR -->
 
                 <!-- PEMBUNGKUS TOMBOL NEXT DAN BACK -->
-                <div class="row-start-2 col-span-2 justify-self-end items-start flex sm:flex-none space-x-1">
+                <div class="row-start-2 col-span-2 justify-self-end items-start flex sm:flex-none">
 
                     <!-- TOMBOL BACK -->
                     <button type="submit" class="btn-kecil" id="tombol-back" onclick="klikGantiActionBack()">
