@@ -10,7 +10,7 @@
             <input type="hidden" name="materi" id="materi-id" value="<?= $sub_materi[0]['materi']; ?>" />
             <label class="block mb-1" for="sub_materi">Pilih Sub Materi : </label>
             <div class="flex flex-col space-y-4">
-                <select class="block h-10 px-2 rounded border-2" id="sub-materi" name="sub-materi">
+                <select class="block h-10 px-2 rounded border-2 outline-none bg-white" id="sub-materi" name="sub-materi">
                     <?php foreach ($sub_materi as $sub_materi) : ?>
                         <option value="<?= $sub_materi['id']; ?>"><?= $sub_materi['sub_materi']; ?></option>
                     <?php endforeach; ?>
