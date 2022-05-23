@@ -1,4 +1,4 @@
-<div class="min-h-screen flex items-center justify-center bg-blue-1000">
+<div class="min-h-screen flex items-center justify-center bg-blue-1400">
 
     <!-- LOGO DAN JUDUL PHYSICS YOURSELF -->
     <div>

@@ -1,4 +1,4 @@
-<div class="min-h-screen flex items-center justify-center bg-blue-1000">
+<div class="min-h-screen flex items-center justify-center bg-blue-1400">
 
 
     <div class="bg-white py-6 px-10 rounded shadow-2xl w-4/5 sm:w-1/2 lg:w-1/4">
