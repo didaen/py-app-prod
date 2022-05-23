@@ -3,7 +3,7 @@
     <div>
         <h1 class="bg-gray-300 text-lg font-bold text-blue-1300 text-center py-3">Profil</h1>
 
-        <div class="p-4 bg-white border-dashed border-l-8 border-r-8 border-blue-1000">
+        <div class="p-4 bg-white border-dashed border-l-8 border-r-8 border-blue-1400">
 
             <!-- PESAN BERHASIL UBAH PROFIL -->
             <?php if ($this->session->flashdata('ganti_profil')) : ?>
@@ -80,7 +80,7 @@
         <h1 class="bg-gray-300 text-lg font-bold text-blue-1300 text-center py-3">Aktifitas Terakhir</h1>
 
         <!-- ________________________________AKHIR AKTIFITAS TERAKHIR LAYAR KECIL_____________________________-->
-        <div class="flex sm:hidden flex-col gap-4 p-4 bg-white border-dashed border-l-8 border-r-8 border-blue-1000">
+        <div class="flex sm:hidden flex-col gap-4 p-4 bg-white border-dashed border-l-8 border-r-8 border-blue-1400">
             <div class="w-full grid grid-cols-5 grid-rows-2 items-center text-center text-xs">
                 <div class="row-start-1 row-end-2 col-start-1 col-end-3 font-medium">
                     Waktu
@@ -111,7 +111,7 @@
         <!-- ________________________________AKHIR AKTIFITAS TERAKHIR LAYAR KECIL_____________________________-->
 
         <!-- ________________________________AKTIFITAS TERAKHIR LAYAR BESAR_____________________________-->
-        <div class="hidden sm:flex flex-col gap-4 p-4 bg-white border-dashed border-l-8 border-r-8 border-blue-1000">
+        <div class="hidden sm:flex flex-col gap-4 p-4 bg-white border-dashed border-l-8 border-r-8 border-blue-1400">
             <div class="w-full grid grid-cols-5 grid-rows-2 gap-x-2 items-center text-center text-xs">
                 <div class="row-start-1 row-end-2 col-start-1 col-end-3 font-medium">
                     Waktu

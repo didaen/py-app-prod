@@ -4,7 +4,7 @@
     <h2 class="w-full bg-gray-300 text-lg font-bold text-blue-1300 text-center py-3">Edit Profil</h2>
     <!-- AKHIR JUDUL EDIT PROFIL -->
 
-    <div class="bg-white py-6 px-10 sm:px-16 border-dashed border-l-8 border-r-8 border-blue-1000 w-full">
+    <div class="bg-white py-6 px-10 sm:px-16 border-dashed border-l-8 border-r-8 border-blue-1400 w-full">
 
         <!-- REGISTRATION FORM -->
         <?= form_open_multipart('user/editprofil', 'class="space-y-6"'); ?>
