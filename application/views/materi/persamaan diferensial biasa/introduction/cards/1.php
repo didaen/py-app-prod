@@ -16,7 +16,7 @@
         <!-- AKHIR JUDUL MATERI, SUB MATERI ID, DAN SUB MATERI -->
 
         <!-- PEMBUNGKUS NOMOR CARD -->
-        <div class="flex bg-blue-300 rounded-tr-xl">
+        <div class="flex bg-blue-1500 rounded-tr-xl">
 
             <!-- NOMOR CARD -->
             <div class="bg-gray-400 px-6 py-1 text-white font-bold text-center">
@@ -274,7 +274,7 @@
 
                 <!-- TOMBOL TUNJUKKAN JAWABAN -->
                 <div class="mt-10 flex flex-row justify-end">
-                    <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-300" onclick="tunjukkanJawaban()">
+                    <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-1500" onclick="tunjukkanJawaban()">
                         Tunjukkan jawaban
                     </button>
                 </div>

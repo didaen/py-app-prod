@@ -1425,6 +1425,11 @@ body {
   background-color: rgb(165 180 252 / var(--tw-bg-opacity));
 }
 
+.bg-blue-1500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(89 144 207 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1783,11 +1788,6 @@ body {
 
   .sm\:border-0 {
     border-width: 0px;
-  }
-
-  .sm\:border-blue-1000 {
-    --tw-border-opacity: 1;
-    border-color: rgb(195 224 229 / var(--tw-border-opacity));
   }
 
   .sm\:p-1 {
