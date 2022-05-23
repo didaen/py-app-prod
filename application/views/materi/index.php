@@ -7,7 +7,7 @@
         <form action="<?= base_url(); ?>materi/sub_materi" method="post">
             <label class="block mb-1" for="sub_materi">Pilih Materi : </label>
             <div class="flex flex-col space-y-4">
-                <select class="block h-10 px-2 rounded border-2 outline-none" id="materi" name="materi">
+                <select class="block h-10 px-2 rounded border-2 outline-none bg-white" id="materi" name="materi">
                     <?php foreach ($materi as $materi) : ?>
                         <option value="<?= $materi['id']; ?>"><?= $materi['materi']; ?></option>
                     <?php endforeach; ?>
