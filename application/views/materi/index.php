@@ -2,7 +2,7 @@
 <div class="mb-10">
     <h1 class="bg-gray-300 text-lg font-bold text-blue-1300 text-center py-3">Materi Pembelajaran</h1>
 
-    <div class="bg-white text-gray-600 rounded px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1000">
+    <div class="bg-white text-gray-600 rounded px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400">
 
         <form action="<?= base_url(); ?>materi/sub_materi" method="post">
             <label class="block mb-1" for="sub_materi">Pilih Materi : </label>
