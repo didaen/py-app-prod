@@ -448,7 +448,7 @@ function showAnswers() {
 		// Ketika element tersebut diklik
 		showAnswersBtn.addEventListener("click", function(event){
 			
-			fetch('http://localhost/py-app/materi/klikTunjukkanJawabanTersimpan', {
+			fetch('https://www.physicsyourself.com/materi/klikTunjukkanJawabanTersimpan', {
 				method: 'POST',
 				credentials: 'same-origin',
 				mode: 'no-cors',
@@ -467,7 +467,7 @@ function showAnswers() {
 					postData.append("klik_tersimpan", klikTersimpan);
 					postData.append("jumlah_klik", 1);
 
-					fetch('http://localhost/py-app/materi/userLihatJawaban', {
+					fetch('https://www.physicsyourself.com/materi/userLihatJawaban', {
 						method: 'POST',
 						mode: 'no-cors',
 						headers: {
