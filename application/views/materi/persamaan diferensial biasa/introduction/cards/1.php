@@ -264,8 +264,8 @@
                           <!-- AKHIR SOAL 1 -->
                         </div>
                         <!-- AKHIR GRID SOAL -->
-                      </div>
-                      <!-- AKHIR SOAL DENGAN KOTAK PERTANYAAN -->
+                    </div>
+                    <!-- AKHIR SOAL DENGAN KOTAK PERTANYAAN -->
             </div>
             <!-- AKHIR MATERI DAN SOAL -->
 
@@ -274,7 +274,7 @@
 
                 <!-- TOMBOL TUNJUKKAN JAWABAN -->
                 <div class="mt-10 flex flex-row justify-end">
-                    <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-300" onclick="tunjukkanJawaban()">
+                    <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-300" id="tunjukkan-jawaban">
                         Tunjukkan jawaban
                     </button>
                 </div>
@@ -282,54 +282,6 @@
 
                 <!-- JAWABAN -->
                 <div class="mt-5 flex flex-col space-y-5" id="kunci-jawaban">
-                    <!-- LANGKAH -->
-                    <div>
-                        <p class="font-medium italic">Langkah 1</p>
-                            
-                        <p>Langkah pertama yang harus dilakukan adalah mengisinya dengan $A$ dan $B$.</p>
-
-                        <!-- PERSAMAAN BIASA TANPA PERTANYAAN -->
-                        <div class="white-box overscroll-auto overflow-auto text-sm">
-                            <div class="equation-box grid">
-                                $$
-                                \begin{aligned}
-                                \frac{d y}{d x} &=\frac{d}{d x}\left({\LARGE \blacksquare} e^{-x}+{\LARGE \blacksquare} e{x}\right) \\
-                                &=\frac{d}{d x}\left({\LARGE \blacksquare} e^{-x}\right)+\frac{d}{d x}\left({\LARGE\blacksquare} e^{x}\right) \\
-                                &={\LARGE \blacksquare} \frac{d}{d x}\left(e^{-x}\right)+{\LARGE \blacksquare} \frac{d}{dx}\left(e^{x}\right) \\
-                                &={\LARGE \blacksquare}\left(-e^{-x}\right)+{\LARGE \blacksquare}\left(e^{x}\right) \\
-                                &=-{\LARGE \blacksquare} e^{-x}+{\LARGE \blacksquare} e^{x}
-                                \end{aligned}
-                                $$
-                            </div>
-                        </div>
-                        <!-- AKHIR PERSAMAAN BIASA TANPA PERTANYAAN -->
-                    </div>
-                    <!-- AKHIR LANGKAH -->
-
-                    <!-- LANGKAH -->
-                    <div>
-                        <p class="font-medium italic">Langkah 2</p>
-                            
-                        <p>Langkah kedua yang harus dilakukan adalah mengisinya dengan $A$ dan $B$.</p>
-
-                        <!-- PERSAMAAN BIASA TANPA PERTANYAAN -->
-                        <div class="white-box overscroll-auto overflow-auto text-sm">
-                            <div class="equation-box grid">
-                                $$
-                                \begin{aligned}
-                                \frac{d y}{d x} &=\frac{d}{d x}\left({\LARGE \blacksquare} e^{-x}+{\LARGE \blacksquare} e{x}\right) \\
-                                &=\frac{d}{d x}\left({\LARGE \blacksquare} e^{-x}\right)+\frac{d}{d x}\left({\LARGE\blacksquare} e^{x}\right) \\
-                                &={\LARGE \blacksquare} \frac{d}{d x}\left(e^{-x}\right)+{\LARGE \blacksquare} \frac{d}{dx}\left(e^{x}\right) \\
-                                &={\LARGE \blacksquare}\left(-e^{-x}\right)+{\LARGE \blacksquare}\left(e^{x}\right) \\
-                                &=-{\LARGE \blacksquare} e^{-x}+{\LARGE \blacksquare} e^{x}
-                                \end{aligned}
-                                $$
-                            </div>
-                        </div>
-                        <!-- AKHIR PERSAMAAN BIASA TANPA PERTANYAAN -->
-                    </div>
-                    <!-- AKHIR LANGKAH -->
-
                 </div>
                 <!-- JAWABAN -->
             </div>
