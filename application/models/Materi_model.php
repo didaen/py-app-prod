@@ -122,4 +122,42 @@ class Materi_model extends CI_model
             return false;
         }
     }
+
+
+
+    // Method untuk mengambil jumlah klik yang telah user lakukan untuk membuka kuncu jawaban
+    public function getJumlahKlik($username, $materi_id, $sub_materi_id, $card) 
+    {
+        $this->db->select('jumlah_klik');
+        $this->db->from('show_answers_log');
+        $this->db->where('username', $username);
+        $this->db->where('materi', $materi_id);
+        $this->db->where('sub_materi', $sub_materi_id);
+        $this->db->where('card', $card);
+        $this->db->order_by('time', 'DESC');
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->row_array();
+        } else {
+            return false;
+        }
+    }
+
+
+
+    // Method untuk mengambil kunci jawaban
+    public function getAnswerKey($materi_id, $sub_materi_id, $card)
+    {
+        $this->db->select('*');
+        $this->db->from('card_content');
+        $this->db->where('materi', $materi_id);
+        $this->db->where('sub_materi', $sub_materi_id);
+        $this->db->where('card', $card);
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
 }
