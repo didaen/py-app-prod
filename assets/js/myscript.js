@@ -535,7 +535,7 @@ function showMateri() {
 
 		let materiPembelajaran = document.getElementById("materi-pembelajaran");
 	
-		fetch('http://localhost/py-app/materi/tampilkanMateriCard', {
+		fetch('https://www.physicsyourself.com/materi/tampilkanMateriCard', {
 			method: 'POST',
 			credentials: 'same-origin',
 			mode: 'no-cors',
