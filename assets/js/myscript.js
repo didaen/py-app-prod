@@ -528,3 +528,103 @@ showAnswers();
 
 
 
+// FUNCTION UNTUK MENAMPILKAN MATERI
+function showMateri() {
+
+	if (document.getElementById("materi-pembelajaran") != null) {
+
+		let materiPembelajaran = document.getElementById("materi-pembelajaran");
+	
+		fetch('http://localhost/py-app/materi/tampilkanMateriCard', {
+			method: 'POST',
+			credentials: 'same-origin',
+			mode: 'no-cors',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+		})
+			.then(response => response.json())
+			.then(response => {
+				console.log(response);
+				
+				let i = 0;
+				let isiKolom1 = '';
+				let isiKolom2 = '';
+	
+				response.forEach(resp => {
+	
+					let baris = parseInt(resp['baris']);
+					i = baris;
+	
+					if(resp['layout'] == '1') {
+					
+						materiPembelajaran.innerHTML += resp['isi'];
+	
+						renderMathInElement(
+							materiPembelajaran,
+							{
+								delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false},
+									{left: "\\begin{equation}", right: "\\end{equation}", display: true},
+									{left: "\\begin{align}", right: "\\end{align}", display: true},
+									{left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+									{left: "\\begin{gather}", right: "\\end{gather}", display: true},
+									{left: "\\(", right: "\\)", display: false},
+									{left: "\\[", right: "\\]", display: true}
+								]
+							}
+						);
+		
+					} else {
+		
+						if(baris == i) {
+	
+							i = baris;
+	
+							if(resp['kolom'] == '1') {
+	
+								isiKolom1 = resp['isi'];
+							} else {
+	
+								isiKolom2 = resp['isi'];
+							}
+		
+						} 
+					}
+				});
+	
+				materiPembelajaran.innerHTML +=
+							`
+								<div class="flex flex-col sm:flex-row sm:gap-x-8">
+									${isiKolom1}
+									${isiKolom2}
+								</div>
+							`;	
+							
+							renderMathInElement(
+								materiPembelajaran,
+								{
+									delimiters: [
+										{left: "$$", right: "$$", display: true},
+										{left: "$", right: "$", display: false},
+										{left: "\\begin{equation}", right: "\\end{equation}", display: true},
+										{left: "\\begin{align}", right: "\\end{align}", display: true},
+										{left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+										{left: "\\begin{gather}", right: "\\end{gather}", display: true},
+										{left: "\\(", right: "\\)", display: false},
+										{left: "\\[", right: "\\]", display: true}
+									]
+								}
+							);
+				
+			});
+	}
+
+}
+
+showMateri();
+
+
+
