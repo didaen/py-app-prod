@@ -410,4 +410,115 @@ class Materi extends CI_Controller
         ];
         $this->db->insert('user_learning_log', $dataCard);
     }
+
+
+
+    public function klikTunjukkanJawabanTersimpan()
+    {
+        json_decode(file_get_contents('php://input'), true);
+
+        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        // Membuat variabel user_id
+        $user_id = $user['id'];
+        
+        // Membuat variabel username
+        $username = $user["username"];
+
+        // Ambil data pembelajaran terakhir
+        $belajar = $this->User_model->getRecentLearningActivity($user_id);
+
+        // Membuat variabel materi_id
+        $materi_id = $belajar["materi_id"];
+
+        // Membuat variabel sub_materi_id
+        $sub_materi_id = $belajar["sub_materi_id"];
+
+        // Membuat variabel card
+        $card = $belajar["card_number"];
+
+        $jumlahKlik['jumlah_klik'] = $this->Materi_model->getJumlahKlik($username, $materi_id, $sub_materi_id, $card);
+
+        // Ternyata kalau gak di-echo gak bisa dipanggil via FETCH POST
+        echo json_encode($jumlahKlik['jumlah_klik']);
+        
+    }
+
+
+
+    public function userLihatJawaban()
+    {
+        json_decode(file_get_contents('php://input'), true);
+
+        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        // Membuat variabel user_id
+        $user_id = $user['id'];
+        
+        // Membuat variabel username
+        $username = $user["username"];
+
+        // Ambil data pembelajaran terakhir
+        $belajar = $this->User_model->getRecentLearningActivity($user_id);
+
+        // Membuat variabel materi_id
+        $materi_id = $belajar["materi_id"];
+
+        // Membuat variabel sub_materi_id
+        $sub_materi_id = $belajar["sub_materi_id"];
+
+        // Membuat variabel card
+        $card = $belajar["card_number"];
+
+        $klik_tersimpan = $this->input->post('klik_tersimpan');
+        $klik_tersimpan = (int)$klik_tersimpan;
+        var_dump($klik_tersimpan);
+
+        $klik_baru = $this->input->post('jumlah_klik');
+        $klik_baru = (int)$klik_baru;
+        var_dump($klik_baru);
+
+        $total_klik = $klik_tersimpan + $klik_baru;
+        var_dump($total_klik);
+        
+        $dataClick = [
+            'username' => $username,
+            'materi' => $materi_id,
+            'sub_materi' => $sub_materi_id,
+            'card' => $card,
+            'jumlah_klik' => $total_klik,
+            'time' => date("Y-m-d") . " " . date("H:i:s")
+        ];
+        $this->db->insert('show_answers_log', $dataClick);
+    }
+
+
+
+    // METHOD UNTUK MENGAMBIL KUNCI JAWABAN
+    public function tunjukkanKunciJawaban()
+    {
+        json_decode(file_get_contents('php://input'), true);
+
+        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        // Membuat variabel user_id
+        $user_id = $user['id'];
+
+        // Ambil data pembelajaran terakhir
+        $belajar = $this->User_model->getRecentLearningActivity($user_id);
+
+        // Membuat variabel materi_id
+        $materi_id = $belajar["materi_id"];
+
+        // Membuat variabel sub_materi_id
+        $sub_materi_id = $belajar["sub_materi_id"];
+
+        // Membuat variabel card
+        $card = $belajar["card_number"];
+
+        $kunciJawaban = $this->Materi_model->getAnswerKey($materi_id, $sub_materi_id, $card);
+
+        // Ternyata kalau gak di-echo gak bisa dipanggil via FETCH POST
+        echo json_encode($kunciJawaban); 
+    }
 }
