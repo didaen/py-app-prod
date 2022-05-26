@@ -433,3 +433,98 @@ tombolReset();
 
 
 
+// Tombol Tunjukkan jawaban untuk mencatat apakah user memencet tombol tunjukkan jawaban atau tidak
+function showAnswers() {
+
+	// Jika ditemukan element dengan id tunjukkan-jawaban
+	if (document.getElementById("tunjukkan-jawaban") != null) {
+
+		// Masukkan element tersebut ke variabel showAnswersBtn
+		let showAnswersBtn = document.getElementById("tunjukkan-jawaban");
+
+		// Variabel jumlah klik
+		// let jumlahKlik = 0;
+		
+		// Ketika element tersebut diklik
+		showAnswersBtn.addEventListener("click", function(event){
+			
+			fetch('http://localhost/py-app/materi/klikTunjukkanJawabanTersimpan', {
+				method: 'POST',
+				credentials: 'same-origin',
+				mode: 'no-cors',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+			})
+				.then(response => response.json())
+				.then(response => {
+
+					let klikTersimpan = parseInt(response['jumlah_klik']);
+					console.log(klikTersimpan);
+
+					let postData = new FormData();
+					postData.append("klik_tersimpan", klikTersimpan);
+					postData.append("jumlah_klik", 1);
+
+					fetch('http://localhost/py-app/materi/userLihatJawaban', {
+						method: 'POST',
+						mode: 'no-cors',
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: postData
+					}).then((res) => {
+						console.log(res);
+					}).catch(console.log);
+
+					// FETCH POST UNTUK MENGAMBI JAWABAN PADA MYSQL
+					let kunciJawaban = document.getElementById("kunci-jawaban");
+
+
+					fetch('http://localhost/py-app/materi/tunjukkanKunciJawaban', {
+						method: 'POST',
+						credentials: 'same-origin',
+						mode: 'no-cors',
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json'
+						},
+					})
+						.then(response => response.json())
+						.then(response => {
+							console.log(response);
+
+							response.forEach(response => {
+								kunciJawaban.innerHTML += response['isi'];
+								renderMathInElement(
+									kunciJawaban,
+									{
+										delimiters: [
+											{left: "$$", right: "$$", display: true},
+											{left: "$", right: "$", display: false},
+											{left: "\\begin{equation}", right: "\\end{equation}", display: true},
+											{left: "\\begin{align}", right: "\\end{align}", display: true},
+											{left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+											{left: "\\begin{gather}", right: "\\end{gather}", display: true},
+											{left: "\\(", right: "\\)", display: false},
+											{left: "\\[", right: "\\]", display: true}
+										]
+									}
+								);
+							});
+						
+						});
+
+				
+			});
+
+			event.preventDefault();
+			
+		});
+	}	
+}
+showAnswers();
+
+
+
