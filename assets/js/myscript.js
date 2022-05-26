@@ -482,7 +482,7 @@ function showAnswers() {
 					let kunciJawaban = document.getElementById("kunci-jawaban");
 
 
-					fetch('http://localhost/py-app/materi/tunjukkanKunciJawaban', {
+					fetch('https://www.physicsyourself.com/materi/tunjukkanKunciJawaban', {
 						method: 'POST',
 						credentials: 'same-origin',
 						mode: 'no-cors',
