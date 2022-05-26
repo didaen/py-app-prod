@@ -521,4 +521,34 @@ class Materi extends CI_Controller
         // Ternyata kalau gak di-echo gak bisa dipanggil via FETCH POST
         echo json_encode($kunciJawaban); 
     }
+
+
+
+    // Method ini untuk menampilkan isi materi di dalam card yang tersimpan dalam database
+    public function tampilkanMateriCard()
+    {
+        json_decode(file_get_contents('php://input'), true);
+
+        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        // Membuat variabel user_id
+        $user_id = $user['id'];
+
+        // Ambil data pembelajaran terakhir
+        $belajar = $this->User_model->getRecentLearningActivity($user_id);
+
+        // Membuat variabel materi_id
+        $materi_id = $belajar["materi_id"];
+
+        // Membuat variabel sub_materi_id
+        $sub_materi_id = $belajar["sub_materi_id"];
+
+        // Membuat variabel card
+        $card = $belajar["card_number"];
+
+        $materi_card = $this->Materi_model->getMateriCard($materi_id, $sub_materi_id, $card);
+
+        // Ternyata kalau gak di-echo gak bisa dipanggil via FETCH POST
+        echo json_encode($materi_card); 
+    }
 }
