@@ -736,6 +736,18 @@ body {
   border-color: rgb(65 114 159 / var(--tw-border-opacity));
 }
 
+.visible {
+  visibility: visible;
+}
+
+.static {
+  position: static;
+}
+
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -972,12 +984,28 @@ body {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
+}
+
+.contents {
+  display: contents;
 }
 
 .hidden {
@@ -1068,8 +1096,16 @@ body {
   transform-origin: top left;
 }
 
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.resize {
+  resize: both;
 }
 
 .grid-cols-29 {
@@ -1310,9 +1346,9 @@ body {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.border-blue-1000 {
+.border-blue-1400 {
   --tw-border-opacity: 1;
-  border-color: rgb(195 224 229 / var(--tw-border-opacity));
+  border-color: rgb(189 220 255 / var(--tw-border-opacity));
 }
 
 .border-white {
@@ -1320,14 +1356,14 @@ body {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.border-blue-1400 {
+.border-blue-1000 {
   --tw-border-opacity: 1;
-  border-color: rgb(189 220 255 / var(--tw-border-opacity));
+  border-color: rgb(195 224 229 / var(--tw-border-opacity));
 }
 
-.bg-blue-1000 {
+.bg-blue-1400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(195 224 229 / var(--tw-bg-opacity));
+  background-color: rgb(189 220 255 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1380,11 +1416,6 @@ body {
   background-color: rgb(39 68 114 / var(--tw-bg-opacity));
 }
 
-.bg-blue-1400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(189 220 255 / var(--tw-bg-opacity));
-}
-
 .bg-blue-1200 {
   --tw-bg-opacity: 1;
   background-color: rgb(65 114 159 / var(--tw-bg-opacity));
@@ -1410,9 +1441,9 @@ body {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
-.bg-blue-300 {
+.bg-blue-1500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+  background-color: rgb(89 144 207 / var(--tw-bg-opacity));
 }
 
 .bg-gray-500 {
@@ -1423,11 +1454,6 @@ body {
 .bg-indigo-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(165 180 252 / var(--tw-bg-opacity));
-}
-
-.bg-blue-1500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(89 144 207 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -1648,6 +1674,15 @@ body {
   outline-offset: 2px;
 }
 
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition {
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1762,6 +1797,11 @@ body {
 
   .sm\:gap-0 {
     gap: 0px;
+  }
+
+  .sm\:gap-x-8 {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
   }
 
   .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
