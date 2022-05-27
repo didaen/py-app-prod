@@ -535,7 +535,7 @@ function showMateri() {
 
 		let materiPembelajaran = document.getElementById("materi-pembelajaran");
 	
-		fetch('https://www.physicsyourself.com/materi/tampilkanMateriCard', {
+		fetch('http://localhost/py-app/materi/tampilkanMateriCard', {
 			method: 'POST',
 			credentials: 'same-origin',
 			mode: 'no-cors',
@@ -548,76 +548,57 @@ function showMateri() {
 			.then(response => {
 				console.log(response);
 				
-				let i = 0;
-				let isiKolom1 = '';
-				let isiKolom2 = '';
+				let isiKolom = '';
 	
 				response.forEach(resp => {
 	
-					let baris = parseInt(resp['baris']);
-					i = baris;
-	
 					if(resp['layout'] == '1') {
 					
-						materiPembelajaran.innerHTML += resp['isi'];
-	
-						renderMathInElement(
-							materiPembelajaran,
-							{
-								delimiters: [
-									{left: "$$", right: "$$", display: true},
-									{left: "$", right: "$", display: false},
-									{left: "\\begin{equation}", right: "\\end{equation}", display: true},
-									{left: "\\begin{align}", right: "\\end{align}", display: true},
-									{left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
-									{left: "\\begin{gather}", right: "\\end{gather}", display: true},
-									{left: "\\(", right: "\\)", display: false},
-									{left: "\\[", right: "\\]", display: true}
-								]
-							}
-						);
+						isiKolom += 
+							`
+								<div class="flex flex-col">
+									${resp['isi']}
+								</div>
+							`;
 		
 					} else {
-		
-						if(baris == i) {
 	
-							i = baris;
+						if(resp['kolom'] == '1') {
 	
-							if(resp['kolom'] == '1') {
+							isiKolom += 
+								`
+									<div class="flex flex-col sm:flex-row sm:gap-x-8">
+										${resp['isi']}
+								`;
+						} else {
 	
-								isiKolom1 = resp['isi'];
-							} else {
-	
-								isiKolom2 = resp['isi'];
-							}
-		
-						} 
+							isiKolom += 
+								`
+										${resp['isi']}
+									</div>
+								`;
+						}
+ 
 					}
 				});
 	
-				materiPembelajaran.innerHTML +=
-							`
-								<div class="flex flex-col sm:flex-row sm:gap-x-8">
-									${isiKolom1}
-									${isiKolom2}
-								</div>
-							`;	
-							
-							renderMathInElement(
-								materiPembelajaran,
-								{
-									delimiters: [
-										{left: "$$", right: "$$", display: true},
-										{left: "$", right: "$", display: false},
-										{left: "\\begin{equation}", right: "\\end{equation}", display: true},
-										{left: "\\begin{align}", right: "\\end{align}", display: true},
-										{left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
-										{left: "\\begin{gather}", right: "\\end{gather}", display: true},
-										{left: "\\(", right: "\\)", display: false},
-										{left: "\\[", right: "\\]", display: true}
-									]
-								}
-							);
+				materiPembelajaran.innerHTML = isiKolom;
+										
+				renderMathInElement(
+					materiPembelajaran,
+					{
+						delimiters: [
+							{left: "$$", right: "$$", display: true},
+							{left: "$", right: "$", display: false},
+							{left: "\\begin{equation}", right: "\\end{equation}", display: true},
+							{left: "\\begin{align}", right: "\\end{align}", display: true},
+							{left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+							{left: "\\begin{gather}", right: "\\end{gather}", display: true},
+							{left: "\\(", right: "\\)", display: false},
+							{left: "\\[", right: "\\]", display: true}
+						]
+					}
+				);
 				
 			});
 	}
