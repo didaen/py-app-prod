@@ -593,3 +593,18 @@ showAnswers();
 
 
 
+// Menghentikan foem untuk mengirim
+function janganKirimForm() {
+	// Pilih elemen dengan id isi-card, masukkan ke variabel equationBox
+	let equationBox = document.getElementById('isi-card');
+
+	// Tambahkan event click pada elemen tersebut
+	equationBox.addEventListener('click', function(event) {
+
+		// Masukkan elemen apa saja yang diklik oleh user yang berada di dalam elemen tersebut ke dalam variabel pertanyaanIni
+		let pertanyaanIni = event.target;
+
+	});
+}
+
+
