@@ -42,7 +42,7 @@
         <!-- ___FORM DAN ISI___ -->
         <div class="flex flex-col text-base text-justify bg-white text-gray-600 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400" id="isi-card">
 
-            <form action="" method="post">
+            
             
                 <!-- VARIABEL UNTUK JAWABAN -->
                 <?php $box_number = 1; ?>
@@ -157,7 +157,7 @@
                 </div>
                 <!-- AKHIR PEMBIUNGKUS TOMBOL DAN KUNCI JAWABAN -->
 
-            </form>
+            
 
         </div>
         <!-- ___AKHIR FORM DAN ISI___ -->
