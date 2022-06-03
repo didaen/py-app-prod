@@ -625,3 +625,4 @@ function janganKirimForm() {
 }
 
 
+janganKirimForm();
