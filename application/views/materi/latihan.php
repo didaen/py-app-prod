@@ -96,7 +96,7 @@
 
                                         <!-- PERTANYAAN -->
                                         <div style="grid-row-start: <?= $latsol['row_start']; ?>; grid-column-start: <?= $latsol['col_start']; ?>; z-index: 10;">
-                                            
+                                            <form method="post">
                                                 <input
                                                 type="text"
                                                 class="pertanyaan <?= $latsol['class']; ?>"
@@ -104,7 +104,7 @@
                                                 value="<?= $jawaban_user['answ_' . $box_number] ?>"
                                                 onclick="kirimDataCard()"
                                                 />
-                                            
+                                            </form>
                                         </div>
 
                                         <?php $box_number++ ?>
