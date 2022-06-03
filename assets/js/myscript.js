@@ -607,7 +607,7 @@ function janganKirimForm() {
                 // Jika elemen memiliki class pertanyaan
                 if (pertanyaanIni.classList.contains('pertanyaan')) {
 
-                   let nomerPertanyaan = pertanyaanIni.dataset.nomerPertanyaan;
+                   let nomerPertanyaan = pertanyaanIni.dataset.nomerForm;
 
                    let formPertanyaan = document.getElementById('form-' + nomerPertanyaan);
                    
