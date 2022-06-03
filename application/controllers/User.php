@@ -62,7 +62,7 @@ class User extends CI_Controller
         // ATURAN-ATURAN TIAP FIELD
 
         // 1. Username
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|alpha_dash', [
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|alpha_dash|is_unique[user.username]', [
             'required' => 'Perlu diisi.',
             'alpha_dash' => 'Username tidak sesuai ketentuan.',
             'is_unique' => 'Username sudah digunakan.'
