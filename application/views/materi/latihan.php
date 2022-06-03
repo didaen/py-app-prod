@@ -96,7 +96,7 @@
 
                                         <!-- PERTANYAAN -->
                                         <div style="grid-row-start: <?= $latsol['row_start']; ?>; grid-column-start: <?= $latsol['col_start']; ?>; z-index: 10;">
-                                            <form action="" method="post">
+                                            <form method="post">
                                                 <input
                                                 type="text"
                                                 class="pertanyaan <?= $latsol['class']; ?>"
