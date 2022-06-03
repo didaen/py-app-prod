@@ -96,13 +96,15 @@
 
                                         <!-- PERTANYAAN -->
                                         <div style="grid-row-start: <?= $latsol['row_start']; ?>; grid-column-start: <?= $latsol['col_start']; ?>; z-index: 10;">
-                                            <input
-                                            type="text"
-                                            class="pertanyaan <?= $latsol['class']; ?>"
-                                            id="answ_<?= $box_number; ?>"
-                                            value="<?= $jawaban_user['answ_' . $box_number] ?>"
-                                            onclick="kirimDataCard()"
-                                            />
+                                            <form action="" method="post">
+                                                <input
+                                                type="text"
+                                                class="pertanyaan <?= $latsol['class']; ?>"
+                                                id="answ_<?= $box_number; ?>"
+                                                value="<?= $jawaban_user['answ_' . $box_number] ?>"
+                                                onclick="kirimDataCard()"
+                                                />
+                                            </form>
                                         </div>
 
                                         <?php $box_number++ ?>
