@@ -407,6 +407,13 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
+        $this->session->unset_userdata('materi_id');
+        $this->session->unset_userdata('materi');
+        $this->session->unset_userdata('sub_materi_id');
+        $this->session->unset_userdata('sub_materi');
+        $this->session->unset_userdata('card_number');
+        $this->session->unset_userdata('total_card');
+        $this->session->unset_userdata('total_pertanyaan');
 
         // Menampilkan pesan LOGOUT
         $this->session->set_flashdata('logout', 'Anda sudah logout.');
