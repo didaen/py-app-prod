@@ -178,4 +178,55 @@ class Materi_model extends CI_model
             return false;
         }
     }
+
+
+
+    // Method untuk mengambil penjelasan dan latihan soal pada database
+    public function getLatihanSoal($materi_id, $sub_materi_id, $card_number)
+    {
+        $this->db->select('*');
+        $this->db->from('card_latihan_soal');
+        $this->db->where('materi', $materi_id);
+        $this->db->where('sub_materi', $sub_materi_id);
+        $this->db->where('card', $card_number);
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
+
+
+    // Method untuk memanggil jenis atau kategori suatu card termasuk belajar atau latihan
+    public function getJenisCard($materi_id, $sub_materi_id, $card_number)
+    {
+        $this->db->select('jenis_card');
+        $this->db->from('card_category');
+        $this->db->where('materi', $materi_id);
+        $this->db->where('sub_materi', $sub_materi_id);
+        $this->db->where('card', $card_number);
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->row_array();
+        } else {
+            return false;
+        }
+    }
+
+    // Method untuk memanggil jenis atau kategori suatu card termasuk belajar atau latihan
+    public function getKeteranganJenisCard($jenis_card)
+    {
+        $this->db->select('keterangan');
+        $this->db->from('keterangan_jenis_card');
+        $this->db->where('jenis_card', $jenis_card);
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->row_array();
+        } else {
+            return false;
+        }
+    }
+
 }
