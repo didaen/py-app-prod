@@ -596,33 +596,3 @@ function showAnswers() {
 }
 showAnswers();
 
-
-
-// Menghentikan foem untuk mengirim
-function janganKirimForm() {
-	// Pilih elemen dengan id isi-card, masukkan ke variabel equationBox
-	let equationBox = document.getElementById('isi-card');
-
-	// Tambahkan event click pada elemen tersebut
-	equationBox.addEventListener('click', function(event) {
-
-		// Masukkan elemen apa saja yang diklik oleh user yang berada di dalam elemen tersebut ke dalam variabel pertanyaanIni
-		let pertanyaanIni = event.target;
-
-                // Jika elemen memiliki class pertanyaan
-                if (pertanyaanIni.classList.contains('pertanyaan')) {
-
-                   let nomerPertanyaan = pertanyaanIni.dataset.nomerForm;
-
-                   let formPertanyaan = document.getElementById('form-' + nomerPertanyaan);
-                   
-                }
-	});
-
-        formPertanyaan.addEventListener("submit", function(event) {
-            event.preventDefault();
-        });
-}
-
-
-janganKirimForm();
