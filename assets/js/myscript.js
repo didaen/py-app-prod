@@ -275,6 +275,9 @@ function tekanEnter() {
 
 					// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 						if (answValue == response[answ]) {
+                                         
+                                                        // Mengisi value dengan jawaban
+                                                        pertanyaan.value = answValue;
 
 							// BGCOLORNYA BERUBAH MENJADI HIJAU
 							pertanyaan.style.backgroundColor = "#a3e635";
@@ -322,10 +325,12 @@ function tekanEnter() {
 					}
 				})
 				.catch((error) => console.log(error));
+
+                event.preventDefault();
 		});
 	});
 	// KEMBALIKAN
-	return;
+	
 }
 
 // JALANKAM FUNCTION
