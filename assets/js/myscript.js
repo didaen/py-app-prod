@@ -604,7 +604,19 @@ function janganKirimForm() {
 		// Masukkan elemen apa saja yang diklik oleh user yang berada di dalam elemen tersebut ke dalam variabel pertanyaanIni
 		let pertanyaanIni = event.target;
 
+                // Jika elemen memiliki class pertanyaan
+                if (pertanyaanIni.classList.contains('pertanyaan')) {
+
+                   let nomerPertanyaan = pertanyaanIni.dataset.nomerPertanyaan;
+
+                   let formPertanyaan = document.getElementById('form-' + nomerPertanyaan);
+                   
+                }
 	});
+
+        formPertanyaan.addEventListener("submit", function(event) {
+            event.preventDefault();
+        });
 }
 
 
