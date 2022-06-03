@@ -2,6 +2,8 @@
 
 class Materi extends CI_Controller
 {
+
+    // Method construct untuk controller Materi
     public function __construct()
     {
         // Memanggil contruct class parent. Ini harus dilakukan setiap membuat contruct untuk meload model
@@ -21,25 +23,24 @@ class Materi extends CI_Controller
 
 
 
-    // Mathod ini untuk menampilkan seluruh materi pembelajaran yang tersedia dalam web
+    // Method ini untuk menampilkan seluruh materi pembelajaran yang tersedia dalam database
     public function index()
     {
 
         // Mengambil data user login dari database berdasarkan session untuk keperluan data user login
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        // Judul
-        $data['judul'] = 'Materi';
-
         // Ambil semua materi pembelajaran dalam database
         $data['materi'] = $this->Materi_model->getAllMateri();
+
+        // Judul
+        $data['judul'] = 'Materi';
 
         // Isi web
         $this->load->view('templates/header', $data);
         $this->load->view('materi/index', $data);
         $this->load->view('templates/footer');
     }
-
 
 
 
@@ -138,6 +139,9 @@ class Materi extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+
+
+
     // Method untuk menampilkan card pilihan
     public function tampilkanCardPilihan($card_number)
     {
@@ -201,23 +205,71 @@ class Materi extends CI_Controller
             'total_card' => $total_card
         ];
         $this->db->insert('user_learning_log', $data['belajar']);
-        
-        // Mengambil jawaban user pada card yang dibuka
-        $data['jawaban_user'] = $this->Materi_model->getJawabanCardUser($user_id, $materi_id, $sub_materi_id, $card_number, $total_pertanyaan);
 
-        // Untuk title bar
-        $data['judul'] = 'Card Pilihan';
-        
-        // View nya adalah materi/submateri
-        $this->load->view('templates/header', $data);
-        $this->load->view('materi/' . strtolower($materi) . '/' . strtolower($sub_materi) . '/' . 'cards' . '/' . $card_number, $data);
-        $this->load->view('templates/footer');
+        // Ambil kategori card dari database
+        $jenis_card = $this->Materi_model->getJenisCard($materi_id, $sub_materi_id, $card_number);
+        $kategori_card = $jenis_card['jenis_card'];
+
+        // Jika jenis cardnya belajar atau == 1
+        if($kategori_card == '1') {
+
+            // Ambil keterangan jenis card dari database
+            $keterangan_jenis_card = $this->Materi_model->getKeteranganJenisCard($kategori_card);
+            $macam_card = $keterangan_jenis_card['keterangan'];
+
+            // Ambil materi card yang tersimpan di database
+            $data['pelajaran'] = $this->Materi_model->getMateriCard($materi_id, $sub_materi_id, $card_number);
+
+            // Untuk title bar
+            $data['judul'] = 'Belajar';
+
+            // View nya adalah materi/submateri
+            $this->load->view('templates/header', $data);
+            $this->load->view('materi/' . $macam_card, $data);
+            $this->load->view('templates/footer');
+
+        // Jika jenis cardnya latihan atau == 2
+        } else {
+
+            // Ambil keterangan jenis card dari database
+            $keterangan_jenis_card = $this->Materi_model->getKeteranganJenisCard($kategori_card);
+            $macam_card = $keterangan_jenis_card['keterangan'];
+            
+            // Mengambil jawaban user pada card yang dibuka
+            $data['latihan_soal'] = $this->Materi_model->getLatihanSoal($materi_id, $sub_materi_id, $card_number);
+
+            // Mengambil jawaban user pada card yang dibuka
+            $data['jawaban_user'] = $this->Materi_model->getJawabanCardUser($user_id, $materi_id, $sub_materi_id, $card_number, $total_pertanyaan);
+
+            // Untuk title bar
+            $data['judul'] = 'Latihan Soal';
+
+            // View nya adalah materi/submateri
+            $this->load->view('templates/header', $data);
+            $this->load->view('materi/' . $macam_card, $data);
+            $this->load->view('templates/footer');
+        }
+
     }
 
+
+
+    // Method ini untuk mengambil kunci jawaban tiap question box yang akan digunakan untuk pencocokan jawaban
     public function answers()
     {
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $user_id = $data['user']['id'];
+        
+        $answers = $this->_answers();
+        
+        // data['answers] untuk mengambil jawaban yang akan dikirimkan pada tiap card
+        echo json_encode($answers);
+    }
+
+
+
+    private function _answers()
+    {
+        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $user_id = $user['id'];
         $belajar = $this->User_model->getRecentLearningActivity($user_id);
 
         $materi_id = $belajar['materi_id'];
@@ -228,20 +280,15 @@ class Materi extends CI_Controller
         $total_pertanyaan = $this->Materi_model->getTotalPertanyaan($materi_id, $sub_materi_id, $card_number);
         $total_pertanyaan = $total_pertanyaan['total_pertanyaan'];
 
-        $answers = $this->Materi_model->getAnswers($materi_id, $sub_materi_id, $card_number, $total_pertanyaan);
-        
-        // data['answers] untuk mengambil jawaban yang akan dikirimkan pada tiap card
-        echo json_encode($answers);
+        return $this->Materi_model->getAnswers($materi_id, $sub_materi_id, $card_number, $total_pertanyaan);
     }
+
+
 
     // METHOD INI UNTUK MENTIMPAN JAWABAN USER KE DATABASE AGAR SAAT MEMBUKA KEMBALI SUDAH ADA JAWABANNYA
     public function jawabanUser() {
-        // $okedeh = $_POST['testdata'];
         
-
-        // $okedeh = $this->input->post('testdata');
-        // now I can get account and passwd by array index
-        $input = json_decode(file_get_contents('php://input'), true);
+        json_decode(file_get_contents('php://input'), true);
 
         // Membuat array yang isinya Id class pertanyaan
 
@@ -258,37 +305,8 @@ class Materi extends CI_Controller
 
         $arrayJawaban = $this->input->post($arrayIdPertanyaan);
         var_dump($arrayJawaban);
-        
-        
-        // $stream_clean = $this->security->xss_clean($this->input->raw_input_stream);
-        // $request = json_decode($stream_clean);
-        // $ready = $request->ready;
-        
-        // echo $stream_clean;
-        
-        
-        
-        // $data = json_decode(file_get_contents('php://input'), true);
-        // $okedeh = json_encode($data);
-        // $gatau = $this->session->set_userdata($okedeh);
-        // var_dump($gatau);
-        
-        
-        
-        // $data = $this->input->post('answ_1');
-        // $simpanjawaban = [
-            //     'answ_1' => $data
-            // ];
             
-            
-            // $data = file_get_contents('assets/js/myscript.js');
-            // $jawaban = json_decode($data, true);
-            
-            
-            // var_dump($jawaban);
-            // die;
-            
-            // Mengambil data user login dari database
+        // Mengambil data user login dari database
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $user_id = $data['user']['id'];
         $data['belajar'] = $this->User_model->getRecentLearningActivity($user_id);
@@ -314,11 +332,14 @@ class Materi extends CI_Controller
         $this->db->insert('card_answer_user', $jawabanUser);
             
     }
-        
+    
+    
+
+    // Method ini untuk menghapus jawaban pada card
     public function hapusJawabanCard()
     {
         
-        $input = json_decode(file_get_contents('php://input'), true);
+        json_decode(file_get_contents('php://input'), true);
 
         // Membuat array yang isinya Id class pertanyaan
 
@@ -365,17 +386,15 @@ class Materi extends CI_Controller
     }
 
 
+
     // Menangkap data yang dikirim dari function myscript.js kirimDataCard
     // Method ini berguna agar ketika user melakukan klik pada kotak pertanyaan, user menyimpan data pembelajaran terakhir yang terbaru
     public function dataPembelajaranTerakhir()
     {
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        
         json_decode(file_get_contents('php://input'), true);
 
-        // Membuat array yang isinya Id class pertanyaan
-
-        // $idPertanyaan = '';
+        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        
         $materi_id = $this->input->post('materi_id');
         $sub_materi_id = $this->input->post('sub_materi_id');
         $card_number = $this->input->post('card_number');
@@ -399,8 +418,8 @@ class Materi extends CI_Controller
         var_dump($total_pertanyaan);
         
         $dataCard = [
-            'user_id' => $data['user']['id'],
-            'username' => $data['user']['username'],
+            'user_id' => $user['id'],
+            'username' => $user['username'],
             'materi_id' => $materi_id,
             'materi' => $materi,
             'sub_materi_id' => $sub_materi_id,
@@ -413,8 +432,10 @@ class Materi extends CI_Controller
 
 
 
+    // METHOD INI UNTUK MENGAMBIL DATA TERAKHIR BERAPA KALI USER MELAKUKAN KLIK PADA TOMBOL Tunjukkan Jawaban
     public function klikTunjukkanJawabanTersimpan()
     {
+
         json_decode(file_get_contents('php://input'), true);
 
         $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -446,6 +467,7 @@ class Materi extends CI_Controller
 
 
 
+    // METHOD INI UNTUK MENYIMPAN BERAPA KALI USER SUDAH MELAKUKAN KLIK PADA TOMBOL TUNJUKKAN JAWABAN
     public function userLihatJawaban()
     {
         json_decode(file_get_contents('php://input'), true);
@@ -523,32 +545,4 @@ class Materi extends CI_Controller
     }
 
 
-
-    // Method ini untuk menampilkan isi materi di dalam card yang tersimpan dalam database
-    public function tampilkanMateriCard()
-    {
-        json_decode(file_get_contents('php://input'), true);
-
-        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-        // Membuat variabel user_id
-        $user_id = $user['id'];
-
-        // Ambil data pembelajaran terakhir
-        $belajar = $this->User_model->getRecentLearningActivity($user_id);
-
-        // Membuat variabel materi_id
-        $materi_id = $belajar["materi_id"];
-
-        // Membuat variabel sub_materi_id
-        $sub_materi_id = $belajar["sub_materi_id"];
-
-        // Membuat variabel card
-        $card = $belajar["card_number"];
-
-        $materi_card = $this->Materi_model->getMateriCard($materi_id, $sub_materi_id, $card);
-
-        // Ternyata kalau gak di-echo gak bisa dipanggil via FETCH POST
-        echo json_encode($materi_card); 
-    }
 }
