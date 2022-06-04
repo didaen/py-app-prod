@@ -231,7 +231,11 @@ class Auth extends CI_Controller
 
                 'role_id' => 2,
 
-                'is_active' => 0
+                'is_active' => 0,
+
+                'created_at' => date("Y-m-d") . " " . date("H:i:s"),
+
+                'updated_at' => date("Y-m-d") . " " . date("H:i:s")
             ];
 
             // BUAT TOKEN AKTIVASI EMAIL
