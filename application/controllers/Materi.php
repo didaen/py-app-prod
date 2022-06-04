@@ -204,7 +204,8 @@ class Materi extends CI_Controller
             'sub_materi_id' => $sub_materi_id,
             'sub_materi' => $sub_materi,
             'card_number' => $card_number,
-            'total_card' => $total_card
+            'total_card' => $total_card,
+            'started_at' => date("Y-m-d") . " " . date("H:i:s")
         ];
         $this->db->insert('user_learning_log', $data['belajar']);
 
