@@ -107,7 +107,8 @@ class Auth extends CI_Controller
                     $user_log = [
                         'username' => $user['username'],
                         'nim' => $user['nim'],
-                        'email' => $user['email']
+                        'email' => $user['email'],
+                        'time' => date("Y-m-d") . " " . date("H:i:s")
                     ];
                     $this->db->insert('user_log', $user_log);
 
