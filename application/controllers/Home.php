@@ -4,6 +4,18 @@
 // Membuat class anak (Home) yang menuruni semua method dan property dari class induknya (CI_Controller)
 class Home extends CI_Controller
 {
+
+    public function __construct()
+    {
+        // Memanggil method constructor dari class parent
+        // Parent-nya yait CI_Controller
+        parent::__construct();
+
+        is_logged_in();
+    }
+
+
+
     public function index()
     {
         // Mengambil baris data yang ada di database
