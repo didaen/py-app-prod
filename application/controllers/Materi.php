@@ -15,6 +15,8 @@ class Materi extends CI_Controller
         // Meload model User_model untuk mengambil data belajar terakhir
         $this->load->model('User_model');
 
+        is_logged_in();
+
         // 3 line code ini untuk menghindarkan kita dari masalah resubmission form
         header('Cache-Control: no-cache, must-revalidate, max-age=0');
         header('Cache-Control: post-check=0, pre-check=0',false);
