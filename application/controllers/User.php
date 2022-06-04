@@ -15,6 +15,8 @@ class User extends CI_Controller
 
         // Meload library form_validation
         $this->load->library('form_validation');
+
+        is_logged_in();
     }
 
     // Method default index ini memuat data pribadi user dan data belajar terakhi user
