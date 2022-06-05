@@ -66,7 +66,7 @@ class User extends CI_Controller
         // 1. Username
 
         // Cek terlebih dulu apakah username yang dikirimkan sama dengan username yang ada di database
-        if($this->input->post('username') !== $data['username']) {
+        if($this->input->post('username') !== $data['user']['username']) {
             
             $this->form_validation->set_rules('username', 'Username', 'required|trim|alpha_dash|is_unique[user.username]', [
                 'required' => 'Perlu diisi.',
