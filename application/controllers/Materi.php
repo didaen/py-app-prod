@@ -379,7 +379,7 @@ class Materi extends CI_Controller
 
 
         // Membuat array associative
-        for ($i = 1; $i <= $total_pertanyaan; $i++) {
+        for ($i = 1; $i <= 40; $i++) {
             $idPertanyaan = "answ_" . $i;
             $jawabanUser[$idPertanyaan] = $arrayJawaban[$idPertanyaan];
                     
