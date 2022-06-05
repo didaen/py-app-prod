@@ -64,11 +64,16 @@ class User extends CI_Controller
         // ATURAN-ATURAN TIAP FIELD
 
         // 1. Username
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|alpha_dash|is_unique[user.username,id,{user.id}]', [
-            'required' => 'Perlu diisi.',
-            'alpha_dash' => 'Username tidak sesuai ketentuan.',
-            'is_unique' => 'Username sudah digunakan.'
-        ]);
+
+        // Cek terlebih dulu apakah username yang dikirimkan sama dengan username yang ada di database
+        if($this->input->post('username') !== $data['username']) {
+            
+            $this->form_validation->set_rules('username', 'Username', 'required|trim|alpha_dash|is_unique[user.username]', [
+                'required' => 'Perlu diisi.',
+                'alpha_dash' => 'Username tidak sesuai ketentuan.',
+                'is_unique' => 'Username sudah digunakan.'
+            ]);
+        }
 
 
         // Pengkondisian form_validation apabila validasi gagal
