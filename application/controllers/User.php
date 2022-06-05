@@ -125,7 +125,7 @@ class User extends CI_Controller
                     $this->db->set('image', $new_image);
 
                     // Tanggal update
-                    $this->db->set('updated_at', date("Y-m-d") . " " . date("H:i:s"));
+                    $this->db->set('updated_at', date("d-m-Y") . " " . date("H:i:s"));
 
                 } else {
 
@@ -142,7 +142,7 @@ class User extends CI_Controller
             $this->db->set('username', $username);
 
             // Tanggal update
-            $this->db->set('updated_at', date("Y-m-d") . " " . date("H:i:s"));
+            $this->db->set('updated_at', date("d-m-Y") . " " . date("H:i:s"));
 
             // Memasukkan $data ke tabel user db py_app
             $this->db->where('id', $user_id);
