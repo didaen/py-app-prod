@@ -105,6 +105,7 @@
                                                 value="<?= $jawaban_user['answ_' . $box_number] ?>"
                                                 onclick="kirimDataCard()"
                                                 data-nomer-form="<?= $box_number; ?>"
+                                                autocomplete="off"
                                                 />
                                             </form>
                                         </div>
