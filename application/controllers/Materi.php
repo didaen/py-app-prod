@@ -386,6 +386,8 @@ class Materi extends CI_Controller
         }
         var_dump($jawabanUser);
 
+        // Waktu user menjawab
+        $jawabanUser['time'] = date("Y-m-d") . " " . date("H:i:s");
 
         $this->db->insert('card_answer_user', $dataJawabanDihapus);
     }
