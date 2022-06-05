@@ -592,6 +592,8 @@ function showAnswers() {
 			event.preventDefault();
 			
 		});
+
+		hasScrollbar();
 	}	
 }
 showAnswers();
