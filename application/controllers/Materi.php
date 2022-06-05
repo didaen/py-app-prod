@@ -205,7 +205,7 @@ class Materi extends CI_Controller
             'sub_materi' => $sub_materi,
             'card_number' => $card_number,
             'total_card' => $total_card,
-            'started_at' => date("Y-m-d") . " " . date("H:i:s")
+            'started_at' => date("d-m-Y") . " " . date("H:i:s")
         ];
         $this->db->insert('user_learning_log', $data['belajar']);
 
@@ -332,7 +332,7 @@ class Materi extends CI_Controller
         var_dump($jawabanUser);
 
         // Waktu user menjawab
-        $jawabanUser['time'] = date("Y-m-d") . " " . date("H:i:s");
+        $jawabanUser['time'] = date("d-m-Y") . " " . date("H:i:s");
 
         $this->db->insert('card_answer_user', $jawabanUser);
             
@@ -387,7 +387,7 @@ class Materi extends CI_Controller
         var_dump($jawabanUser);
 
         // Waktu user menjawab
-        $dataJawabanDihapus['time'] = date("Y-m-d") . " " . date("H:i:s");
+        $dataJawabanDihapus['time'] = date("d-m-Y") . " " . date("H:i:s");
 
         $this->db->insert('card_answer_user', $dataJawabanDihapus);
     }
@@ -433,7 +433,7 @@ class Materi extends CI_Controller
             'sub_materi' => $sub_materi,
             'card_number' => $card_number,
             'total_card' => $total_card,
-            'started_at' => date("Y-m-d") . " " . date("H:i:s")
+            'started_at' => date("d-m-Y") . " " . date("H:i:s")
         ];
         $this->db->insert('user_learning_log', $dataCard);
     }
@@ -517,7 +517,7 @@ class Materi extends CI_Controller
             'sub_materi' => $sub_materi_id,
             'card' => $card,
             'jumlah_klik' => $total_klik,
-            'time' => date("Y-m-d") . " " . date("H:i:s")
+            'time' => date("d-m-Y") . " " . date("H:i:s")
         ];
         $this->db->insert('show_answers_log', $dataClick);
     }
