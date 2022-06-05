@@ -77,7 +77,7 @@ class User extends CI_Controller
             $this->form_validation->set_rules('username', 'Username', 'required', [
                 'required' => 'Perlu diisi.'
             ]);
-        
+        }
 
 
         // Pengkondisian form_validation apabila validasi gagal
@@ -147,7 +147,6 @@ class User extends CI_Controller
             // Kembali ke controller Auth saat berhasil
             redirect('user');
         }
-    }
     }
 
 
