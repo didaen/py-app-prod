@@ -108,7 +108,7 @@ class Auth extends CI_Controller
                         'username' => $user['username'],
                         'nim' => $user['nim'],
                         'email' => $user['email'],
-                        'time' => date("Y-m-d") . " " . date("H:i:s")
+                        'time' => date("d-m-Y") . " " . date("H:i:s")
                     ];
                     $this->db->insert('user_log', $user_log);
 
@@ -233,9 +233,9 @@ class Auth extends CI_Controller
 
                 'is_active' => 0,
 
-                'created_at' => date("Y-m-d") . " " . date("H:i:s"),
+                'created_at' => date("d-m-Y") . " " . date("H:i:s"),
 
-                'updated_at' => date("Y-m-d") . " " . date("H:i:s")
+                'updated_at' => date("d-m-Y") . " " . date("H:i:s")
             ];
 
             // BUAT TOKEN AKTIVASI EMAIL
