@@ -73,6 +73,10 @@ class User extends CI_Controller
                 'alpha_dash' => 'Username tidak sesuai ketentuan.',
                 'is_unique' => 'Username sudah digunakan.'
             ]);
+        } else {
+            $this->form_validation->set_rules('username', 'Username', 'required', [
+                'required' => 'Perlu diisi.'
+            ]);
         
 
 
