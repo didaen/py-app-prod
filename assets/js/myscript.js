@@ -527,7 +527,31 @@ function tombolReset() {
 		});
 	}
 }
+
 tombolReset();
+
+
+
+// Funtion ini untuk menyembunyikan tombol Reset
+function sembunyikanTombolReset() {
+
+	if(document.getElementById("reset") !== null) {
+		const resetButton =  document.getElementById("reset");
+		let cardNumberJudulInnerHtml = parseInt(cardNumberJudul.innerHTML);
+
+		let totalCard = document.getElementById("total-card");
+		let nomerCardTerakhir = parseInt(totalCard.value);
+
+		let tombolNext = document.getElementById("tombol-next");
+
+		if (cardNumberJudulInnerHtml === nomerCardTerakhir) {
+			tombolNext.style.display = "none";
+		} else {
+			tombolNext.style.display = "";
+		}
+	}
+}
+
 
 
 
