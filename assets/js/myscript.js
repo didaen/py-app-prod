@@ -436,6 +436,27 @@ function klikGantiActionNext() {
 
 
 
+// Funtion ini untuk menyembunyikan tombol BACK saat user berada pada card 1
+function sembunyikanTombolNext() {
+	let tombolNext = document.getElementById("tombol-Next");
+
+	if (document.getElementById("card-number-judul") != null) {
+		let cardNumberJudul = document.getElementById("card-number-judul");
+		let cardNumberJudulInnerHtml = parseInt(cardNumberJudul.innerHTML);
+
+		if (cardNumberJudulInnerHtml === 1) {
+			tombolNext.style.display = "none";
+		} else {
+			tombolNext.style.display = "";
+		}
+	}
+}
+
+// Menjalankan function
+sembunyikanTombolNext();
+
+
+
 // Function ini untuk menambahkan attribute action pada saat user klik tombol LANJUTKAN BELAJAR
 function klikGantiActionLanjutkanBelajar() {
 	let selectCard = document.getElementById("card-lanjutkan-belajar");
