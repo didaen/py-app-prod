@@ -73,8 +73,12 @@
                                 </div>
 
                             <?php elseif($pel['kategori'] == '2') : ?>
-                                <iframe src="<?= $pel['isi']; ?>" frameborder="0" class="w-full">
-                                </iframe>
+                                
+                                <div class="flex flex-col mb-4">
+
+                                    <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                    </iframe>
+                                </div>
                             
                             <?php else : ?>
 
