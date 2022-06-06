@@ -154,11 +154,11 @@
 
 
                     <!-- DISPLAY NONE -->
-                    <div class="flex flex-row items-center">
+                    <div class="flex flex-row items-center justify-center">
                         <div>
-                                $$
-                                \frac{d^{2} y}{d x^{2}}+x y\left(\frac{d y}{d x}\right)^{2}=0 \\
-                                $$
+                            $$
+                            \frac{d^{2} y}{d x^{2}}+x y\left(\frac{d y}{d x}\right)^{2}=0 \\
+                            $$
                         </div>
                         <div>
                             $(1)$
