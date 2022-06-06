@@ -76,7 +76,7 @@
                                 
                                 <div>
 
-                                    <iframe src="<?= $pel['isi']; ?>" style="width: 80%;">
+                                    <iframe src="<?= $pel['isi']; ?>" frameborder="0" class="aspect-video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                     </iframe>
                                 </div>
                             
