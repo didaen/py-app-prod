@@ -664,18 +664,3 @@ function showAnswers() {
 	}	
 }
 showAnswers();
-
-
-
-function renderTagKatex() {
-	let pelajaran = document.getElementById('pelajaran')
-	for (var i = 0; i < pelajaran.length; ++i) {
-		katex.render(pelajaran[i].textContent, pelajaran[i], {
-			displayMode: true,
-			macros: {
-			'\\tag': '\\pod\\text'
-			}
-		});
-	}
-}
-renderTagKatex();
