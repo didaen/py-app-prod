@@ -71,6 +71,10 @@
                                         <?= $pel['isi']; ?>
                                     </p>
                                 </div>
+
+                            <?php elseif($pel['kategori'] == '2') : ?>
+                                <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                </iframe>
                             
                             <?php else : ?>
 
@@ -95,6 +99,11 @@
                                         <p>
                                             <?= $pel['isi']; ?>
                                         </p>
+
+                                    <?php elseif($pel['kategori'] == '2') : ?>
+                                        
+                                        <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                        </iframe>
                                     
                             
                                     <?php else : ?>
@@ -114,6 +123,11 @@
                                         <p>
                                             <?= $pel['isi']; ?>
                                         </p>
+
+                                    <?php elseif($pel['kategori'] == '2') : ?>
+                                        
+                                        <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                        </iframe>
 
 
                                     <?php else : ?>
