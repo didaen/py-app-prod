@@ -26,7 +26,7 @@ class Materi_model extends CI_model
     // METHOD UNTUK MENDAPATKAN NAMA SUB MATERI BERDASARKAN ID SUB MATERI
     public function getSubMateriNameById($sub_materi_id)
     {
-        return $this->db->get_where('sub_materi', ['id' => $sub_materi_id])->row_array();
+        return $this->db->get_where('1_sub_materi', ['id' => $sub_materi_id])->row_array();
     }
 
     // METHOD INI UNTUK MENAMPILKAN JUMLAH CARD BERDASARKAN ID MATERI DAN ID SUB MATERI
