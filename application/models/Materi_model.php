@@ -39,20 +39,7 @@ class Materi_model extends CI_model
         ])->row_array();
     }
 
-    // METHOD INI UNTUK MENDAPATKAN NAMA MATERI BERDASARKAN CODE MATERI DARI TABEL sub_materi
-    public function getNamaMateriBySubMateri($sub_materi)
-    {
-        $this->db->select('materi.materi');
-        $this->db->from('1_sub_materi');
-        $this->db->join('materi', 'sub_materi.materi = materi.id', 'left');
-        $query = $this->db->where('sub_materi.sub_materi', $sub_materi);
-        $query = $this->db->get();
-        if ($query->num_rows() != 0) {
-            return $query->result_array();
-        } else {
-            return false;
-        }
-    }
+    
 
     // Method untuk mendapatkan total pertanyaan sesuai materi id, sub materi id, dan card number
     public function getTotalPertanyaan($materi_id, $sub_materi_id, $card_number)
