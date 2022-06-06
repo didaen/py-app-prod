@@ -74,9 +74,9 @@
 
                             <?php elseif($pel['kategori'] == '2') : ?>
                                 
-                                <div class="block relative overflow-hidden pt-10 mb-4 w-full">
+                                <div>
 
-                                    <iframe src="<?= $pel['isi']; ?>" class="absolute top-0 left-0 bottom-0 right-0 h-full w-full">
+                                    <iframe src="<?= $pel['isi']; ?>">
                                     </iframe>
                                 </div>
                             
