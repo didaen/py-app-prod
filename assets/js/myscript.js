@@ -665,3 +665,15 @@ function showAnswers() {
 }
 showAnswers();
 
+
+
+function renderTagKatex() {
+	let pelajaran = document.getElementById('pelajaran')
+	katex.render(pelajaran.textContent, pelajaran, {
+		displayMode: true,
+		macros: {
+		  '\\tag': '\\pod\\text'
+		}
+	});
+}
+renderTagKatex();
