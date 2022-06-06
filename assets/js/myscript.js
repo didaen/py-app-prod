@@ -407,11 +407,12 @@ function klikGantiActionBack() {
 
 // Funtion ini untuk menyembunyikan tombol BACK saat user berada pada card 1
 function sembunyikanTombolBack() {
-	let tombolBack = document.getElementById("tombol-back");
-
+	
 	if (document.getElementById("card-number-judul") != null) {
 		let cardNumberJudul = document.getElementById("card-number-judul");
 		let cardNumberJudulInnerHtml = parseInt(cardNumberJudul.innerHTML);
+
+		let tombolBack = document.getElementById("tombol-back");
 
 		if (cardNumberJudulInnerHtml === 1) {
 			tombolBack.style.display = "none";
@@ -438,13 +439,17 @@ function klikGantiActionNext() {
 
 // Funtion ini untuk menyembunyikan tombol BACK saat user berada pada card 1
 function sembunyikanTombolNext() {
-	let tombolNext = document.getElementById("tombol-Next");
 
 	if (document.getElementById("card-number-judul") != null) {
 		let cardNumberJudul = document.getElementById("card-number-judul");
 		let cardNumberJudulInnerHtml = parseInt(cardNumberJudul.innerHTML);
 
-		if (cardNumberJudulInnerHtml === 1) {
+		let totalCard = document.getElementById("total-card");
+		let nomerCardTerakhir = parseInt(totalCard.value);
+
+		let tombolNext = document.getElementById("tombol-Next");
+
+		if (cardNumberJudulInnerHtml === nomerCardTerakhir) {
 			tombolNext.style.display = "none";
 		} else {
 			tombolNext.style.display = "";
