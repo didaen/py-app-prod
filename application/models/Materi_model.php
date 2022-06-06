@@ -45,7 +45,7 @@ class Materi_model extends CI_model
     public function getTotalPertanyaan($materi_id, $sub_materi_id, $card_number)
     {
         $this->db->select('total_pertanyaan');
-        $this->db->from('6_total_pertanyaan');
+        $this->db->from('7_total_pertanyaan');
         $this->db->where('materi', $materi_id);
         $this->db->where('sub_materi', $sub_materi_id);
         $this->db->where('card', $card_number);
@@ -71,7 +71,7 @@ class Materi_model extends CI_model
         $pertanyaan .= "answ_" . $total_pertanyaan;
 
         $this->db->select($pertanyaan);
-        $this->db->from('4_card_answer');
+        $this->db->from('6_card_answer');
         $this->db->where('materi', $materi_id);
         $this->db->where('sub_materi', $sub_materi_id);
         $this->db->where('card', $card_number);
@@ -136,7 +136,7 @@ class Materi_model extends CI_model
     public function getAnswerKey($materi_id, $sub_materi_id, $card)
     {
         $this->db->select('*');
-        $this->db->from('kunci_jawaban');
+        $this->db->from('5_kunci_jawaban');
         $this->db->where('materi', $materi_id);
         $this->db->where('sub_materi', $sub_materi_id);
         $this->db->where('card', $card);
@@ -172,7 +172,7 @@ class Materi_model extends CI_model
     public function getLatihanSoal($materi_id, $sub_materi_id, $card_number)
     {
         $this->db->select('*');
-        $this->db->from('5_card_latihan_soal');
+        $this->db->from('8_card_latihan_soal');
         $this->db->where('materi', $materi_id);
         $this->db->where('sub_materi', $sub_materi_id);
         $this->db->where('card', $card_number);
