@@ -611,6 +611,14 @@ function showAnswers() {
 									}
 								);
 							});
+
+							hasScrollbar();
+
+							// MENAMBAHKAN EVENT LOAD KE WINDOW
+							window.addEventListener("load", function () {
+								// APABILA WINDOW DIRESIZE, JALANKAN FUNCTION
+								hasScrollbar();
+							});
 						
 						});
 
@@ -618,23 +626,8 @@ function showAnswers() {
 			});
 
 			event.preventDefault();
-
-			hasScrollbar();
-
-			// MENAMBAHKAN EVENT LOAD KE WINDOW
-			window.addEventListener("load", function () {
-				// APABILA WINDOW DIRESIZE, JALANKAN FUNCTION
-				hasScrollbar();
-			});
-
-			// MENAMBAHKAN EVENT RESIZE KE WINDOW
-			window.addEventListener("resize", function () {
-				// APABILA WINDOW DIRESIZE, JALANKAN FUNCTION
-				hasScrollbar();
-			});
 			
 		});
-
 		
 	}	
 }
