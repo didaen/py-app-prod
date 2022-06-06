@@ -47,17 +47,7 @@
                 <!-- VARIABEL UNTUK JAWABAN -->
                 <?php $box_number = 1; ?>
                 <!-- AKHIR VARIABEL UNTUK JAWABAN -->
-
-                <!-- TEMPLATE SQUARE -->
-                <div>
-                    $
-                    {\textcolor{black}{\LARGE \square}}
-                    {\textcolor{black}{\LARGE \blacksquare}}
-                    {\textcolor{black}{\Large \blacksquare}}
-                    $
-                </div>
-                <!-- AKHIR TEMPLATE SQUARE -->
-
+                
 
                 <!-- TEMPLATE LATIHAN SOAL -->
                 <div class="flex flex-col gap-y-4">
