@@ -45,7 +45,7 @@ class Materi_model extends CI_model
     public function getTotalPertanyaan($materi_id, $sub_materi_id, $card_number)
     {
         $this->db->select('total_pertanyaan');
-        $this->db->from('total_pertanyaan');
+        $this->db->from('3_total_pertanyaan');
         $this->db->where('materi', $materi_id);
         $this->db->where('sub_materi', $sub_materi_id);
         $this->db->where('card', $card_number);
