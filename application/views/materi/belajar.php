@@ -151,6 +151,22 @@
                         <?php endif; ?>
 
                     <?php endforeach; ?>
+
+
+                    <!-- DISPLAY NONE -->
+                    <div class="flex flex-row justify-between">
+                        <div class="grid justify-items-stretch">
+                            <div class="justify-self-center">
+                                $$
+                                \frac{d^{2} y}{d x^{2}}+x y\left(\frac{d y}{d x}\right)^{2}=0 \\
+                                $$
+                            </div>
+                        </div>
+                        <div>
+                            $(1)$
+                        </div>
+                    </div>
+                    <!-- AKHIR DISPLAY NONE -->
                 </div>
                 <!-- AKHIR TEMPLATE LATIHAN SOAL -->
 
@@ -161,6 +177,7 @@
 
     </div>
     <!-- ________________________________AKHIR PEMBUNGKUS SUB MATERI DAN ISI CARD_____________________________-->
+
 
     <!-- PEMBUNGKUS NOMOR CARD -->
     <div class="flex bg-blue-1500 rounded-bl-xl rounded-br-xl justify-center">
