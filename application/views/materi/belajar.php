@@ -76,7 +76,7 @@
                                 
                                 <div>
 
-                                    <iframe src="<?= $pel['isi']; ?>">
+                                    <iframe src="<?= $pel['isi']; ?>" style="width: 80%;">
                                     </iframe>
                                 </div>
                             
