@@ -154,9 +154,9 @@
 
 
                     <!-- DISPLAY NONE -->
-                    <div class="flex flex-row justify-between justify-center">
-                        <div class="grid justify-items-stretch">
-                            <div class="justify-self-center">
+                    <div class="flex flex-row">
+                        <div class="grid">
+                            <div class="">
                                 $$
                                 \frac{d^{2} y}{d x^{2}}+x y\left(\frac{d y}{d x}\right)^{2}=0 \\
                                 $$
