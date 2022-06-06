@@ -107,9 +107,9 @@
 
                                     <?php elseif($pel['kategori'] == '2') : ?>
                                         
-                                        <div class="flex flex-col mb-4 w-full">
+                                        <div class="relative h-0 overflow-hidden max-w-full w-full mb-4" style="padding-bottom: 56.25%;">
 
-                                            <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                            <iframe src="<?= $pel['isi']; ?>" frameborder="0" class="absolute top-0 left-0 w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                             </iframe>
                                         </div>
                                     
@@ -134,9 +134,9 @@
 
                                     <?php elseif($pel['kategori'] == '2') : ?>
                                         
-                                        <div class="flex flex-col mb-4 w-full">
+                                        <div class="relative h-0 overflow-hidden max-w-full w-full mb-4" style="padding-bottom: 56.25%;">
 
-                                            <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                            <iframe src="<?= $pel['isi']; ?>" frameborder="0" class="absolute top-0 left-0 w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                             </iframe>
                                         </div>
 
