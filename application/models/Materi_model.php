@@ -33,7 +33,7 @@ class Materi_model extends CI_model
     public function getTotalCardByMateriIdAndSubMateriId($materi_id, $sub_materi_id)
     {
         // Pada tabel card hanya ada code sub_materi. Jadi variable yg dikirim ini haruslah id dari submateri yang dipilih. Bukan nama sub_materi
-        return $this->db->get_where('card', [
+        return $this->db->get_where('2_card', [
             'materi' => $materi_id,
             'sub_materi' => $sub_materi_id
         ])->row_array();
