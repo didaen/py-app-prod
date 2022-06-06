@@ -73,7 +73,7 @@
                                 </div>
 
                             <?php elseif($pel['kategori'] == '2') : ?>
-                                <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                <iframe src="<?= $pel['isi']; ?>" frameborder="0" class="w-full">
                                 </iframe>
                             
                             <?php else : ?>
@@ -102,7 +102,7 @@
 
                                     <?php elseif($pel['kategori'] == '2') : ?>
                                         
-                                        <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                        <iframe src="<?= $pel['isi']; ?>" frameborder="0" class="w-full">
                                         </iframe>
                                     
                             
@@ -126,7 +126,7 @@
 
                                     <?php elseif($pel['kategori'] == '2') : ?>
                                         
-                                        <iframe src="<?= $pel['isi']; ?>" class="w-full">
+                                        <iframe src="<?= $pel['isi']; ?>" frameborder="0" class="w-full">
                                         </iframe>
 
 
