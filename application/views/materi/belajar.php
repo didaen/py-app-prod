@@ -203,36 +203,6 @@
             <!-- PEMBUNGKUS PROGRESS BAR DAN TOMBOL-TOMBOL -->
             <div class="w-full grid grid-rows-2 gap-2 sm:gap-0 grid-cols-3 sm:flex sm:flex-row mt-2">
 
-                <!-- TOMBOL RESET -->
-                <div class="row-start-2 sm:flex-none">
-                    <button class="btn-kecil-merah" id="reset">
-                        Reset
-                    </button>
-                </div>
-                <!-- AKHIR TOMBOL RESET -->
-
-                <!-- PEMBUNGKUS PROGRESS BAR -->
-                <div class="col-start-1 col-end-4 sm:grow flex flex-col justify-center px-4 text-xs bg-gray-400 text-center rounded">
-                    <p>Progress pengerjaan</p>
-
-                    <!-- KOTAK WARNA ABU PROGRESS BAR -->
-                    <div class="bungkus bg-gray-400 p-1 rounded-full">
-
-                        <!-- DURASI BELUM TERPAKAI WARNA PUTIH -->
-                        <div class="bg-white rounded-full" id="durasi-terpakai">
-
-                            <!-- DURASI SUDAH TERPAKAI WARNA HIJAU -->
-                            <div class="text-center text-gray-700 rounded-full" id="durasi">0%</div>
-                            <!-- AKHIR DURASI SUDAH TERPAKAI WARNA HIJAU -->
-
-                        </div>
-                        <!-- AKHIR DURASI BELUM TERPAKAI WARNA PUTIH -->
-
-                    </div>
-                    <!-- AKHIR KOTAK WARNA ABU PROGRESS BAR -->
-
-                </div>
-                <!-- AKHIR PEMBUNGKUS PROGRESS BAR -->
 
                 <!-- PEMBUNGKUS TOMBOL NEXT DAN BACK -->
                 <div class="row-start-2 col-span-2 justify-self-end items-start flex sm:flex-none">
