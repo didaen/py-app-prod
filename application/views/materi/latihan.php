@@ -186,7 +186,7 @@
     <div>
 
         <!-- PERINGATAN APABILA ADA SCROLLBAR -->
-        <div class="w-full text-gray-600 bg-red-300 hidden text-center text-sm px-4" id="peringatan">
+        <div class="w-full text-gray-600 bg-red-300 hidden text-center text-sm px-4 py-2" id="peringatan">
             Persamaan masih panjang. Geser kotak di atas.
         </div>
         <!-- AKHIR PERINGATAN APABILA ADA SCROLLBAR -->
