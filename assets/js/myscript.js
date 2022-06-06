@@ -437,7 +437,7 @@ function klikGantiActionNext() {
 
 
 
-// Funtion ini untuk menyembunyikan tombol BACK saat user berada pada card 1
+// Funtion ini untuk menyembunyikan tombol NEXT saat user berada pada card 1
 function sembunyikanTombolNext() {
 
 	if (document.getElementById("card-number-judul") != null) {
