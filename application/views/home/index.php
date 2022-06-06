@@ -21,7 +21,7 @@
         <p class="text-gray-600 text-justify">Physics Yourself adalah sebuah web untuk belajar Fisika dan Matematika. Web ini memiliki konsep belajar dimana saja dan kapan saja. Web ini masih dalam tahap pengembangan awal sehingga masih memerlukan banyak perbaikan. Bantu pengembang dengan mengisi angket berikut ini. Bantuan dari kamu sangat berarti.</p>
         <div class="flex flex-col justify-end space-y-2 sm:space-x-2">
             <a href="<?= base_url('materi'); ?>" class="btn-kecil bg-indigo-600 hover:bg-indigo-500 text-gray-200">Belajar dulu</a>
-            <a href="https://www.youtube.com/channel/UC9hGq1nEAfPOvn4U41JLNSA" target=”_blank” class="btn-kecil bg-orange-500 hover:bg-orange-400 text-gray-200">Tutorial</a>
+            <a href="https://www.youtube.com/channel/UC9hGq1nEAfPOvn4U41JLNSA" target=”_blank” class="btn-kecil bg-orange-300 hover:bg-orange-200 text-gray-200">Tutorial</a>
             <a href="#" class="btn-kecil">Isi angket</a>
         </div>
     </div>
