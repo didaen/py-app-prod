@@ -126,7 +126,7 @@
 
                                     <?php elseif($pel['kategori'] == '2') : ?>
                                         
-                                        <iframe src="<?= $pel['isi']; ?>" frameborder="0">
+                                        <iframe src="<?= $pel['isi']; ?>" width="640" height="345">
                                         </iframe>
 
 
