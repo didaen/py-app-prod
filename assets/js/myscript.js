@@ -669,11 +669,13 @@ showAnswers();
 
 function renderTagKatex() {
 	let pelajaran = document.getElementById('pelajaran')
-	katex.render(pelajaran.textContent, pelajaran, {
-		displayMode: true,
-		macros: {
-		  '\\tag': '\\pod\\text'
-		}
-	});
+	for (var i = 0; i < pelajaran.length; ++i) {
+		katex.render(pelajaran[i].textContent, pelajaran[i], {
+			displayMode: true,
+			macros: {
+			'\\tag': '\\pod\\text'
+			}
+		});
+	}
 }
 renderTagKatex();
