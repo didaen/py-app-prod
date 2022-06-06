@@ -201,7 +201,7 @@
             <input type="hidden" name="total-card" id="total-card" value="<?= $belajar['total_card'] ?>" />
 
             <!-- PEMBUNGKUS PROGRESS BAR DAN TOMBOL-TOMBOL -->
-            <div class="w-full flex flex-row mt-2">
+            <div class="w-full flex flex-row justify-end mt-2">
 
 
                 <!-- PEMBUNGKUS TOMBOL NEXT DAN BACK -->
