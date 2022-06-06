@@ -71,7 +71,7 @@ class Materi_model extends CI_model
         $pertanyaan .= "answ_" . $total_pertanyaan;
 
         $this->db->select($pertanyaan);
-        $this->db->from('card_answer');
+        $this->db->from('4_card_answer');
         $this->db->where('materi', $materi_id);
         $this->db->where('sub_materi', $sub_materi_id);
         $this->db->where('card', $card_number);
