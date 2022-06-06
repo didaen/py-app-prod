@@ -1215,6 +1215,10 @@ body {
   overflow: auto;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overscroll-auto {
   -ms-scroll-chaining: chained;
       overscroll-behavior: auto;
@@ -1481,6 +1485,10 @@ body {
 
 .pb-0 {
   padding-bottom: 0px;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-center {
