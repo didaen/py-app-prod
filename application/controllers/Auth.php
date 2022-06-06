@@ -258,7 +258,7 @@ class Auth extends CI_Controller
             $this->_sendEmail($email, $token, 'verify');
 
             // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
-            $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan cek kotak masuk email Anda/spam untuk melakukan verifikasi akun.');
+            $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
 
             // Kembali ke controller Auth saat berhasil akun
             redirect('auth');
@@ -480,7 +480,7 @@ class Auth extends CI_Controller
                 $this->_sendEmail($email, $token, 'forgot');
 
                 // Tampilkan pesan berhasil forgot password
-                $this->session->set_flashdata('forgot_berhasil', 'Silahkan cek kotak masuk email Anda/spam untuk memperbarui password Anda.');
+                $this->session->set_flashdata('forgot_berhasil', 'Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk memperbarui password Anda.');
 
                 // Kembali ke halam forgot password
                 redirect('auth/forgotpassword');
