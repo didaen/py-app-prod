@@ -160,8 +160,8 @@
                             \frac{d^{2} y}{d x^{2}}+x y\left(\frac{d y}{d x}\right)^{2}=0 \\
                             $$
                         </div>
-                        <div class="grid justify-items-stretch">
-                            <div class="justify-self-end">
+                        <div class="flex flex-row justify-end">
+                            <div>
 
                                 $(1)$
                             </div>
