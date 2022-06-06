@@ -600,7 +600,7 @@ function showAnswers() {
 									
 									kunciPerBaris += 
 									`
-										<div class="font-medium italic bg-gray-300">
+										<div class="font-medium text-center py-1 bg-gray-300">
 											${res['isi']}
 										</div>
 									`;
