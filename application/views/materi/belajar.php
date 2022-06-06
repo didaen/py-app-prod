@@ -236,7 +236,7 @@
                     </button>
 
                     <!-- TOMBOL NEXT -->
-                    <button type="submit" class="btn-kecil" onclick="klikGantiActionNext()">
+                    <button type="submit" class="btn-kecil" id="tombol-next" onclick="klikGantiActionNext()">
                         Next
                     </button>
 
