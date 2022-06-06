@@ -172,7 +172,7 @@ class Materi_model extends CI_model
     public function getLatihanSoal($materi_id, $sub_materi_id, $card_number)
     {
         $this->db->select('*');
-        $this->db->from('card_latihan_soal');
+        $this->db->from('5_card_latihan_soal');
         $this->db->where('materi', $materi_id);
         $this->db->where('sub_materi', $sub_materi_id);
         $this->db->where('card', $card_number);
