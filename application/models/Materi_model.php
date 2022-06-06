@@ -20,7 +20,7 @@ class Materi_model extends CI_model
     public function getSubMateriByMateriId($materi_id)
     {
         // Method
-        return $this->db->get_where('sub_materi', ['materi' => $materi_id])->result_array();
+        return $this->db->get_where('1_sub_materi', ['materi' => $materi_id])->result_array();
     }
 
     // METHOD UNTUK MENDAPATKAN NAMA SUB MATERI BERDASARKAN ID SUB MATERI
