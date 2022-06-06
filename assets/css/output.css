@@ -1140,10 +1140,6 @@ body {
   justify-content: space-between;
 }
 
-.justify-items-stretch {
-  justify-items: stretch;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1221,10 +1217,6 @@ body {
 
 .justify-self-end {
   justify-self: end;
-}
-
-.justify-self-center {
-  justify-self: center;
 }
 
 .overflow-auto {
