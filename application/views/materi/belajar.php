@@ -154,7 +154,7 @@
 
 
                     <!-- DISPLAY NONE -->
-                    <div class="flex flex-row">
+                    <div class="flex flex-row items-center">
                         <div>
                             $$
                             \frac{d^{2} y}{d x^{2}}+x y\left(\frac{d y}{d x}\right)^{2}=0 \\
