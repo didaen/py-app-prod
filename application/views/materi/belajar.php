@@ -154,7 +154,7 @@
 
 
                     <!-- DISPLAY NONE -->
-                    <div class="flex flex-row justify-between">
+                    <div class="flex flex-row justify-between justify-center">
                         <div class="grid justify-items-stretch">
                             <div class="justify-self-center">
                                 $$
