@@ -75,14 +75,9 @@
 
                                 <div class="white-box overscroll-auto overflow-auto text-sm mb-4">
                                     <div class="equation-box grid">
-                                        <div class="flex flex-row justify-between">
-                                            <div>
-                                                <?= $pel['isi']; ?>
-                                            </div>
-                                            <div>
-                                                <?= $pel['numbering']; ?>
-                                            </div>
-                                        </div>
+ 
+                                        <?= $pel['isi']; ?>
+                                            
                                     </div>
                                 </div>
 
