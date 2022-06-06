@@ -43,7 +43,7 @@ class Materi_model extends CI_model
     public function getNamaMateriBySubMateri($sub_materi)
     {
         $this->db->select('materi.materi');
-        $this->db->from('sub_materi');
+        $this->db->from('1_sub_materi');
         $this->db->join('materi', 'sub_materi.materi = materi.id', 'left');
         $query = $this->db->where('sub_materi.sub_materi', $sub_materi);
         $query = $this->db->get();
