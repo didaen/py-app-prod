@@ -33,6 +33,7 @@
             <!-- JUDUL -->
             <div class="flex flex-col justify-center text-white text-lg text-center ml-4">
                 <div><?= $judul; ?></div>
+                <input type="hidden" id="judul-kategori" value="<?= $judul; ?>">
             </div>
             <!-- AKHIR JUDUL -->
 
