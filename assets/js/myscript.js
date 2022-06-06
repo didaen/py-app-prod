@@ -579,6 +579,7 @@ function showAnswers() {
 
 					// FETCH POST UNTUK MENGAMBI JAWABAN PADA MYSQL
 					let kunciJawaban = document.getElementById("kunci-jawaban");
+					let kunciPerBaris = '';
 
 
 					fetch('https://www.physicsyourself.com/materi/tunjukkanKunciJawaban', {
@@ -593,8 +594,40 @@ function showAnswers() {
 						.then(response => response.json())
 						.then(response => {
 
-							response.forEach(response => {
-								kunciJawaban.innerHTML += response['isi'];
+							response.forEach(res => {
+
+								if(res['kategori'] == '1') {
+									
+									kunciPerBaris += 
+									`
+										<div class="font-medium italic bg-gray-300">
+											${res['isi']}
+										</div>
+									`;
+
+								} else if(res['kategori'] == '2') {
+
+									kunciPerBaris += 
+									`
+										<p>
+											${res['isi']}
+										</p>
+									`;
+
+								} else {
+
+									kunciPerBaris += 
+									`
+										<div class="white-box overscroll-auto overflow-auto text-sm">
+											<div class="equation-box grid">
+												${res['isi']}
+											</div>
+										</div>
+									`;
+								}
+
+								kunciJawaban.innerHTML = kunciPerBaris;
+
 								renderMathInElement(
 									kunciJawaban,
 									{
@@ -621,7 +654,6 @@ function showAnswers() {
 							});
 						
 						});
-
 				
 			});
 
