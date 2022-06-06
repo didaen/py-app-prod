@@ -447,7 +447,7 @@ function sembunyikanTombolNext() {
 		let totalCard = document.getElementById("total-card");
 		let nomerCardTerakhir = parseInt(totalCard.value);
 
-		let tombolNext = document.getElementById("tombol-Next");
+		let tombolNext = document.getElementById("tombol-next");
 
 		if (cardNumberJudulInnerHtml === nomerCardTerakhir) {
 			tombolNext.style.display = "none";
