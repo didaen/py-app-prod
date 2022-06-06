@@ -43,7 +43,7 @@
         <!-- ___FORM DAN ISI___ -->
         <div class="isi-card flex flex-col text-base text-justify bg-white text-gray-600 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400">
 
-            <form action="" method="post">
+            
             
                 <!-- VARIABEL UNTUK JAWABAN -->
                 <?php $box_number = 1; ?>
@@ -162,25 +162,7 @@
                 </div>
                 <!-- AKHIR TEMPLATE LATIHAN SOAL -->
 
-                <!-- PEMBIUNGKUS TOMBOL DAN KUNCI JAWABAN -->
-                <div>
-
-                    <!-- TOMBOL TUNJUKKAN JAWABAN -->
-                    <div class="mt-10 flex flex-row justify-end">
-                        <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-300" id="tunjukkan-jawaban">
-                            Tunjukkan jawaban
-                        </button>
-                    </div>
-                    <!-- AKHIR TOMBOL TUNJUKKAN JAWABAN -->
-
-                    <!-- JAWABAN -->
-                    <div class="mt-5 flex flex-col space-y-5" id="kunci-jawaban">
-                    </div>
-                    <!-- JAWABAN -->
-                </div>
-                <!-- AKHIR PEMBIUNGKUS TOMBOL DAN KUNCI JAWABAN -->
-
-            </form>
+            
 
         </div>
         <!-- ___AKHIR FORM DAN ISI___ -->
