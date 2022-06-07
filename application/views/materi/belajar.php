@@ -85,8 +85,6 @@
 
                                 <div class="white-box overscroll-auto overflow-auto text-sm mb-4">
                                     <div class="equation-box grid">
- 
-                                        <div class="flex flex-row justify-between gap-x-8">
                                             <div>
 
                                                 <?= $pel['isi']; ?>
@@ -95,7 +93,7 @@
 
                                                 <?= $pel['pengelompokan']; ?>
                                             </div>
-                                        </div>
+                                        
                                             
                                     </div>
                                 </div>
