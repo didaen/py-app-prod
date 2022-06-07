@@ -84,7 +84,7 @@
                             <?php else : ?>
 
                                 <div class="white-box overscroll-auto overflow-auto text-sm mb-4">
-                                    <div class="equation-box grid">
+                                    <div class="equation-box grid gap-x-4">
                                             
 
                                                 <?= $pel['isi']; ?>
