@@ -85,14 +85,14 @@
 
                                 <div class="white-box overscroll-auto overflow-auto text-sm mb-4">
                                     <div class="equation-box grid">
-                                            <div>
+                                            
 
                                                 <?= $pel['isi']; ?>
-                                            </div>
-                                            <div>
+                                            
+                                            
 
                                                 <?= $pel['pengelompokan']; ?>
-                                            </div>
+                                            
                                         
                                             
                                     </div>
