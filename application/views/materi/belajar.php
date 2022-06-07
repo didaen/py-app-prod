@@ -152,22 +152,6 @@
 
                     <?php endforeach; ?>
 
-
-                    <!-- DISPLAY NONE -->
-                    <div class="flex flex-row">
-                        <div>
-                            $$
-                            \frac{d^{2} y}{d x^{2}}+x y\left(\frac{d y}{d x}\right)^{2}=0 \\
-                            $$
-                        </div>
-                        <div class="flex flex-row items-center">
-                            <div>
-
-                                $(1)$
-                            </div>
-                        </div>
-                    </div>
-                    <!-- AKHIR DISPLAY NONE -->
                 </div>
                 <!-- AKHIR TEMPLATE LATIHAN SOAL -->
 
