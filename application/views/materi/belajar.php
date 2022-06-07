@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
 
-                            <?php else : ?>
+                            <?php elseif($pel['kategori'] == '4') : ?>
 
                                 <div class="white-box overscroll-auto overflow-auto text-sm mb-4">
                                     <div class="equation-box grid">
