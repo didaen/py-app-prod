@@ -86,7 +86,7 @@
                                 <div class="white-box overscroll-auto overflow-auto text-sm mb-4">
                                     <div class="equation-box grid">
  
-                                        <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row justify-between overscroll-auto overflow-auto">
                                             <div>
 
                                                 <?= $pel['isi']; ?>
