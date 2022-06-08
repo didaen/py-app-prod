@@ -14,12 +14,7 @@
         <!-- AKHIR LOGO DAN JUDUL PHYSICS YOURSELF -->
 
         <!-- MENAMPILKAN FLASHDATA -->
-        <?php if ($this->session->flashdata('akun_baru')) : ?>
-            <div class="w-full bg-green-100 text-green-600 border border-green-300 px-3 py-1 mb-4 rounded">
-                <?= $this->session->flashdata('akun_baru'); ?>
-            </div>
-
-        <?php elseif ($this->session->flashdata('token_salah')) : ?>
+        <?php if ($this->session->flashdata('token_salah')) : ?>
             <div class="w-full bg-red-100 text-red-600 border border-red-300 px-3 py-1 mb-4 rounded">
                 <?= $this->session->flashdata('token_salah'); ?>
             </div>
