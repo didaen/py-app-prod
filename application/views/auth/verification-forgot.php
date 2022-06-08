@@ -35,7 +35,7 @@
 
                 <label for="token" class="block text-gray-500">Kode Verifikasi</label>
 
-                <input type="text" class="input" name="token" id="token">
+                <input type="text" class="input" name="token" id="token" autocomplete="off">
 
                 <!-- Jika terdapat error pada field Username akan ditampilkan di sini -->
                 <?= form_error('token', '<p class="text-sm text-red-600 italic">', '</p>'); ?>
