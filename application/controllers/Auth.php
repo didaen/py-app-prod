@@ -504,10 +504,13 @@ class Auth extends CI_Controller
             'smtp_host' => $dataEmail[0]['host'],
             'smtp_user' => $dataEmail[0]['email'],
             'smtp_pass' => $dataEmail[0]['pw'],
-            'smtp_port' => 465,
+            'smtp_port' => '465',
             'mailtype' => 'html',
             'charset' => 'utf-8',
-            'newline' => "\r\n"
+            'newline' => "\r\n",
+            'smtp_timeout' => '30',
+            'mailpath' => '/usr/sbin/sendmail',
+            'protocol' => 'sendmail'
         ];
 
         // Panggil library email, masukkan konfigurasi email sebagai argumen kedua
