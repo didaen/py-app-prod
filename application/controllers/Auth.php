@@ -705,23 +705,17 @@ class Auth extends CI_Controller
             // Jika masa berlaku token tidak lebih dari 24 jam atau dibandingkan waktu sekarang
             if(time() - $user_token['date_created'] < (60 * 60 * 24)) {
 
-                // maka ubah status dari belum aktif menjadi aktif
-                $this->db->set('is_active', 1);
+                $data = [
+                    'email' => $email
+                ];
 
-                // Pada akun dengan email tersebut
-                $this->db->where('email', $email);
-
-                // Update data user
-                $this->db->update('user');
+                $this->session->set_userdata($data);
 
                 // Hapus token di database
                 $this->db->delete('user_token', ['email' => $email]);
 
-                // Tampilkan flash message berhasil aktifasi
-                $this->session->set_flashdata('akun_aktif', 'Akun Anda sudah aktif. Silahkan login.');
-
                 // Kembalikan ke auth
-                redirect('auth');
+                redirect('auth/ubahpassword');
 
             // Jika masa waktu validasi token melebihi 24 jam
             } else {
@@ -734,7 +728,7 @@ class Auth extends CI_Controller
 
 
                 // Tampilkan pesan TOKEN SUDAH TIDAK BERLAKU
-                $this->session->set_flashdata('waktu_habis', 'Aktivasi akun Anda gagal. Kode verifikasi sudah tidak berlaku.');
+                $this->session->set_flashdata('waktu_habis', 'Anda gagal memperbarui password. Kode verifikasi sudah tidak berlaku.');
 
                 // Kembalikan ke auth
                 redirect('auth');
@@ -744,10 +738,10 @@ class Auth extends CI_Controller
         } else {
 
             // maka tampilkan pesan TOKEN TIDAK SAH
-            $this->session->set_flashdata('token_salah', 'Aktivasi akun Anda gagal. Kode verifikasi tidak sah.');
+            $this->session->set_flashdata('token_salah', 'Anda gagal memperbarui password. Kode verifikasi tidak sah.');
 
             // Kembalikan ke auth
-            redirect('auth');
+            redirect('auth/verificationCodeForgot');
         }
 
     }
@@ -807,6 +801,10 @@ class Auth extends CI_Controller
         $data = [
             'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
         ];
+
+        // Memasukkan $data ke tabel user db pyapp
+        $this->db->where('email', $email);
+        $this->db->update('user', $data);
 
         // Buat pesan flash UBAH PASSWORD BERHASIL
         $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password. Silahkan login kembali.');
