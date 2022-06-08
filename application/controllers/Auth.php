@@ -782,7 +782,7 @@ class Auth extends CI_Controller
     {
         
         // Ambi data email yang dikirim melalui URL link RESET PASSWORD
-        $token = $this->input->get('token');
+        $token = $this->input->post('token');
         
         $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
         
