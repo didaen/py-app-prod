@@ -489,7 +489,7 @@ class Auth extends CI_Controller
     }
 
 
-
+    
     // Method untuk MENGIRIM EMAIL
     private function _sendEmail($email, $token, $type)
     {
@@ -568,7 +568,7 @@ class Auth extends CI_Controller
 
             // Untuk isi
             $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/verification-forgot');
+            $this->load->view('auth/verification');
             $this->load->view('templates/auth_footer');
 
         // Jika form validation berhasil
@@ -672,7 +672,7 @@ class Auth extends CI_Controller
 
             // Untuk isi
             $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/verification');
+            $this->load->view('auth/verification-forgot');
             $this->load->view('templates/auth_footer');
 
         // Jika form validation berhasil
