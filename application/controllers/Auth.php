@@ -709,17 +709,12 @@ class Auth extends CI_Controller
     // Method untuk mengolah password baru yang dimasukkan oleh user
     public function verificationCode()
     {
-        
-        // Email
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
-            'required' => 'Perlu diisi.',
-            'valid_email' => 'Email tidak sesuai.'
-        ]);
 
         // Token
-        $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric', [
+        $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric|max_length[6]', [
             'required' => 'Perlu diisi.',
-            'numeric' => 'Token tidak sesuai format.'
+            'numeric' => 'Token tidak sesuai format.',
+            'max_length' => 'Kode verifikasi salah.'
         ]);
 
         // Jika form validation gagal
@@ -750,12 +745,6 @@ class Auth extends CI_Controller
     // Method untuk mengolah password baru yang dimasukkan oleh user
     public function verificationCode2()
     {
-        
-        // Email
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
-            'required' => 'Perlu diisi.',
-            'valid_email' => 'Email tidak sesuai.'
-        ]);
 
         // Token
         $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric', [
