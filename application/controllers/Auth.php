@@ -542,27 +542,99 @@ class Auth extends CI_Controller
             // Jika variabel user ada ada valid atau terbentuk
             if($user) {
                 
-                // Maka bautkan token untuk keperluan forgot password itu
-                $token = base64_encode(random_bytes(32));
+                // Membuat 6 angka random
+                $token = rand(111111,999999);
 
-                // Membuat array assoc untuk dimasukkan ke tabel user_token
-                $user_token = [
-                    'email' => $email,
-                    'token' => $token,
-                    'date_created' => time()
-                ];
+                // CEK APAKAH TOKEN YANG ADA DI DATABASE ADA YANG SAMA
+                $token_sama = $this->db->get_where('user_token', ['token' => $token])->row_array();
 
-                // Insert data ke table user_token
-                $this->db->insert('user_token', $user_token);
+                if($token_sama) {
 
-                // Kirim email dengan type 'forgot' yang khusus untuk menangani forgot password
-                $this->_sendEmail($email, $token, 'forgot');
+                    // Membuat 6 angka random
+                    $token = rand(111111,999999);
 
-                // Tampilkan pesan berhasil forgot password
-                $this->session->set_flashdata('forgot_berhasil', 'Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk memperbarui password Anda.');
+                    // CEK APAKAH TOKEN YANG ADA DI DATABASE ADA YANG SAMA
+                    $token_sama = $this->db->get_where('user_token', ['token' => $token])->row_array();
 
-                // Kembali ke halam forgot password
-                redirect('auth/forgotpassword');
+                    if($token_sama) {
+
+                        // Membuat 6 angka random
+                        $token = rand(111111,999999);
+
+                        // CEK APAKAH TOKEN YANG ADA DI DATABASE ADA YANG SAMA
+                        $token_sama = $this->db->get_where('user_token', ['token' => $token])->row_array();
+
+                        if($token_sama) {
+
+                            // Membuat 6 angka random
+                            $token = rand(111111,999999);
+
+                            // CEK APAKAH TOKEN YANG ADA DI DATABASE ADA YANG SAMA
+                            $token_sama = $this->db->get_where('user_token', ['token' => $token])->row_array();
+
+                        } else {
+
+                            // Membuat array assoc untuk dimasukkan ke tabel user_token
+                            $user_token = [
+                                'email' => $email,
+                                'token' => $token,
+                                'date_created' => time()
+                            ];
+
+                            // Insert data ke table user_token
+                            $this->db->insert('user_token', $user_token);
+
+                            // Kirim email dengan type 'forgot' yang khusus untuk menangani forgot password
+                            $this->_sendEmail($email, $token, 'forgot');
+
+                            // Tampilkan pesan berhasil forgot password
+                            $this->session->set_flashdata('forgot_berhasil', 'Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode untuk memperbarui password Anda.');
+
+                            // Kembali ke halam forgot password
+                            redirect('auth/verificationCodeForgot');
+                        }
+
+                    } else {
+                        // Membuat array assoc untuk dimasukkan ke tabel user_token
+                        $user_token = [
+                            'email' => $email,
+                            'token' => $token,
+                            'date_created' => time()
+                        ];
+
+                        // Insert data ke table user_token
+                        $this->db->insert('user_token', $user_token);
+
+                        // Kirim email dengan type 'forgot' yang khusus untuk menangani forgot password
+                        $this->_sendEmail($email, $token, 'forgot');
+
+                        // Tampilkan pesan berhasil forgot password
+                        $this->session->set_flashdata('forgot_berhasil', 'Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode untuk memperbarui password Anda.');
+
+                        // Kembali ke halam forgot password
+                        redirect('auth/verificationCodeForgot');
+                    }
+
+                } else {
+                    // Membuat array assoc untuk dimasukkan ke tabel user_token
+                    $user_token = [
+                        'email' => $email,
+                        'token' => $token,
+                        'date_created' => time()
+                    ];
+
+                    // Insert data ke table user_token
+                    $this->db->insert('user_token', $user_token);
+
+                    // Kirim email dengan type 'forgot' yang khusus untuk menangani forgot password
+                    $this->_sendEmail($email, $token, 'forgot');
+
+                    // Tampilkan pesan berhasil forgot password
+                    $this->session->set_flashdata('forgot_berhasil', 'Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode untuk memperbarui password Anda.');
+
+                    // Kembali ke halam forgot password
+                    redirect('auth/verificationCodeForgot');
+                }
                 
             // Jika variabel user tidak ada isinya
             } else {
@@ -743,13 +815,14 @@ class Auth extends CI_Controller
 
 
     // Method untuk mengolah password baru yang dimasukkan oleh user
-    public function verificationCode2()
+    public function verificationCodeForgot()
     {
 
         // Token
-        $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric', [
+        $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric|max_length[6]', [
             'required' => 'Perlu diisi.',
-            'numeric' => 'Token tidak sesuai format.'
+            'numeric' => 'Token tidak sesuai format.',
+            'max_length' => 'Kode verifikasi salah.'
         ]);
 
         // Jika form validation gagal
@@ -758,7 +831,7 @@ class Auth extends CI_Controller
             // maka kembalikan ke halaman Reset Password
 
             // Judul/Title
-            $data['title'] = 'Verifikasi';
+            $data['title'] = 'Verifikasi Lupa Password';
 
             // Untuk isi
             $this->load->view('templates/auth_header', $data);
@@ -769,7 +842,7 @@ class Auth extends CI_Controller
         } else {
 
             // maka buka method private _ubahPassword
-            $this->_verificationCode();
+            redirect('auth/ubahPassword');
             
         }
         
