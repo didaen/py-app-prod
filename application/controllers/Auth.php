@@ -809,6 +809,8 @@ class Auth extends CI_Controller
         // Buat pesan flash UBAH PASSWORD BERHASIL
         $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password. Silahkan login kembali.');
 
+        $this->session->unset_userdata('email');
+
         // Tampilkan pesan flash pada controller Auth
         redirect('auth');
     }
