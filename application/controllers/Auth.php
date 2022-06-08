@@ -704,4 +704,152 @@ class Auth extends CI_Controller
     }
 
 
+
+
+    // Method untuk mengolah password baru yang dimasukkan oleh user
+    public function verificationCode()
+    {
+        
+        // Email
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
+            'required' => 'Perlu diisi.',
+            'valid_email' => 'Email tidak sesuai.'
+        ]);
+
+        // Token
+        $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric', [
+            'required' => 'Perlu diisi.',
+            'numeric' => 'Token tidak sesuai format.'
+        ]);
+
+        // Jika form validation gagal
+        if ($this->form_validation->run() == false) {
+
+            // maka kembalikan ke halaman Reset Password
+
+            // Judul/Title
+            $data['title'] = 'Verifikasi Akun';
+
+            // Untuk isi
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/verification');
+            $this->load->view('templates/auth_footer');
+
+        // Jika form validation berhasil
+        } else {
+
+            // maka buka method private _ubahPassword
+            $this->_verificationCode();
+            
+        }
+        
+    }
+
+
+
+    // Method untuk mengolah password baru yang dimasukkan oleh user
+    public function verificationCode2()
+    {
+        
+        // Email
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
+            'required' => 'Perlu diisi.',
+            'valid_email' => 'Email tidak sesuai.'
+        ]);
+
+        // Token
+        $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric', [
+            'required' => 'Perlu diisi.',
+            'numeric' => 'Token tidak sesuai format.'
+        ]);
+
+        // Jika form validation gagal
+        if ($this->form_validation->run() == false) {
+
+            // maka kembalikan ke halaman Reset Password
+
+            // Judul/Title
+            $data['title'] = 'Verifikasi';
+
+            // Untuk isi
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/verification');
+            $this->load->view('templates/auth_footer');
+
+        // Jika form validation berhasil
+        } else {
+
+            // maka buka method private _ubahPassword
+            $this->_verificationCode();
+            
+        }
+        
+    }
+
+
+
+    // Method ini yang akan dituju user setelah klik link RESET PASSWORD
+    private function _verificationCode()
+    {
+        
+        // Ambi data email yang dikirim melalui URL link RESET PASSWORD
+        $email = $this->input->get('email');
+        $token = $this->input->get('token');
+        
+        $user_token = $this->db->get_where('user_token', ['email' => $email, 'token' => $token])->row_array();
+        
+        // Jika data pada tabel user_token yang diambil berdasarkan token ditemukan
+        if($user_token) {
+
+            // Lanjut cek masa berlaku token
+            // Jika masa berlaku token tidak lebih dari 24 jam atau dibandingkan waktu sekarang
+            if(time() - $user_token['date_created'] < (60 * 60 * 24)) {
+
+                // maka ubah status dari belum aktif menjadi aktif
+                $this->db->set('is_active', 1);
+
+                // Pada akun dengan email tersebut
+                $this->db->where('email', $email);
+
+                // Update data user
+                $this->db->update('user');
+
+                // Hapus token di database
+                $this->db->delete('user_token', ['email' => $email]);
+
+                // Tampilkan flash message berhasil aktifasi
+                $this->session->set_flashdata('akun_aktif', 'Akun Anda sudah aktif. Silahkan login.');
+
+                // Kembalikan ke auth
+                redirect('auth');
+
+            // Jika masa waktu validasi token melebihi 24 jam
+            } else {
+
+                // mqka hapus data pendaftaran user pada tabel user
+                $this->db->delete('user', ['email' => $email]);
+
+                // maka hapus token di database
+                $this->db->delete('user_token', ['email' => $email]);
+
+
+                // Tampilkan pesan TOKEN SUDAH TIDAK BERLAKU
+                $this->session->set_flashdata('waktu_habis', 'Aktivasi akun Anda gagal. Token sudah tidak berlaku.');
+
+                // Kembalikan ke auth
+                redirect('auth');
+            }
+
+        // Jika TOKEN TIDAK DITEMUKAN pada tabel user_token
+        } else {
+
+            // maka tampilkan pesan TOKEN TIDAK SAH
+            $this->session->set_flashdata('token_salah', 'Aktivasi akun Anda gagal. Token tidak sah.');
+
+            // Kembalikan ke auth
+            redirect('auth');
+        }
+
+    }
+
 }
