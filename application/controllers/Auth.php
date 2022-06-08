@@ -387,7 +387,7 @@ class Auth extends CI_Controller
             $this->email->subject('Reset Password');
     
             // Isi dari email
-            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Klik link berikut untuk memperbarui password akun Anda : <b><a href="'. base_url() . 'auth/resetpassword?email=' .  $email . '&token=' . urlencode($token) . '">RESET PASSWORD</a></b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
+            $this->email->message('<b>Terima kasih sudah belajar di PHYSICS YOURSELF.</b><br><br>Ini adalah kode verifikasi untuk memperbarui password Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
         }
 
 
