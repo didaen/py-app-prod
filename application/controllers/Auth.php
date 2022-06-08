@@ -273,9 +273,9 @@ class Auth extends CI_Controller
         // KONFIGURASI UNTUK MENGIRIMAN EMAIL
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'info.physicsyourself@gmail.com',
-            'smtp_pass' => 'AdminPhysicsYourself',
+            'smtp_host' => 'ssl://smtp.hostinger.com',
+            'smtp_user' => 'admin@physicsyourself.com',
+            'smtp_pass' => 'VqJ@mAf_&faqx7M',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
@@ -289,7 +289,7 @@ class Auth extends CI_Controller
         $this->email->initialize($config);
 
         // Pengirim dan alias pengirim email
-        $this->email->from('info.physicsyourself@gmail.com', 'Admin Physics Yourself');
+        $this->email->from('admin@physicsyourself.com', 'Admin Physics Yourself');
 
         // Alamat email yang dituju
         $this->email->to($email);
@@ -300,7 +300,7 @@ class Auth extends CI_Controller
             $this->email->subject('Verifikasi Akun');
     
             // Isi dari email
-            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Klik link berikut untuk mengaktifkan akun Anda : <b><a href="'. base_url() . 'auth/verify?email=' .  $email . '&token=' . urlencode($token) . '">AKTIFKAN</a></b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
+            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Kode verifikasi Anda : <b>' . base_url() . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
 
         } else if($type == 'forgot') {
 
