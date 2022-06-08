@@ -554,7 +554,7 @@ class Auth extends CI_Controller
         // Token
         $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric|max_length[6]', [
             'required' => 'Perlu diisi.',
-            'numeric' => 'Token tidak sesuai format.',
+            'numeric' => 'Kode verifikasi salah.',
             'max_length' => 'Kode verifikasi salah.'
         ]);
 
