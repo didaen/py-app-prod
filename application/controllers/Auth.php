@@ -300,7 +300,7 @@ class Auth extends CI_Controller
             $this->email->subject('Verifikasi Akun');
     
             // Isi dari email
-            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Kode verifikasi Anda : <b>' . base_url() . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
+            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Kode verifikasi Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
 
         } else if($type == 'forgot') {
 
