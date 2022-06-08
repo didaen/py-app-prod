@@ -69,6 +69,11 @@
                 <?= $this->session->flashdata('token_digunakan'); ?>
             </div>
 
+        <?php elseif ($this->session->flashdata('waktu_habis')) : ?>
+            <div class="w-full bg-red-100 text-red-600 border border-red-300 px-3 py-1 mb-4 rounded">
+                <?= $this->session->flashdata('waktu_habis'); ?>
+            </div>
+
         <?php endif; ?>
         <!-- AKHIR MENAMPILKAN FLASHDATA -->
 
