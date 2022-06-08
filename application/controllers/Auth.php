@@ -793,13 +793,15 @@ class Auth extends CI_Controller
     {
         
         // Ambi data email yang dikirim melalui URL link RESET PASSWORD
-        $email = $this->input->get('email');
         $token = $this->input->get('token');
         
-        $user_token = $this->db->get_where('user_token', ['email' => $email, 'token' => $token])->row_array();
+        $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
         
         // Jika data pada tabel user_token yang diambil berdasarkan token ditemukan
         if($user_token) {
+
+            // Ambil emailnya
+            $email = $user_token['email'];
 
             // Lanjut cek masa berlaku token
             // Jika masa berlaku token tidak lebih dari 24 jam atau dibandingkan waktu sekarang
@@ -834,7 +836,7 @@ class Auth extends CI_Controller
 
 
                 // Tampilkan pesan TOKEN SUDAH TIDAK BERLAKU
-                $this->session->set_flashdata('waktu_habis', 'Aktivasi akun Anda gagal. Token sudah tidak berlaku.');
+                $this->session->set_flashdata('waktu_habis', 'Aktivasi akun Anda gagal. Kode verifikasi sudah tidak berlaku.');
 
                 // Kembalikan ke auth
                 redirect('auth');
@@ -844,7 +846,7 @@ class Auth extends CI_Controller
         } else {
 
             // maka tampilkan pesan TOKEN TIDAK SAH
-            $this->session->set_flashdata('token_salah', 'Aktivasi akun Anda gagal. Token tidak sah.');
+            $this->session->set_flashdata('token_salah', 'Aktivasi akun Anda gagal. Kode verifikasi tidak sah.');
 
             // Kembalikan ke auth
             redirect('auth');
