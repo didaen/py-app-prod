@@ -498,7 +498,7 @@ class Auth extends CI_Controller
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.hostinger.com',
             'smtp_user' => 'admin@physicsyourself.com',
-            'smtp_pass' => 'VqJ@mAf_&faqx7M',
+            'smtp_pass' => 'YRR)M@sRwzhb#8i%%%%^^!!!',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
