@@ -14,6 +14,9 @@ class Auth extends CI_Controller
         // Parent-nya yait CI_Controller
         parent::__construct();
 
+        // Meload model Materi_model untuk mengambil data-data dari database tentang pembelajaran
+        $this->load->model('Auth_model');
+
         // Library form_validation tidak dapat diload di
         // application > config > autoload.php
         // Namun harus disimpan pada method atau controller
