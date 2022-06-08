@@ -678,18 +678,78 @@ class Auth extends CI_Controller
         // Jika form validation berhasil
         } else {
 
-            // MENCARI USER SESUAI EMAIL, LALU GANTI PASSWORDNYA
-            $this->db->where('email', $email);
-            $this->db->update('user', $data);
-
-            // HAPUS TOKEN
-            $this->db->delete('user_token', ['email' => $email]);
-
-            // maka buka method private _ubahPassword
-            redirect('auth/ubahPassword');
+            $this->_verificationCodeForgot();
             
         }
         
+    }
+
+
+
+    // Method ini yang akan dituju user setelah klik link RESET PASSWORD
+    private function _verificationCodeForgot()
+    {
+        
+        // Ambi data email yang dikirim melalui URL link RESET PASSWORD
+        $token = $this->input->post('token');
+        
+        $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
+        
+        // Jika data pada tabel user_token yang diambil berdasarkan token ditemukan
+        if($user_token) {
+
+            // Ambil emailnya
+            $email = $user_token['email'];
+
+            // Lanjut cek masa berlaku token
+            // Jika masa berlaku token tidak lebih dari 24 jam atau dibandingkan waktu sekarang
+            if(time() - $user_token['date_created'] < (60 * 60 * 24)) {
+
+                // maka ubah status dari belum aktif menjadi aktif
+                $this->db->set('is_active', 1);
+
+                // Pada akun dengan email tersebut
+                $this->db->where('email', $email);
+
+                // Update data user
+                $this->db->update('user');
+
+                // Hapus token di database
+                $this->db->delete('user_token', ['email' => $email]);
+
+                // Tampilkan flash message berhasil aktifasi
+                $this->session->set_flashdata('akun_aktif', 'Akun Anda sudah aktif. Silahkan login.');
+
+                // Kembalikan ke auth
+                redirect('auth');
+
+            // Jika masa waktu validasi token melebihi 24 jam
+            } else {
+
+                // mqka hapus data pendaftaran user pada tabel user
+                $this->db->delete('user', ['email' => $email]);
+
+                // maka hapus token di database
+                $this->db->delete('user_token', ['email' => $email]);
+
+
+                // Tampilkan pesan TOKEN SUDAH TIDAK BERLAKU
+                $this->session->set_flashdata('waktu_habis', 'Aktivasi akun Anda gagal. Kode verifikasi sudah tidak berlaku.');
+
+                // Kembalikan ke auth
+                redirect('auth');
+            }
+
+        // Jika TOKEN TIDAK DITEMUKAN pada tabel user_token
+        } else {
+
+            // maka tampilkan pesan TOKEN TIDAK SAH
+            $this->session->set_flashdata('token_salah', 'Aktivasi akun Anda gagal. Kode verifikasi tidak sah.');
+
+            // Kembalikan ke auth
+            redirect('auth');
+        }
+
     }
 
 
@@ -780,86 +840,84 @@ class Auth extends CI_Controller
         redirect('auth');
     }
 
+
+    // Method untuk memverifikasi user yang melakukan pendaftaran
+    public function verify()
+    {
+        // Tangkap data email dan token yang dikirim via URL link email AKTIVASI AKUN
+        $email = $this->input->get('email');
+        $token = $this->input->get('token');
+
+        // Ambil row di database berdasarkan email
+        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+
+        // Jika data di database yang diambil berdasarkan email valid atau ada
+        if($user) {
+            
+            // Ambil row pada tabel user_token di database berdasarkan token
+            $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
+
+            // Jika data pada tabel user_token yang diambil berdasarkan token ditemukan
+            if($user_token) {
+
+                // Lanjut cek masa berlaku token
+                // Jika masa berlaku token tidak lebih dari 24 jam atau dibandingkan waktu sekarang
+                if(time() - $user_token['date_created'] < (60 * 60 * 24)) {
+
+                    // maka ubah status dari belum aktif menjadi aktif
+                    $this->db->set('is_active', 1);
+
+                    // Pada akun dengan email tersebut
+                    $this->db->where('email', $email);
+    
+                    // Update data user
+                    $this->db->update('user');
+
+                    // Hapus token di database
+                    $this->db->delete('user_token', ['email' => $email]);
+
+                    // Tampilkan flash message berhasil aktifasi
+                    $this->session->set_flashdata('akun_aktif', 'Akun Anda sudah aktif. Silahkan login.');
+
+                    // Kembalikan ke auth
+                    redirect('auth');
+
+                // Jika masa waktu validasi token melebihi 24 jam
+                } else {
+
+                    // mqka hapus data pendaftaran user pada tabel user
+                    $this->db->delete('user', ['email' => $email]);
+
+                    // maka hapus token di database
+                    $this->db->delete('user_token', ['email' => $email]);
+
+
+                    // Tampilkan pesan TOKEN SUDAH TIDAK BERLAKU
+                    $this->session->set_flashdata('waktu_habis', 'Aktivasi akun Anda gagal. Token sudah tidak berlaku.');
+    
+                    // Kembalikan ke auth
+                    redirect('auth');
+                }
+
+            // Jika TOKEN TIDAK DITEMUKAN pada tabel user_token
+            } else {
+
+                // maka tampilkan pesan TOKEN TIDAK SAH
+                $this->session->set_flashdata('token_salah', 'Aktivasi akun Anda gagal. Token tidak sah.');
+    
+                // Kembalikan ke auth
+                redirect('auth');
+            }
+
+        // Jika email tidak ditemukan di tabel user atau dengan kata lain user belum pernah melakukan pendaftaran
+        } else {
+
+            // maka tampilkan pesan EMAIL SALAH ATAU BERLUM TERDAFTAR
+            $this->session->set_flashdata('gagal_aktivasi', 'Aktivasi akun Anda gagal. Email Anda salah atau belum terdaftar.');
+
+            // Kembalikan ke auth
+            redirect('auth');
+        }
+
+    }
 }
-
-
-
- // Method untuk memverifikasi user yang melakukan pendaftaran
- public function verify()
- {
-     // Tangkap data email dan token yang dikirim via URL link email AKTIVASI AKUN
-     $email = $this->input->get('email');
-     $token = $this->input->get('token');
-
-     // Ambil row di database berdasarkan email
-     $user = $this->db->get_where('user', ['email' => $email])->row_array();
-
-     // Jika data di database yang diambil berdasarkan email valid atau ada
-     if($user) {
-         
-         // Ambil row pada tabel user_token di database berdasarkan token
-         $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
-
-         // Jika data pada tabel user_token yang diambil berdasarkan token ditemukan
-         if($user_token) {
-
-             // Lanjut cek masa berlaku token
-             // Jika masa berlaku token tidak lebih dari 24 jam atau dibandingkan waktu sekarang
-             if(time() - $user_token['date_created'] < (60 * 60 * 24)) {
-
-                 // maka ubah status dari belum aktif menjadi aktif
-                 $this->db->set('is_active', 1);
-
-                 // Pada akun dengan email tersebut
-                 $this->db->where('email', $email);
- 
-                 // Update data user
-                 $this->db->update('user');
-
-                 // Hapus token di database
-                 $this->db->delete('user_token', ['email' => $email]);
-
-                 // Tampilkan flash message berhasil aktifasi
-                 $this->session->set_flashdata('akun_aktif', 'Akun Anda sudah aktif. Silahkan login.');
-
-                 // Kembalikan ke auth
-                 redirect('auth');
-
-             // Jika masa waktu validasi token melebihi 24 jam
-             } else {
-
-                 // mqka hapus data pendaftaran user pada tabel user
-                 $this->db->delete('user', ['email' => $email]);
-
-                 // maka hapus token di database
-                 $this->db->delete('user_token', ['email' => $email]);
-
-
-                 // Tampilkan pesan TOKEN SUDAH TIDAK BERLAKU
-                 $this->session->set_flashdata('waktu_habis', 'Aktivasi akun Anda gagal. Token sudah tidak berlaku.');
- 
-                 // Kembalikan ke auth
-                 redirect('auth');
-             }
-
-         // Jika TOKEN TIDAK DITEMUKAN pada tabel user_token
-         } else {
-
-             // maka tampilkan pesan TOKEN TIDAK SAH
-             $this->session->set_flashdata('token_salah', 'Aktivasi akun Anda gagal. Token tidak sah.');
- 
-             // Kembalikan ke auth
-             redirect('auth');
-         }
-
-     // Jika email tidak ditemukan di tabel user atau dengan kata lain user belum pernah melakukan pendaftaran
-     } else {
-
-         // maka tampilkan pesan EMAIL SALAH ATAU BERLUM TERDAFTAR
-         $this->session->set_flashdata('gagal_aktivasi', 'Aktivasi akun Anda gagal. Email Anda salah atau belum terdaftar.');
-
-         // Kembalikan ke auth
-         redirect('auth');
-     }
-
- }
