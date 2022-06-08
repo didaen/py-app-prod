@@ -497,6 +497,8 @@ class Auth extends CI_Controller
     private function _sendEmail($email, $token, $type)
     {
         $dataEmail = $this->Auth_model->getDataEmail();
+        var_dump($dataEmail);
+        die;
 
         // KONFIGURASI UNTUK MENGIRIMAN EMAIL
         $config = [
