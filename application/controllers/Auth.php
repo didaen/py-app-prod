@@ -285,7 +285,7 @@ class Auth extends CI_Controller
                         $this->_sendEmail($email, $token, 'verify');
             
                         // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
-                        $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
+                        $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode verifikasi.');
             
                         // Kembali ke controller Auth saat berhasil akun
                         redirect('auth/verificationCode');
@@ -310,7 +310,7 @@ class Auth extends CI_Controller
                     $this->_sendEmail($email, $token, 'verify');
         
                     // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
-                    $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
+                    $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode verifikasi.');
         
                     // Kembali ke controller Auth saat berhasil akun
                     redirect('auth/verificationCode');
@@ -335,7 +335,7 @@ class Auth extends CI_Controller
                 $this->_sendEmail($email, $token, 'verify');
     
                 // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
-                $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
+                $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode verifikasi.');
     
                 // Kembali ke controller Auth saat berhasil akun
                 redirect('auth/verificationCode');
