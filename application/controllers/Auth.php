@@ -497,15 +497,13 @@ class Auth extends CI_Controller
     private function _sendEmail($email, $token, $type)
     {
         $dataEmail = $this->Auth_model->getDataEmail();
-        var_dump($dataEmail);
-        die;
 
         // KONFIGURASI UNTUK MENGIRIMAN EMAIL
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => $dataEmail['host'],
-            'smtp_user' => $dataEmail['email'],
-            'smtp_pass' => $dataEmail['pw'],
+            'smtp_host' => $dataEmail[0]['host'],
+            'smtp_user' => $dataEmail[0]['email'],
+            'smtp_pass' => $dataEmail[0]['pw'],
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
@@ -519,7 +517,7 @@ class Auth extends CI_Controller
         $this->email->initialize($config);
 
         // Pengirim dan alias pengirim email
-        $this->email->from($dataEmail['email'], 'Admin Physics Yourself');
+        $this->email->from($dataEmail[0]['email'], 'Admin Physics Yourself');
 
         // Alamat email yang dituju
         $this->email->to($email);
