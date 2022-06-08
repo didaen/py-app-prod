@@ -29,7 +29,7 @@
 
         <!-- VERIFIKASI AKUN FORM -->
 
-        <form method="post" action="<?= base_url('auth/ubahPassword'); ?>" class="space-y-5">
+        <form method="post" action="<?= base_url('auth/verificationcodeforgot'); ?>" class="space-y-5">
 
             <div>
 
