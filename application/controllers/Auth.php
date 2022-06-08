@@ -346,88 +346,6 @@ class Auth extends CI_Controller
 
 
 
-    // Method untuk MENGIRIM EMAIL
-    private function _sendEmail($email, $token, $type)
-    {
-        // KONFIGURASI UNTUK MENGIRIMAN EMAIL
-        $config = [
-            'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.hostinger.com',
-            'smtp_user' => 'admin@physicsyourself.com',
-            'smtp_pass' => 'VqJ@mAf_&faqx7M',
-            'smtp_port' => 465,
-            'mailtype' => 'html',
-            'charset' => 'utf-8',
-            'newline' => "\r\n"
-        ];
-
-        // Panggil library email, masukkan konfigurasi email sebagai argumen kedua
-        $this->load->library('email', $config);
-
-        // MENGATASI ERROR PORT 25
-        $this->email->initialize($config);
-
-        // Pengirim dan alias pengirim email
-        $this->email->from('admin@physicsyourself.com', 'Admin Physics Yourself');
-
-        // Alamat email yang dituju
-        $this->email->to($email);
-
-        if($type == 'verify') {
-            
-            // Subject Email
-            $this->email->subject('Verifikasi Akun');
-    
-            // Isi dari email
-            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Kode verifikasi Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
-
-        } else if($type == 'forgot') {
-
-            // Subject Email
-            $this->email->subject('Reset Password');
-    
-            // Isi dari email
-            $this->email->message('<b>Terima kasih sudah belajar di PHYSICS YOURSELF.</b><br><br>Ini adalah kode verifikasi untuk memperbarui password Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
-        }
-
-
-        // Mengirim email yang sudah dibuat
-        if($this->email->send()) {
-            return true;
-        } else {
-            echo $this->email->print_debugger();
-            die;
-        }
-
-    }
-
-
-
-    // Method LOGOUT
-    public function logout()
-    {
-
-        // Tugasnya adalah membersihkan session sambil mengembalikan ke halaman login
-        $this->session->unset_userdata('username');
-        $this->session->unset_userdata('email');
-        $this->session->unset_userdata('role_id');
-        $this->session->unset_userdata('materi_id');
-        $this->session->unset_userdata('materi');
-        $this->session->unset_userdata('sub_materi_id');
-        $this->session->unset_userdata('sub_materi');
-        $this->session->unset_userdata('card_number');
-        $this->session->unset_userdata('total_card');
-        $this->session->unset_userdata('total_pertanyaan');
-
-        // Menampilkan pesan LOGOUT
-        $this->session->set_flashdata('logout', 'Anda sudah logout.');
-
-        // Kembali ke controller Auth saat logout
-        redirect('auth');
-    }
-
-
-
     // Method untuk mengatasi user yang lupa password
     public function forgotPassword()
     {
@@ -571,77 +489,61 @@ class Auth extends CI_Controller
     }
 
 
-
-    // Method untuk mengolah password baru yang dimasukkan oleh user
-    public function ubahPassword()
+    
+    // Method untuk MENGIRIM EMAIL
+    private function _sendEmail($email, $token, $type)
     {
-        
-        // 4. Password
-        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
-            'required' => 'Perlu diisi.',
-            'min_length' => 'Password terlalu pendek.',
-            'matches' => 'Password tidak cocok.',
-        ]);
-
-        // 5. Ulangi Password
-        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
-            'required' => 'Perlu diisi.',
-            'matches' => 'Password tidak cocok.'
-        ]);
-
-        // Jika form validation gagal
-        if ($this->form_validation->run() == false) {
-
-            // maka kembalikan ke halaman Reset Password
-
-            // Judul/Title
-            $data['title'] = 'Reset Password';
-
-            // Untuk isi
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/reset-password');
-            $this->load->view('templates/auth_footer');
-
-        // Jika form validation berhasil
-        } else {
-
-            // maka buka method private _ubahPassword
-            $this->_ubahPassword();
-            
-        }
-        
-    }
-
-
-    // Method private untuk mengganti password user dengan yang baru pada FORGOT PASSWORD
-    private function _ubahPassword()
-    {
-
-        // Menyimpan data session email ke variabel email
-        $email = $this->session->userdata('email');
-
-        // Jika data berhasil ditambahkan
-        $data = [
-            'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
+        // KONFIGURASI UNTUK MENGIRIMAN EMAIL
+        $config = [
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.hostinger.com',
+            'smtp_user' => 'admin@physicsyourself.com',
+            'smtp_pass' => 'VqJ@mAf_&faqx7M',
+            'smtp_port' => 465,
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'newline' => "\r\n"
         ];
 
-        // MENCARI USER SESUAI EMAIL, LALU GANTI PASSWORDNYA
-        $this->db->where('email', $email);
-        $this->db->update('user', $data);
+        // Panggil library email, masukkan konfigurasi email sebagai argumen kedua
+        $this->load->library('email', $config);
 
-        // HAPUS TOKEN
-        $this->db->delete('user_token', ['email' => $email]);
+        // MENGATASI ERROR PORT 25
+        $this->email->initialize($config);
 
-        // Buat pesan flash UBAH PASSWORD BERHASIL
-        $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password. Silahkan login kembali.');
+        // Pengirim dan alias pengirim email
+        $this->email->from('admin@physicsyourself.com', 'Admin Physics Yourself');
 
-        // UNSET SESSION EMAIL SUPAYA BISA KE CONTROLLER AUTH UNTUK LOGIN ULANG (Kalau ingin ke controller Auth harus tidak boleh memiliki session email)
-        $this->session->unset_userdata('email');
+        // Alamat email yang dituju
+        $this->email->to($email);
 
-        // Tampilkan pesan flash pada controller Auth
-        redirect('auth');
+        if($type == 'verify') {
+            
+            // Subject Email
+            $this->email->subject('Verifikasi Akun');
+    
+            // Isi dari email
+            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Kode verifikasi Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
+
+        } else if($type == 'forgot') {
+
+            // Subject Email
+            $this->email->subject('Reset Password');
+    
+            // Isi dari email
+            $this->email->message('<b>Terima kasih sudah belajar di PHYSICS YOURSELF.</b><br><br>Ini adalah kode verifikasi untuk memperbarui password Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
+        }
+
+
+        // Mengirim email yang sudah dibuat
+        if($this->email->send()) {
+            return true;
+        } else {
+            echo $this->email->print_debugger();
+            die;
+        }
+
     }
-
 
 
 
@@ -674,42 +576,6 @@ class Auth extends CI_Controller
 
             // maka buka method private _ubahPassword
             $this->_verificationCode();
-            
-        }
-        
-    }
-
-
-
-    // Method untuk mengolah password baru yang dimasukkan oleh user
-    public function verificationCodeForgot()
-    {
-
-        // Token
-        $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric|max_length[6]', [
-            'required' => 'Perlu diisi.',
-            'numeric' => 'Token tidak sesuai format.',
-            'max_length' => 'Kode verifikasi salah.'
-        ]);
-
-        // Jika form validation gagal
-        if ($this->form_validation->run() == false) {
-
-            // maka kembalikan ke halaman Reset Password
-
-            // Judul/Title
-            $data['title'] = 'Verifikasi Lupa Password';
-
-            // Untuk isi
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/verification');
-            $this->load->view('templates/auth_footer');
-
-        // Jika form validation berhasil
-        } else {
-
-            // maka buka method private _ubahPassword
-            redirect('auth/ubahPassword');
             
         }
         
@@ -781,6 +647,140 @@ class Auth extends CI_Controller
             redirect('auth');
         }
 
+    }
+
+
+
+    // Method untuk mengolah password baru yang dimasukkan oleh user
+    public function verificationCodeForgot()
+    {
+
+        // Token
+        $this->form_validation->set_rules('token', 'Token', 'required|trim|numeric|max_length[6]', [
+            'required' => 'Perlu diisi.',
+            'numeric' => 'Token tidak sesuai format.',
+            'max_length' => 'Kode verifikasi salah.'
+        ]);
+
+        // Jika form validation gagal
+        if ($this->form_validation->run() == false) {
+
+            // maka kembalikan ke halaman Reset Password
+
+            // Judul/Title
+            $data['title'] = 'Verifikasi Lupa Password';
+
+            // Untuk isi
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/verification');
+            $this->load->view('templates/auth_footer');
+
+        // Jika form validation berhasil
+        } else {
+
+            // maka buka method private _ubahPassword
+            redirect('auth/ubahPassword');
+            
+        }
+        
+    }
+
+
+
+    // Method untuk mengolah password baru yang dimasukkan oleh user
+    public function ubahPassword()
+    {
+        
+        // 4. Password
+        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
+            'required' => 'Perlu diisi.',
+            'min_length' => 'Password terlalu pendek.',
+            'matches' => 'Password tidak cocok.',
+        ]);
+
+        // 5. Ulangi Password
+        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
+            'required' => 'Perlu diisi.',
+            'matches' => 'Password tidak cocok.'
+        ]);
+
+        // Jika form validation gagal
+        if ($this->form_validation->run() == false) {
+
+            // maka kembalikan ke halaman Reset Password
+
+            // Judul/Title
+            $data['title'] = 'Reset Password';
+
+            // Untuk isi
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/reset-password');
+            $this->load->view('templates/auth_footer');
+
+        // Jika form validation berhasil
+        } else {
+
+            // maka buka method private _ubahPassword
+            $this->_ubahPassword();
+            
+        }
+        
+    }
+
+
+
+    // Method private untuk mengganti password user dengan yang baru pada FORGOT PASSWORD
+    private function _ubahPassword()
+    {
+
+        // Menyimpan data session email ke variabel email
+        $email = $this->session->userdata('email');
+
+        // Jika data berhasil ditambahkan
+        $data = [
+            'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
+        ];
+
+        // MENCARI USER SESUAI EMAIL, LALU GANTI PASSWORDNYA
+        $this->db->where('email', $email);
+        $this->db->update('user', $data);
+
+        // HAPUS TOKEN
+        $this->db->delete('user_token', ['email' => $email]);
+
+        // Buat pesan flash UBAH PASSWORD BERHASIL
+        $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password. Silahkan login kembali.');
+
+        // UNSET SESSION EMAIL SUPAYA BISA KE CONTROLLER AUTH UNTUK LOGIN ULANG (Kalau ingin ke controller Auth harus tidak boleh memiliki session email)
+        $this->session->unset_userdata('email');
+
+        // Tampilkan pesan flash pada controller Auth
+        redirect('auth');
+    }
+    
+
+
+    // Method LOGOUT
+    public function logout()
+    {
+
+        // Tugasnya adalah membersihkan session sambil mengembalikan ke halaman login
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+        $this->session->unset_userdata('materi_id');
+        $this->session->unset_userdata('materi');
+        $this->session->unset_userdata('sub_materi_id');
+        $this->session->unset_userdata('sub_materi');
+        $this->session->unset_userdata('card_number');
+        $this->session->unset_userdata('total_card');
+        $this->session->unset_userdata('total_pertanyaan');
+
+        // Menampilkan pesan LOGOUT
+        $this->session->set_flashdata('logout', 'Anda sudah logout.');
+
+        // Kembali ke controller Auth saat logout
+        redirect('auth');
     }
 
 }
