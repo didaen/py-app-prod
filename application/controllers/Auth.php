@@ -239,7 +239,7 @@ class Auth extends CI_Controller
             ];
 
             // BUAT TOKEN AKTIVASI EMAIL
-            $token = base64_encode(random_bytes(32));
+            $token = rand(111111,999999);
             
             // Menyiapkan data-data yang akan diinput sebagai token di database
             $user_token = [
