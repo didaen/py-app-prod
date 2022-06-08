@@ -8,7 +8,7 @@
 
             <img src="<?= base_url(); ?>assets/img/pylightgray.png" class="w-12 rounded-full" alt="Physics Yourself">
 
-            <h2 class="text-2xl font-bold text-gray-700">Lupa Password</h2>
+            <h2 class="text-2xl font-bold text-gray-700">Reset Password</h2>
 
         </div>
         <!-- AKHIR LOGO DAN JUDUL PHYSICS YOURSELF -->
