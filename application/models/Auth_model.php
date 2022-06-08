@@ -1,5 +1,5 @@
 <?php
-class Materi_model extends CI_model
+class Auth_model extends CI_model
 {
     public function getDataEmail()
     {
