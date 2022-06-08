@@ -678,6 +678,13 @@ class Auth extends CI_Controller
         // Jika form validation berhasil
         } else {
 
+            // MENCARI USER SESUAI EMAIL, LALU GANTI PASSWORDNYA
+            $this->db->where('email', $email);
+            $this->db->update('user', $data);
+
+            // HAPUS TOKEN
+            $this->db->delete('user_token', ['email' => $email]);
+
             // maka buka method private _ubahPassword
             redirect('auth/ubahPassword');
             
@@ -741,18 +748,8 @@ class Auth extends CI_Controller
             'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
         ];
 
-        // MENCARI USER SESUAI EMAIL, LALU GANTI PASSWORDNYA
-        $this->db->where('email', $email);
-        $this->db->update('user', $data);
-
-        // HAPUS TOKEN
-        $this->db->delete('user_token', ['email' => $email]);
-
         // Buat pesan flash UBAH PASSWORD BERHASIL
         $this->session->set_flashdata('ganti_password', 'Anda berhasil mengubah password. Silahkan login kembali.');
-
-        // UNSET SESSION EMAIL SUPAYA BISA KE CONTROLLER AUTH UNTUK LOGIN ULANG (Kalau ingin ke controller Auth harus tidak boleh memiliki session email)
-        $this->session->unset_userdata('email');
 
         // Tampilkan pesan flash pada controller Auth
         redirect('auth');
