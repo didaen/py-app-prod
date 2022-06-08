@@ -288,7 +288,7 @@ class Auth extends CI_Controller
                         $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
             
                         // Kembali ke controller Auth saat berhasil akun
-                        redirect('auth');
+                        redirect('auth/verificationCode');
                     }
     
                 } else {
@@ -313,7 +313,7 @@ class Auth extends CI_Controller
                     $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
         
                     // Kembali ke controller Auth saat berhasil akun
-                    redirect('auth');
+                    redirect('auth/verificationCode');
                 }
 
             } else {
@@ -338,7 +338,7 @@ class Auth extends CI_Controller
                 $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
     
                 // Kembali ke controller Auth saat berhasil akun
-                redirect('auth');
+                redirect('auth/verificationCode');
             }
             
         }
