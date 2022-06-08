@@ -239,7 +239,7 @@ class Auth extends CI_Controller
             ];
 
             // BUAT TOKEN AKTIVASI EMAIL
-            $token = rand(111111,999999);
+            $token = base64_encode(random_bytes(32));
             
             // Menyiapkan data-data yang akan diinput sebagai token di database
             $user_token = [
@@ -273,9 +273,9 @@ class Auth extends CI_Controller
         // KONFIGURASI UNTUK MENGIRIMAN EMAIL
         $config = [
             'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.hostinger.com',
-            'smtp_user' => 'admin@physicsyourself.com',
-            'smtp_pass' => 'VqJ@mAf_&faqx7M',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'info.physicsyourself@gmail.com',
+            'smtp_pass' => 'AdminPhysicsYourself',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',
@@ -289,7 +289,7 @@ class Auth extends CI_Controller
         $this->email->initialize($config);
 
         // Pengirim dan alias pengirim email
-        $this->email->from('admin@physicsyourself.com', 'Admin Physics Yourself');
+        $this->email->from('info.physicsyourself@gmail.com', 'Admin Physics Yourself');
 
         // Alamat email yang dituju
         $this->email->to($email);
