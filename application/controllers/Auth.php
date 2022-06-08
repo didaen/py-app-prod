@@ -240,28 +240,107 @@ class Auth extends CI_Controller
 
             // BUAT TOKEN AKTIVASI EMAIL
             $token = rand(111111,999999);
+
+            // CEK APAKAH TOKEN YANG ADA DI DATABASE ADA YANG SAMA
+            $token_sama = $this->db->get_where('user_token', ['token' => $token])->row_array();
+
+            // JIKA ADA TOKEN YANG SAMA BUAT ANGKA RANDOM LAGI
+            if($token_sama) {
+
+                $token = rand(111111,999999);
+
+                // CEK APAKAH TOKEN YANG ADA DI DATABASE ADA YANG SAMA
+                $token_sama = $this->db->get_where('user_token', ['token' => $token])->row_array();
+
+                if($token_sama) {
+
+                    $token = rand(111111,999999);
+    
+                    // CEK APAKAH TOKEN YANG ADA DI DATABASE ADA YANG SAMA
+                    $token_sama = $this->db->get_where('user_token', ['token' => $token])->row_array();
+
+                    if($token_sama) {
+
+                        $token = rand(111111,999999);
+        
+                        // CEK APAKAH TOKEN YANG ADA DI DATABASE ADA YANG SAMA
+                        $token_sama = $this->db->get_where('user_token', ['token' => $token])->row_array();
+        
+                    } else {
+
+                        // Menyiapkan data-data yang akan diinput sebagai token di database
+                        $user_token = [
+                            'email' => $email,
+                            'token' => $token,
+                            'date_created' => time()
+                        ];
             
-            // Menyiapkan data-data yang akan diinput sebagai token di database
-            $user_token = [
-                'email' => $email,
-                'token' => $token,
-                'date_created' => time()
-            ];
+                        // Memasukkan data user yang mendaftar ke table user
+                        $this->db->insert('user', $data);
+            
+                        // Memasukkan keperluan aktivasi akun ke tabel user_token
+                        $this->db->insert('user_token', $user_token);
+            
+                        // Mengirimkan Email
+                        $this->_sendEmail($email, $token, 'verify');
+            
+                        // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
+                        $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
+            
+                        // Kembali ke controller Auth saat berhasil akun
+                        redirect('auth');
+                    }
+    
+                } else {
 
-            // Memasukkan data user yang mendaftar ke table user
-            $this->db->insert('user', $data);
+                    // Menyiapkan data-data yang akan diinput sebagai token di database
+                    $user_token = [
+                        'email' => $email,
+                        'token' => $token,
+                        'date_created' => time()
+                    ];
+        
+                    // Memasukkan data user yang mendaftar ke table user
+                    $this->db->insert('user', $data);
+        
+                    // Memasukkan keperluan aktivasi akun ke tabel user_token
+                    $this->db->insert('user_token', $user_token);
+        
+                    // Mengirimkan Email
+                    $this->_sendEmail($email, $token, 'verify');
+        
+                    // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
+                    $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
+        
+                    // Kembali ke controller Auth saat berhasil akun
+                    redirect('auth');
+                }
 
-            // Memasukkan keperluan aktivasi akun ke tabel user_token
-            $this->db->insert('user_token', $user_token);
+            } else {
 
-            // Mengirimkan Email
-            $this->_sendEmail($email, $token, 'verify');
-
-            // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
-            $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
-
-            // Kembali ke controller Auth saat berhasil akun
-            redirect('auth');
+                // Menyiapkan data-data yang akan diinput sebagai token di database
+                $user_token = [
+                    'email' => $email,
+                    'token' => $token,
+                    'date_created' => time()
+                ];
+    
+                // Memasukkan data user yang mendaftar ke table user
+                $this->db->insert('user', $data);
+    
+                // Memasukkan keperluan aktivasi akun ke tabel user_token
+                $this->db->insert('user_token', $user_token);
+    
+                // Mengirimkan Email
+                $this->_sendEmail($email, $token, 'verify');
+    
+                // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
+                $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk melakukan verifikasi akun.');
+    
+                // Kembali ke controller Auth saat berhasil akun
+                redirect('auth');
+            }
+            
         }
     }
 
