@@ -108,7 +108,7 @@
                             
                                     <?php else : ?>
 
-                                        <div class="white-box overscroll-auto overflow-auto text-sm">
+                                        <div class="white-box overscroll-auto overflow-auto text-sm" style="width: <?= $pel['ukuran_kolom']; ?>;">
                                             <div class="equation-box grid">
                                                 <?= $pel['isi']; ?>
                                             </div>
@@ -135,7 +135,7 @@
 
                                     <?php else : ?>
 
-                                        <div class="white-box overscroll-auto overflow-auto text-sm">
+                                        <div class="white-box overscroll-auto overflow-auto text-sm" style="width: <?= $pel['ukuran_kolom']; ?>;">
                                             <div class="equation-box grid">
                                                 <?= $pel['isi']; ?>
                                             </div>
