@@ -56,7 +56,7 @@
                 <?php $nomer = 1; ?>
                 <?php foreach ($referensi as $ref) : ?>
                     <div class="flex flex-row mb-4">
-                        <div class="px-2">
+                        <div class="pr-4">
                             <?= $nomer; ?>.
                         </div>
                         <div >
