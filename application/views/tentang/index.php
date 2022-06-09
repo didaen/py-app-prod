@@ -54,8 +54,8 @@
             <?php $nomer = 1; ?>
             <?php foreach ($referensi as $ref) : ?>
                 <div class="flex flex-row">
-                    <div>
-                        <?= $nomer; ?>
+                    <div class="px-2">
+                        <?= $nomer; ?>.
                     </div>
                     <div >
                         <?= $ref['sumber']; ?>
