@@ -93,7 +93,7 @@
 
                                     <?php if($pel['kategori'] == '1') : ?>
 
-                                        <p>
+                                        <p style="width: <?= $pel['ukuran_kolom']; ?>;">
                                             <?= $pel['isi']; ?>
                                         </p>
 
@@ -120,7 +120,7 @@
 
                                     <?php if($pel['kategori'] == 1) : ?>
 
-                                        <p>
+                                        <p style="width: <?= $pel['ukuran_kolom']; ?>;">
                                             <?= $pel['isi']; ?>
                                         </p>
 
