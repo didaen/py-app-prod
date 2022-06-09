@@ -93,7 +93,7 @@
 
                                     <?php if($pel['kategori'] == '1') : ?>
 
-                                        <p>
+                                        <p class="w-full sm:w-<?= $pel['ukuran_kolom']?>">
                                             <?= $pel['isi']; ?>
                                         </p>
 
@@ -108,7 +108,7 @@
                             
                                     <?php else : ?>
 
-                                        <div class="white-box overscroll-auto overflow-auto text-sm">
+                                        <div class="white-box overscroll-auto overflow-auto text-sm w-full sm:w-<?= $pel['ukuran_kolom']?>">
                                             <div class="equation-box grid">
                                                 <?= $pel['isi']; ?>
                                             </div>
@@ -120,7 +120,7 @@
 
                                     <?php if($pel['kategori'] == 1) : ?>
 
-                                        <p>
+                                        <p class="w-full sm:w-<?= $pel['ukuran_kolom']?>">
                                             <?= $pel['isi']; ?>
                                         </p>
 
@@ -135,7 +135,7 @@
 
                                     <?php else : ?>
 
-                                        <div class="white-box overscroll-auto overflow-auto text-sm">
+                                        <div class="white-box overscroll-auto overflow-auto text-sm w-full sm:w-<?= $pel['ukuran_kolom']?>">
                                             <div class="equation-box grid">
                                                 <?= $pel['isi']; ?>
                                             </div>
