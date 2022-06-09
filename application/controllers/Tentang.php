@@ -25,7 +25,7 @@ class Tentang extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         // Memanggil database untuk meload referensi web ini
-        $data['references'] = $this->Tentang_model->getAllReferences();
+        $data['referensi'] = $this->Tentang_model->getAllReferences();
 
         // Pada controller Materi ini akan meload view tentang/index
         $data['judul'] = 'Tentang';
