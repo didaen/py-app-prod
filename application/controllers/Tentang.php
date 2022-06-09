@@ -11,6 +11,9 @@ class Tentang extends CI_Controller
         // Parent-nya yait CI_Controller
         parent::__construct();
 
+        // Meload Tentang_model yang berisi referensi dari web Physics Yourself
+        $this->load->model('Tentang_model');
+
         is_logged_in();
     }
 
@@ -20,6 +23,8 @@ class Tentang extends CI_Controller
     {
         // Mengambil data user login dari database
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $data['references'] = $this->Tentang_model->getAllReferences();
 
         $this->load->view('templates/header', $data);
 
