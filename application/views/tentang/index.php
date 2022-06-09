@@ -50,12 +50,12 @@
 
     <h2 class="bg-gray-300 text-lg font-bold text-blue-1300 text-center py-3">Referensi</h2>
     <div class="bg-white text-gray-600 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400">
-        <?php foreach ($referensi as $ref) : ?>
         <ol class="block float-none">
-            <li>
-                <?= $ref['sumber']; ?>
-            </li>
+            <?php foreach ($referensi as $ref) : ?>
+                <li>
+                    <?= $ref['sumber']; ?>
+                </li>
+            <?php endforeach; ?>
         </ol>
-        <?php endforeach; ?>
     </div>
 </div>
