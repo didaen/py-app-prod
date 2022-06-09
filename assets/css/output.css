@@ -872,6 +872,10 @@ body {
   grid-row-end: 3;
 }
 
+.float-none {
+  float: none;
+}
+
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
