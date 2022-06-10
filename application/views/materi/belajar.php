@@ -75,9 +75,9 @@
 
                                 <div class="white-box overscroll-auto overflow-auto mb-4">
                                     <div class="equation-box grid">
- 
-                                        <?= $pel['isi']; ?>
-                                            
+                                        $$
+                                        <?= $pel['isi']; ?> /qquad ...(<?= $box_number; ?>)
+                                        $$
                                     </div>
                                 </div>
 
