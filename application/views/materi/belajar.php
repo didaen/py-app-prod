@@ -71,12 +71,22 @@
                                     </iframe>
                                 </div>
                             
-                            <?php else : ?>
+                            <?php elseif($pel['kategori'] == '3') : ?>
 
                                 <div class="white-box overscroll-auto overflow-auto mb-4">
                                     <div class="equation-box grid">
                                         $$
                                         <?= $pel['isi']; ?>(<?= $box_number; ?>)
+                                        $$
+                                    </div>
+                                </div>
+
+                            <?php else : ?>
+
+                                <div class="white-box overscroll-auto overflow-auto mb-4">
+                                    <div class="equation-box grid">
+                                        $$
+                                        <?= $pel['isi']; ?>
                                         $$
                                     </div>
                                 </div>
