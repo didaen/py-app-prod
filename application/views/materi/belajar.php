@@ -121,7 +121,7 @@
                                                 <div>
                                                     <?= $pel['isi']; ?>
                                                 </div>
-                                                <div class="text-right">
+                                                <div>
                                                     (1)
                                                 </div>
                                             </div>
