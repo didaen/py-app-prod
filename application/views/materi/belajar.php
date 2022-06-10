@@ -83,12 +83,12 @@
 
                                 <div class="white-box overscroll-auto overflow-auto w-full sm:w-<?= $pel['ukuran_kolom']?>">
                                     <div class="equation-box grid">
-                                        <div class="flex items-center gap-x-4">
+                                        <div class="flex items-center">
 
                                             <div class="w-10/12">
                                                 <?= $pel['isi']; ?>
                                             </div>
-                                            <div class="w-2/12">
+                                            <div class="w-2/12 text-right">
                                                 $(1)$
                                             </div>
                                         </div>
