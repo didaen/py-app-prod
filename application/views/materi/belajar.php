@@ -150,6 +150,7 @@
 
                         <?php endif; ?>
 
+                        <?php $box_number++; ?>
                     <?php endforeach; ?>
 
                 </div>
