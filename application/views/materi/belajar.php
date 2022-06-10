@@ -77,6 +77,7 @@
                                     <div class="equation-box grid">
                                         $$
                                         <?= $pel['isi']; ?> /qquad ...(<?= $box_number; ?>)
+                                        \end{aligned}
                                         $$
                                     </div>
                                 </div>
