@@ -1064,6 +1064,10 @@ body {
   width: 4rem;
 }
 
+.w-10\/12 {
+  width: 83.333333%;
+}
+
 .max-w-full {
   max-width: 100%;
 }

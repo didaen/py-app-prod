@@ -85,7 +85,7 @@
                                     <div class="equation-box grid">
                                         <div class="flex items-center">
 
-                                            <div class="w-4/5">
+                                            <div class="w-10/12">
                                                 <?= $pel['isi']; ?>
                                             </div>
                                             <div>
