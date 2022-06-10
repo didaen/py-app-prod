@@ -85,10 +85,10 @@
                                     <div class="equation-box grid overscroll-auto overflow-auto">
                                         <div class="flex flex-row overscroll-auto overflow-auto gap-x-4 items-center">
                                     
-                                            <div class="flex w-10/12 overflow-auto">
+                                            <div class="w-10/12">
                                                 <?= $pel['isi']; ?>
                                             </div>
-                                            <div class="flex w-2/12 text-right overflow-auto">
+                                            <div class="w-2/12 text-right">
                                                 $(1)$
                                             </div>
                                         </div>
