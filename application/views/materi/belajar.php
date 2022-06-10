@@ -76,7 +76,7 @@
                                 <div class="white-box overscroll-auto overflow-auto mb-4">
                                     <div class="equation-box grid">
                                         $$
-                                        <?= $pel['isi']; ?>(<?= $box_number; ?>)
+                                        <?= $pel['isi']; ?>...(<?= $box_number; ?>)
                                         $$
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@
                                         <div class="white-box overscroll-auto overflow-auto mb-4">
                                             <div class="equation-box grid">
                                                 $$
-                                                <?= $pel['isi']; ?>(<?= $box_number; ?>)
+                                                <?= $pel['isi']; ?>...(<?= $box_number; ?>)
                                                 $$
                                             </div>
                                         </div>
@@ -150,7 +150,7 @@
                                         <div class="white-box overscroll-auto overflow-auto mb-4">
                                             <div class="equation-box grid">
                                                 $$
-                                                <?= $pel['isi']; ?>(<?= $box_number; ?>)
+                                                <?= $pel['isi']; ?>...(<?= $box_number; ?>)
                                                 $$
                                             </div>
                                         </div>
