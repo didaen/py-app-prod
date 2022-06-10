@@ -80,7 +80,7 @@
                                         $$
                                     </div>
                                 </div>
-
+                                <?php $box_number++; ?>
                             <?php else : ?>
 
                                 <div class="white-box overscroll-auto overflow-auto mb-4">
@@ -125,7 +125,7 @@
                                                 $$
                                             </div>
                                         </div>
-
+                                        <?php $box_number++; ?>
                                     <?php endif; ?>
 
                             <?php else : ?>
@@ -154,7 +154,7 @@
                                                 $$
                                             </div>
                                         </div>
-
+                                        <?php $box_number++; ?>
                                     <?php endif; ?>
 
                                 </div>
@@ -164,7 +164,7 @@
 
                         <?php endif; ?>
 
-                        <?php $box_number++; ?>
+                        
                     <?php endforeach; ?>
 
                 </div>
