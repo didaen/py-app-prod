@@ -88,7 +88,7 @@
                                             <div class="w-10/12">
                                                 <?= $pel['isi']; ?>
                                             </div>
-                                            <div class="flex w-2/12 text-right">
+                                            <div class="w-2/12 text-right">
                                                 $(1)$
                                             </div>
                                         </div>
