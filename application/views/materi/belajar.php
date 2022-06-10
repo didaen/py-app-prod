@@ -76,11 +76,10 @@
                                 <div class="white-box overscroll-auto overflow-auto mb-4">
                                     <div class="equation-box grid">
                                         $$
-                                        <?= $pel['isi']; ?>...(<?= $box_number; ?>)
+                                        <?= $pel['isi']; ?>...(<?= $pel['numbering']; ?>)
                                         $$
                                     </div>
                                 </div>
-                                <?php $box_number++; ?>
                             <?php else : ?>
 
                                 <div class="white-box overscroll-auto overflow-auto mb-4">
@@ -121,11 +120,11 @@
                                         <div class="white-box overscroll-auto overflow-auto mb-4">
                                             <div class="equation-box grid">
                                                 $$
-                                                <?= $pel['isi']; ?>...(<?= $box_number; ?>)
+                                                <?= $pel['isi']; ?>...(<?= $pel['numbering']; ?>)
                                                 $$
                                             </div>
                                         </div>
-                                        <?php $box_number++; ?>
+    
                                     <?php endif; ?>
 
                             <?php else : ?>
@@ -150,11 +149,11 @@
                                         <div class="white-box overscroll-auto overflow-auto mb-4">
                                             <div class="equation-box grid">
                                                 $$
-                                                <?= $pel['isi']; ?>...(<?= $box_number; ?>)
+                                                <?= $pel['isi']; ?>...(<?= $pel['numbering']; ?>)
                                                 $$
                                             </div>
                                         </div>
-                                        <?php $box_number++; ?>
+    
                                     <?php endif; ?>
 
                                 </div>
