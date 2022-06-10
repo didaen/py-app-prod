@@ -82,7 +82,7 @@
                             <?php else : ?>
 
                                 <div class="white-box overscroll-auto overflow-auto w-full sm:w-<?= $pel['ukuran_kolom']?>">
-                                    <div class="equation-box flex flex-row overscroll-auto overflow-auto">
+                                    <div class="equation-box grid overscroll-auto overflow-auto">
                                         <div class="flex flex-row overscroll-auto overflow-auto gap-x-4">
                                     
                                             <div class="flex w-10/12 overflow-auto">
