@@ -116,11 +116,13 @@
                                         </div>
                                     
                             
-                                    <?php else : ?>
+                                    <?php elseif($pel['kategori'] == '3') : ?>
 
-                                        <div class="white-box overscroll-auto overflow-auto w-full sm:w-<?= $pel['ukuran_kolom']?>">
+                                        <div class="white-box overscroll-auto overflow-auto mb-4">
                                             <div class="equation-box grid">
-                                                <?= $pel['isi']; ?>
+                                                $$
+                                                <?= $pel['isi']; ?>(<?= $box_number; ?>)
+                                                $$
                                             </div>
                                         </div>
 
@@ -143,11 +145,13 @@
                                         </div>
 
 
-                                    <?php else : ?>
+                                    <?php elseif($pel['kategori'] == '3') : ?>
 
-                                        <div class="white-box overscroll-auto overflow-auto w-full sm:w-<?= $pel['ukuran_kolom']?>">
+                                        <div class="white-box overscroll-auto overflow-auto mb-4">
                                             <div class="equation-box grid">
-                                                <?= $pel['isi']; ?>
+                                                $$
+                                                <?= $pel['isi']; ?>(<?= $box_number; ?>)
+                                                $$
                                             </div>
                                         </div>
 
