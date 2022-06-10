@@ -103,7 +103,7 @@
 
                                     <?php if($pel['kategori'] == '1') : ?>
 
-                                        <p class="w-full sm:w-<?= $pel['ukuran_kolom']?>">
+                                        <p class="w-full sm:w-<?= $pel['width']?>">
                                             <?= $pel['isi']; ?>
                                         </p>
 
@@ -132,7 +132,7 @@
 
                                     <?php if($pel['kategori'] == 1) : ?>
 
-                                        <p class="w-full sm:w-<?= $pel['ukuran_kolom']?>">
+                                        <p class="w-full sm:w-<?= $pel['width']?>">
                                             <?= $pel['isi']; ?>
                                         </p>
 
