@@ -115,7 +115,7 @@
                         <?php endif; ?>
 
                         <!-- Jika index atau baris selanjutnya masih ada atau kurang dari total baris -->
-                        <?php if($j + 1 < count($latihan_soal) && $persamaan == false) : ?>
+                        <?php if($j + 1 < count($latihan_soal) && $persamaan == true) : ?>
                             
                             <!-- Jika nomor soal untuk baris selanjutnya tidak sama dengan nomer soal baris yang sekarang -->
                             <?php if($i != (int)$latihan_soal[$j + 1]['no_soal']) : ?>
@@ -126,7 +126,7 @@
                             <?php endif; ?>
                         
                         <!-- Jika index selanjutnya sama dengan total indek (karena index dimulai dari 0, maka harus + 1) -->
-                        <?php elseif($j + 1 == count($latihan_soal) && $persamaan == false) : ?>
+                        <?php elseif($j + 1 == count($latihan_soal) && $persamaan == true) : ?>
 
                             <!-- maka isi variabel k dengan nomor soal sekarang + 1 -->
                             <?php $k = (int)$latihan_soal[$j]['no_soal'] + 1; ?>
