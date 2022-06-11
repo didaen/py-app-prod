@@ -53,6 +53,7 @@
                 <div class="flex flex-col gap-y-4">
                     
                     <?php $j = 0; ?>
+                    <?php $persamaan = false; ?>
 
                     <?php foreach($latihan_soal as $latsol) : ?>
 
@@ -66,6 +67,9 @@
                                 </p>
 
                         <?php elseif($latsol['kategori'] == '2') : ?>
+
+                            <!-- UNTUK MENANDAI BAHWA TERDAPAT PERSAMAAN -->
+                            <?php $persamaan = true; ?>
 
                             <!-- SOAL DENGAN KOTAK PERTANYAAN -->
                             <div class="white-box overscroll-auto overflow-auto text-sm">
@@ -85,6 +89,9 @@
                                         <!-- AKHIR PERSAMAAN 1 -->
 
                         <?php else : ?>
+
+                            <!-- UNTUK MENANDAI BAHWA TERDAPAT PERSAMAAN -->
+                            <?php $persamaan = true; ?>
 
                                         <!-- PERTANYAAN -->
                                         <div style="grid-row-start: <?= $latsol['row_start']; ?>; grid-column-start: <?= $latsol['col_start']; ?>; z-index: 10;">
@@ -107,26 +114,34 @@
 
                         <?php endif; ?>
 
-                        <?php if($j + 1 < count($latihan_soal)) : ?>
+                        <!-- Jika index atau baris selanjutnya masih ada atau kurang dari total baris -->
+                        <?php if($j + 1 < count($latihan_soal) && $persamaan == false) : ?>
                             
+                            <!-- Jika nomor soal untuk baris selanjutnya tidak sama dengan nomer soal baris yang sekarang -->
                             <?php if($i != (int)$latihan_soal[$j + 1]['no_soal']) : ?>
                                 
+                                <!-- maka tambahkan 3 penutup ini -->
                                 </div></div></div>
                             
                             <?php endif; ?>
                         
-                        <?php elseif($j + 1 == count($latihan_soal)) : ?>
+                        <!-- Jika index selanjutnya sama dengan total indek (karena index dimulai dari 0, maka harus + 1) -->
+                        <?php elseif($j + 1 == count($latihan_soal) && $persamaan == false) : ?>
 
+                            <!-- maka isi variabel k dengan nomor soal sekarang + 1 -->
                             <?php $k = (int)$latihan_soal[$j]['no_soal'] + 1; ?>
 
+                            <!-- Jika nomor soal pada baris yang sekarang tidak sama dengan nomor soal pada baris selanjutnya atau sudah beda soal (karena dibuat. Ini sebagai penanda akhir baris) -->
                             <?php if($i != $k) : ?>
                                 
+                                <!-- maka tambahkan tiga penutup ini -->
                                 </div></div></div>
                             
                             <?php endif; ?>
 
                         <?php endif; ?>
 
+                        <!-- Penambahan index atau pergantian baris -->
                         <?php $j++; ?>
 
                     <?php endforeach; ?>
