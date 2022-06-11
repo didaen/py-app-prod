@@ -78,7 +78,9 @@
 
                                         <!-- PERSAMAAN 1 -->
                                         <div class="col-start-1 row-start-1">
+                                            $$
                                             <?= $latsol['isi']; ?>
+                                            $$
                                         </div>
                                         <!-- AKHIR PERSAMAAN 1 -->
 
