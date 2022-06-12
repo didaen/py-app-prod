@@ -620,7 +620,9 @@ function showAnswers() {
 									`
 										<div class="white-box overscroll-auto overflow-auto text-sm">
 											<div class="equation-box grid">
+												$$
 												${res['isi']}
+												$$
 											</div>
 										</div>
 									`;
