@@ -50,7 +50,7 @@
                 
 
                 <!-- TEMPLATE LATIHAN SOAL -->
-                <div class="flex flex-col gap-y-4">
+                <div class="flex flex-col">
                     
                     <?php $j = 0; ?>
                     <?php $persamaan = false; ?>
@@ -62,7 +62,7 @@
                         
                         <?php if($latsol['kategori'] == '1') : ?>
 
-                                <p>
+                                <p class="mb-4">
                                     <?= $latsol['isi']; ?>
                                 </p>
 
