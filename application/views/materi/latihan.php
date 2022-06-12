@@ -72,7 +72,7 @@
                             <?php $persamaan = true; ?>
 
                             <!-- SOAL DENGAN KOTAK PERTANYAAN -->
-                            <div class="white-box overscroll-auto overflow-auto text-sm">
+                            <div class="white-box overscroll-auto overflow-auto">
 
                                 <!-- GRID SOAL -->
                                 <div class="equation-box grid">
