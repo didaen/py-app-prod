@@ -128,11 +128,11 @@
 	}
 
 	.pertanyaan-tk1 {
-		@apply text-base;
+		@apply text-lg;
 	}
 
 	.pertanyaan-tk2 {
-		@apply text-sm;
+		@apply text-base;
 	}
 
 	.input {
