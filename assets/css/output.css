@@ -534,6 +534,10 @@ body {
   font-family: "KaTeX_Main-Regular", Arial, Helvetica, sans-serif;
 }
 
+.katex-bold {
+  font-family: "KaTeX_Main-Bold", Arial, Helvetica, sans-serif;
+}
+
 .katex-math-italic {
   font-family: "KaTeX_Math-Italic", Arial, Helvetica, sans-serif;
 }

@@ -167,7 +167,13 @@
                 </div>
                 <!-- AKHIR PEMBIUNGKUS TOMBOL DAN KUNCI JAWABAN -->
 
-            
+            <!-- DISPLAY HIDDEN -->
+            <div class="katex-italic"></div>
+            <div class="katex-regular"></div>
+            <div class="katex-bold"></div>
+            <div class="katex-math-italic"></div>
+            <div class="times-new-roman"></div>
+            <!-- AKHIR DISPLAY HIDDEN -->
 
         </div>
         <!-- ___AKHIR FORM DAN ISI___ -->
