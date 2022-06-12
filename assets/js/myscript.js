@@ -618,7 +618,7 @@ function showAnswers() {
 
 									kunciPerBaris += 
 									`
-										<div class="white-box overscroll-auto overflow-auto text-sm">
+										<div class="white-box overscroll-auto overflow-auto">
 											<div class="equation-box grid">
 												$$
 												${res['isi']}
