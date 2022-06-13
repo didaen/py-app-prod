@@ -124,6 +124,16 @@
                                                 $$
                                             </div>
                                         </div>
+
+                                    <?php else : ?>
+
+                                        <div class="white-box overscroll-auto overflow-auto">
+                                            <div class="equation-box grid">
+                                                $$
+                                                <?= $pel['isi']; ?>
+                                                $$
+                                            </div>
+                                        </div>
     
                                     <?php endif; ?>
 
@@ -150,6 +160,16 @@
                                             <div class="equation-box grid">
                                                 $$
                                                 <?= $pel['isi']; ?>...(<?= $pel['numbering']; ?>)
+                                                $$
+                                            </div>
+                                        </div>
+
+                                    <?php else : ?>
+
+                                        <div class="white-box overscroll-auto overflow-auto">
+                                            <div class="equation-box grid">
+                                                $$
+                                                <?= $pel['isi']; ?>
                                                 $$
                                             </div>
                                         </div>
