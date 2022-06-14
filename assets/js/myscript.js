@@ -333,8 +333,7 @@ function tekanEnter() {
 	
 }
 
-// JALANKAM FUNCTION
-tekanEnter();
+
 
 
 
