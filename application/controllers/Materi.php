@@ -261,10 +261,10 @@ class Materi extends CI_Controller
     public function answers()
     {
         
-        $this->_answers();
+        $answers = $this->_answers();
         
         // data['answers] untuk mengambil jawaban yang akan dikirimkan pada tiap card
-        
+        echo json_encode($answers);
     }
 
 
@@ -283,9 +283,7 @@ class Materi extends CI_Controller
         $total_pertanyaan = $this->Materi_model->getTotalPertanyaan($materi_id, $sub_materi_id, $card_number);
         $total_pertanyaan = $total_pertanyaan['total_pertanyaan'];
 
-        $answers = $this->Materi_model->getAnswers($materi_id, $sub_materi_id, $card_number, $total_pertanyaan);
-
-        echo json_encode($answers);
+        return $this->Materi_model->getAnswers($materi_id, $sub_materi_id, $card_number, $total_pertanyaan);
     }
 
 
