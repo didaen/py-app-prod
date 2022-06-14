@@ -163,7 +163,6 @@ function kirimDataCard() {
 		}
 	});
 }
-kirimDataCard();
 
 
 
@@ -334,7 +333,8 @@ function tekanEnter() {
 	
 }
 
-
+// JALANKAM FUNCTION
+tekanEnter();
 
 
 
