@@ -264,7 +264,7 @@ class Materi extends CI_Controller
         $answers = $this->_answers();
         
         // data['answers] untuk mengambil jawaban yang akan dikirimkan pada tiap card
-        echo json_encode($answers);
+        json_encode($answers);
     }
 
 
