@@ -307,7 +307,7 @@ class Materi extends CI_Controller
 
 
         $arrayJawaban = $this->input->post($arrayIdPertanyaan);
-        var_dump($arrayJawaban);
+
             
         // Mengambil data user login dari database
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -329,7 +329,7 @@ class Materi extends CI_Controller
             $jawabanUser[$idPertanyaan] = $arrayJawaban[$idPertanyaan];
                     
         }
-        var_dump($jawabanUser);
+        
 
         // Waktu user menjawab
         $jawabanUser['time'] = date("Y-m-d") . " " . date("H:i:s");
@@ -360,7 +360,7 @@ class Materi extends CI_Controller
 
 
         $arrayJawaban = $this->input->post($arrayIdPertanyaan);
-        var_dump($arrayJawaban);
+        
         
            
         // Mengambil data user login dari database
@@ -384,7 +384,7 @@ class Materi extends CI_Controller
             $jawabanUser[$idPertanyaan] = $arrayJawaban[$idPertanyaan];
                     
         }
-        var_dump($jawabanUser);
+        
 
         // Waktu user menjawab
         $dataJawabanDihapus['time'] = date("Y-m-d") . " " . date("H:i:s");
@@ -422,7 +422,7 @@ class Materi extends CI_Controller
         $total_pertanyaan = $this->Materi_model->getTotalPertanyaan($materi_id, $sub_materi_id, $card_number);
         $total_pertanyaan = $total_pertanyaan['total_pertanyaan'];
 
-        var_dump($total_pertanyaan);
+        
         
         $dataCard = [
             'user_id' => $user['id'],
@@ -502,14 +502,14 @@ class Materi extends CI_Controller
 
         $klik_tersimpan = $this->input->post('klik_tersimpan');
         $klik_tersimpan = (int)$klik_tersimpan;
-        var_dump($klik_tersimpan);
+        
 
         $klik_baru = $this->input->post('jumlah_klik');
         $klik_baru = (int)$klik_baru;
-        var_dump($klik_baru);
+        
 
         $total_klik = $klik_tersimpan + $klik_baru;
-        var_dump($total_klik);
+        
         
         $dataClick = [
             'username' => $username,
