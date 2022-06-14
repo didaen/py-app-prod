@@ -102,7 +102,6 @@
                                                 class="pertanyaan <?= $latsol['class']; ?>"
                                                 id="answ_<?= $box_number; ?>"
                                                 value="<?= $jawaban_user['answ_' . $box_number] ?>"
-                                                
                                                 data-nomer-form="<?= $box_number; ?>"
                                                 autocomplete="off"
                                                 />
