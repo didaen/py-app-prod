@@ -163,6 +163,7 @@ function kirimDataCard() {
 		}
 	});
 }
+kirimDataCard();
 
 
 
