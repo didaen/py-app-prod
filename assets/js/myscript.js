@@ -751,7 +751,7 @@ function userMenjawab() {
 	
 							console.log(arrayKunciJawaban);
 
-							for(let i = 0; i < arrayKunciJawaban.length; i++) {
+							for(let i = 0; i <= arrayKunciJawaban.length; i++) {
 
 								// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 								if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
