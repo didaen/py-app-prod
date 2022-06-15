@@ -831,4 +831,3 @@ function userMenjawab() {
 	
 }
 
-userMenjawab();
