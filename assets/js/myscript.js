@@ -771,12 +771,8 @@ function userMenjawab() {
 									// MENGIRIMKAN JAWABAN BENAR KE DATABASE
 									let postData = new FormData();
 									
-									semuaPertanyaan.forEach(pertanyaan => {
-
-										postData.append(pertanyaan.id, pertanyaan.value);
-
-									});
-									
+									postData.append(semuaPertanyaan[i].id, semuaPertanyaan[i].value);
+	
 									fetch('https://www.physicsyourself.com/materi/jawabanUser', {
 										method: 'POST',
 										mode: 'no-cors',
