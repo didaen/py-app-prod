@@ -804,6 +804,9 @@ function userMenjawab() {
 								}
 							}
 	
+							console.log(pertanyaanBelumDiisi);
+							console.log(jumlahPertanyaan);
+							
 							// persenPengerjaan BERTAMBAH
 							persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
 		
