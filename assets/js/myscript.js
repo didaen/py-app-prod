@@ -688,21 +688,21 @@ function userMenjawab() {
 	
 		// MENDEKLARASIKAN VARIABEL persenPengerjaan
 		let persenPengerjaan = 0;
-	
-		// Membuat array kosong arrayIdPertanyaan untuk menyimpan kumpulan id elemen dengan class pertanyaan
-		let arrayIdPertanyaan = [];
-	
-		// Membuat array kosong arrayJawabanUser untuk menyimpan kumpulan jawaban user pada input dengan class pertanyaan
-		let arrayJawabanUser = [];
-
-		// Membuat array kosong arrayKunciJawaban untuk menyimpan kumpulan kunci jawaban dari FETCH POST
-		let arrayKunciJawaban = [];
 		
 		// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
 		semuaPertanyaan.forEach(pertanyaan => {
 	
 			// Setiap user melakukan input jawaban
 			pertanyaan.addEventListener("keyup", function (event) {
+
+				// Membuat array kosong arrayIdPertanyaan untuk menyimpan kumpulan id elemen dengan class pertanyaan
+				let arrayIdPertanyaan = [];
+			
+				// Membuat array kosong arrayJawabanUser untuk menyimpan kumpulan jawaban user pada input dengan class pertanyaan
+				let arrayJawabanUser = [];
+
+				// Membuat array kosong arrayKunciJawaban untuk menyimpan kumpulan kunci jawaban dari FETCH POST
+				let arrayKunciJawaban = [];
 
 				// Ketika user memasukkan jawaban pada input dengan class pertanyaan, ambil id-nya
 				let answ = pertanyaan.id;
