@@ -753,6 +753,8 @@ function userMenjawab() {
 						// JIKA USER MENEKAN TOMBOL ENTER
 						if (event.keyCode === 13) {
 
+							console.log(arrayIdPertanyaan);
+							
 							arrayIdPertanyaan.forEach(kolom => {
 
 								arrayKunciJawaban[nomorIndex] = response[kolom];
