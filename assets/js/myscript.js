@@ -726,33 +726,9 @@ function userMenjawab() {
 					// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
 					arrayJawabanUser.push(pertanyaan.value);
 
-					// FETCH POST UNTUK MENGAMBIL SEMUA JAWABAN DENGAN MEMANFAATKAN ARRAY ID SEBAGAI KOLOM
-
-					// FETCH POST jawaban untuk question box dengan id tersebut
-					fetch('https://www.physicsyourself.com/materi/answers', {
-						method: 'POST',
-						credentials: 'same-origin',
-						mode: 'no-cors',
-						headers: {
-							'Accept': 'application/json',
-							'Content-Type': 'application/json'
-						},
-					})
-						.then(response => response.json())
-						.then(response => {
-
-							arrayKunciJawaban.push(response[pertanyaan.id]);
-							console.log(arrayKunciJawaban);
-
-						})
-						.catch((error) => console.log(error));
-
 				});
 
-				console.log(arrayIdPertanyaan);
-				console.log(arrayJawabanUser);
-				console.log(arrayKunciJawaban);
-	
+
 				// Ketika user memasukkan jawaban pada input dengan class pertanyaan, ambil id-nya
 				let answ = pertanyaan.id;
 				
@@ -771,6 +747,10 @@ function userMenjawab() {
 				})
 					.then(response => response.json())
 					.then(response => {
+
+						arrayKunciJawaban = response;
+
+						console.log(arrayKunciJawaban);
 						
 						// JIKA USER MENEKAN TOMBOL ENTER
 						if (event.keyCode === 13) {
