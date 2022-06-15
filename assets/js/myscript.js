@@ -698,19 +698,6 @@ function userMenjawab() {
 		// Membuat array kosong arrayKunciJawaban untuk menyimpan kumpulan kunci jawaban dari FETCH POST
 		let arrayKunciJawaban = [];
 		
-		// untuk masing-masing tiap elemen pada array semuaPertanyaan
-		semuaPertanyaan.forEach(pertanyaan => {
-	
-			// Jika kotak pertanyaan ada isinya
-			if(pertanyaan.value !== '') {
-	
-				// Maka pertanyaanBelumDiisi jadi berkurang 1
-				pertanyaanBelumDiisi -= 1;
-			}
-		});
-	
-		
-	
 		// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
 		semuaPertanyaan.forEach(pertanyaan => {
 	
@@ -778,22 +765,13 @@ function userMenjawab() {
 									// JUMLAH PERTANYAAN BERKURANG 1
 									pertanyaanBelumDiisi -= 1;
 		
-									// persenPengerjaan BERTAMBAH
-									persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
-		
-									// WIDTH PROGRESS BAR AKAN BERTAMBAH
-									durasi.style.width = persenPengerjaan + "%";
-		
-									// WARNA PROGRESS BAR MENJADI HIJAU
-									durasi.style.backgroundColor = "#a3e635";
-		
-									// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
-									durasi.innerHTML = persenPengerjaan + "%";
-		
 									// MENGIRIMKAN JAWABAN BENAR KE DATABASE
 									let postData = new FormData();
+
 									semuaPertanyaan.forEach(pertanyaan => {
+
 										postData.append(pertanyaan.id, pertanyaan.value);
+
 									});
 									
 									fetch('https://www.physicsyourself.com/materi/jawabanUser', {
@@ -810,14 +788,24 @@ function userMenjawab() {
 		
 									// APABILA JAWABAN KOSONG TETAP
 									pertanyaan.style.backgroundColor = "";
-									
+
 								} else {
 									// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
 									pertanyaan.style.backgroundColor = "#f87171";
 								}
 							}
 	
-							
+							// persenPengerjaan BERTAMBAH
+							persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
+		
+							// WIDTH PROGRESS BAR AKAN BERTAMBAH
+							durasi.style.width = persenPengerjaan + "%";
+
+							// WARNA PROGRESS BAR MENJADI HIJAU
+							durasi.style.backgroundColor = "#a3e635";
+
+							// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
+							durasi.innerHTML = persenPengerjaan + "%";
 						}
 					})
 					.catch((error) => console.log(error));
