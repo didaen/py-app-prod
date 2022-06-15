@@ -772,17 +772,7 @@ function userMenjawab() {
 									// JUMLAH PERTANYAAN BERKURANG 1
 									pertanyaanBelumDiisi -= 1;
 		
-									// persenPengerjaan BERTAMBAH
-									persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
-		
-									// WIDTH PROGRESS BAR AKAN BERTAMBAH
-									durasi.style.width = persenPengerjaan + "%";
-		
-									// WARNA PROGRESS BAR MENJADI HIJAU
-									durasi.style.backgroundColor = "#a3e635";
-		
-									// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
-									durasi.innerHTML = persenPengerjaan + "%";
+									
 		
 									// MENGIRIMKAN JAWABAN BENAR KE DATABASE
 									let postData = new FormData();
@@ -814,7 +804,17 @@ function userMenjawab() {
 								}
 							}
 	
-							
+							// persenPengerjaan BERTAMBAH
+							persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
+		
+							// WIDTH PROGRESS BAR AKAN BERTAMBAH
+							durasi.style.width = persenPengerjaan + "%";
+
+							// WARNA PROGRESS BAR MENJADI HIJAU
+							durasi.style.backgroundColor = "#a3e635";
+
+							// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
+							durasi.innerHTML = persenPengerjaan + "%";
 						}
 					})
 					.catch((error) => console.log(error));
