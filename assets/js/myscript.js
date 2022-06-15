@@ -763,56 +763,61 @@ function userMenjawab() {
 							});
 	
 							console.log(arrayKunciJawaban);
-	
-							// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
-							if (answValue == response[answ]) {
-											 
-								// Mengisi value dengan jawaban
-								pertanyaan.value = answValue;
-	
-								// BGCOLORNYA BERUBAH MENJADI HIJAU
-								pertanyaan.style.backgroundColor = "#a3e635";
-	
-								// TAMBAHKAN ATTRIBUTE readonly AGAR TIDAK BISA DIEDIT LAGI.
-								pertanyaan.setAttribute("readonly", "");
-	
-								// JUMLAH PERTANYAAN BERKURANG 1
-								pertanyaanBelumDiisi -= 1;
-	
-								// persenPengerjaan BERTAMBAH
-								persenPengerjaan =
-									Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
-	
-								// WIDTH PROGRESS BAR AKAN BERTAMBAH
-								durasi.style.width = persenPengerjaan + "%";
-	
-								// WARNA PROGRESS BAR MENJADI HIJAU
-								durasi.style.backgroundColor = "#a3e635";
-	
-								// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
-								durasi.innerHTML = persenPengerjaan + "%";
-	
-								// MENGIRIMKAN JAWABAN BENAR KE DATABASE
-								let postData = new FormData();
-								semuaPertanyaan.forEach(pertanyaan => {
-									postData.append(pertanyaan.id, pertanyaan.value);
-								});
-								
-								fetch('https://www.physicsyourself.com/materi/jawabanUser', {
-									method: 'POST',
-									mode: 'no-cors',
-									headers: {
-										"Content-Type": "application/json"
-									},
-									body: postData
-								}).then((res) => {
-									console.log(res);
-								}).catch(console.log);
-							} else {
-	
-								// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
-								pertanyaan.style.backgroundColor = "#f87171";
+
+							for(let i = 0; i < arrayKunciJawaban.length; i++) {
+
+								// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
+								if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
+		
+									// BGCOLORNYA BERUBAH MENJADI HIJAU
+									semuaPertanyaan[i].style.backgroundColor = "#a3e635";
+		
+									// TAMBAHKAN ATTRIBUTE readonly AGAR TIDAK BISA DIEDIT LAGI.
+									semuaPertanyaan[i].setAttribute("readonly", "");
+		
+									// JUMLAH PERTANYAAN BERKURANG 1
+									pertanyaanBelumDiisi -= 1;
+		
+									// persenPengerjaan BERTAMBAH
+									persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
+		
+									// WIDTH PROGRESS BAR AKAN BERTAMBAH
+									durasi.style.width = persenPengerjaan + "%";
+		
+									// WARNA PROGRESS BAR MENJADI HIJAU
+									durasi.style.backgroundColor = "#a3e635";
+		
+									// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
+									durasi.innerHTML = persenPengerjaan + "%";
+		
+									// MENGIRIMKAN JAWABAN BENAR KE DATABASE
+									let postData = new FormData();
+									semuaPertanyaan.forEach(pertanyaan => {
+										postData.append(pertanyaan.id, pertanyaan.value);
+									});
+									
+									fetch('https://www.physicsyourself.com/materi/jawabanUser', {
+										method: 'POST',
+										mode: 'no-cors',
+										headers: {
+											"Content-Type": "application/json"
+										},
+										body: postData
+									}).then((res) => {
+										console.log(res);
+									}).catch(console.log);
+								} else if(arrayJawabanUser[i] == '') {
+		
+									// APABILA JAWABAN KOSONG TETAP
+									pertanyaan.style.backgroundColor = "";
+									
+								} else {
+									// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
+									pertanyaan.style.backgroundColor = "#f87171";
+								}
 							}
+	
+							
 						}
 					})
 					.catch((error) => console.log(error));
