@@ -753,6 +753,8 @@ function userMenjawab() {
 						arrayIdPertanyaan.forEach(kolom => {
 
 							arrayKunciJawaban[nomorIndex] = response[kolom];
+							
+							nomorIndex++
 						});
 
 						console.log(arrayKunciJawaban);
