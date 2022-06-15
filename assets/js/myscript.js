@@ -753,6 +753,7 @@ function userMenjawab() {
 							});
 
 							console.log(arrayIdPertanyaan);
+							console.log(arrayJawabanUser);
 
 							arrayIdPertanyaan.forEach(kolom => {
 
