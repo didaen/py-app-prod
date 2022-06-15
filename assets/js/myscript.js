@@ -742,11 +742,15 @@ function userMenjawab() {
 						.then(response => {
 
 							arrayKunciJawaban.push(response[pertanyaan.id]);
-							console.log(arrayKunciJawaban);
 
-						});
+						})
+						.catch((error) => console.log(error));
 
 				});
+
+				console.log(arrayIdPertanyaan);
+				console.log(arrayJawabanUser);
+				console.log(arrayKunciJawaban);
 	
 				// Ketika user memasukkan jawaban pada input dengan class pertanyaan, ambil id-nya
 				let answ = pertanyaan.id;
