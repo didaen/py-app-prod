@@ -737,6 +737,13 @@ function userMenjawab() {
 								// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
 								arrayJawabanUser.push(pertanyaan.value);
 
+								// Jika kotak pertanyaan ada isinya
+								if(pertanyaan.value !== '') {
+
+									// Maka pertanyaanBelumDiisi jadi berkurang 1
+									pertanyaanBelumDiisi -= 1;
+								}
+
 							});
 
 							console.log(arrayIdPertanyaan);
@@ -751,7 +758,7 @@ function userMenjawab() {
 	
 							console.log(arrayKunciJawaban);
 
-							for(let i = 0; i <= arrayKunciJawaban.length; i++) {
+							for(let i = 0; i < arrayKunciJawaban.length; i++) {
 
 								// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 								if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
@@ -765,9 +772,21 @@ function userMenjawab() {
 									// JUMLAH PERTANYAAN BERKURANG 1
 									pertanyaanBelumDiisi -= 1;
 		
+									// persenPengerjaan BERTAMBAH
+									persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
+		
+									// WIDTH PROGRESS BAR AKAN BERTAMBAH
+									durasi.style.width = persenPengerjaan + "%";
+		
+									// WARNA PROGRESS BAR MENJADI HIJAU
+									durasi.style.backgroundColor = "#a3e635";
+		
+									// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
+									durasi.innerHTML = persenPengerjaan + "%";
+		
 									// MENGIRIMKAN JAWABAN BENAR KE DATABASE
 									let postData = new FormData();
-
+									
 									semuaPertanyaan.forEach(pertanyaan => {
 
 										postData.append(pertanyaan.id, pertanyaan.value);
@@ -795,17 +814,7 @@ function userMenjawab() {
 								}
 							}
 	
-							// persenPengerjaan BERTAMBAH
-							persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
-		
-							// WIDTH PROGRESS BAR AKAN BERTAMBAH
-							durasi.style.width = persenPengerjaan + "%";
-
-							// WARNA PROGRESS BAR MENJADI HIJAU
-							durasi.style.backgroundColor = "#a3e635";
-
-							// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
-							durasi.innerHTML = persenPengerjaan + "%";
+							
 						}
 					})
 					.catch((error) => console.log(error));
