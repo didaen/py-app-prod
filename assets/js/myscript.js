@@ -120,50 +120,49 @@ window.addEventListener("resize", function () {
 // FUNCTION UNTUK MENGIRIMKAN DATA MATERI, SUB MATERI, DAN CARD NUMBER APABILA USER MELAKUKAN BACK TANPA MELALUI TOMBOL BACK YANG SUDAH DISEDIAKAN
 function kirimDataCard() {
 
-	// Pilih elemen dengan id isi-card, masukkan ke variabel equationBox
-	let equationBox = document.getElementById('isi-card');
+	// Seleksi semua elemen dengan class pertanyaan
+	const semuaPertanyaan = document.querySelectorAll(".pertanyaan");
 
-	// Tambahkan event click pada elemen tersebut
-	equationBox.addEventListener('click', function(event) {
+	// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
+	semuaPertanyaan.forEach(pertanyaan => {
 
-		// Masukkan elemen apa saja yang diklik oleh user yang berada di dalam elemen tersebut ke dalam variabel pertanyaanIni
-		let pertanyaanIni = event.target;
-
-		// Seleksi elemen yang memiliki id materi-id, kemudiam masukkan ke dalam variabel materiId
-		let materiId = document.getElementById('materi-id');
-
-		// Seleksi elemen yang memiliki id sub-materi-id, kemudiam masukkan ke dalam variabel subMateriId
-		let subMateriId = document.getElementById('sub-materi-id');
-
-		// Seleksi elemen yang memiliki id card-number, kemudiam masukkan ke dalam variabel cardNumber
-		let cardNumber = document.getElementById('card-number');
-		
-		// Jika variabel pertanyaanIni mempunyai class pertanyaan
-		if(pertanyaanIni.classList.contains('pertanyaan')) {
+		// Tambahkan event click pada elemen tersebut
+		pertanyaan.addEventListener('click', function(event) {
+	
+			// Seleksi elemen yang memiliki id materi-id, kemudiam masukkan ke dalam variabel materiId
+			let materiId = document.getElementById('materi-id');
+	
+			// Seleksi elemen yang memiliki id sub-materi-id, kemudiam masukkan ke dalam variabel subMateriId
+			let subMateriId = document.getElementById('sub-materi-id');
+	
+			// Seleksi elemen yang memiliki id card-number, kemudiam masukkan ke dalam variabel cardNumber
+			let cardNumber = document.getElementById('card-number');
 			
-			// Menginisiasi object baru FormData
-			let postData = new FormData();
-
-			// Mempersiapkan data-data yang akan dikirim menggunakan FETCH POST
-			postData.append('materi_id', materiId.value);
-			postData.append('sub_materi_id', subMateriId.value);
-			postData.append('card_number', cardNumber.value);
-			
-			// FETCH POST UNTUK MENYIMPAN DATA KE TABEL user_learning_log untuk menyimpan data pembelajaran terakhir user
-			fetch('https://www.physicsyourself.com/materi/dataPembelajaranTerakhir', {
-				method: 'POST',
-				mode: 'no-cors',
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: postData
-			}).then((res) => {
-				console.log(res);
-			}).catch(console.log);
-		}
-
-		event.preventDefault();
+				
+				// Menginisiasi object baru FormData
+				let postData = new FormData();
+	
+				// Mempersiapkan data-data yang akan dikirim menggunakan FETCH POST
+				postData.append('materi_id', materiId.value);
+				postData.append('sub_materi_id', subMateriId.value);
+				postData.append('card_number', cardNumber.value);
+				
+				// FETCH POST UNTUK MENYIMPAN DATA KE TABEL user_learning_log untuk menyimpan data pembelajaran terakhir user
+				fetch('https://www.physicsyourself.com/materi/dataPembelajaranTerakhir', {
+					method: 'POST',
+					mode: 'no-cors',
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: postData
+				}).then((res) => {
+					console.log(res);
+				}).catch(console.log);
+	
+			event.preventDefault();
+		});
 	});
+
 }
 
 
