@@ -773,17 +773,6 @@ function userMenjawab() {
 									
 									postData.append(semuaPertanyaan[i].id, semuaPertanyaan[i].value);
 	
-									fetch('https://www.physicsyourself.com/materi/jawabanUser', {
-										method: 'POST',
-										mode: 'no-cors',
-										headers: {
-											"Content-Type": "application/json"
-										},
-										body: postData
-
-									}).then((res) => {
-										console.log(res);
-									}).catch(console.log);
 
 								} else if(arrayJawabanUser[i] == '') {
 		
@@ -814,6 +803,18 @@ function userMenjawab() {
 
 							// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
 							durasi.innerHTML = persenPengerjaan + "%";
+
+							fetch('https://www.physicsyourself.com/materi/jawabanUser', {
+										method: 'POST',
+										mode: 'no-cors',
+										headers: {
+											"Content-Type": "application/json"
+										},
+										body: postData
+
+									}).then((res) => {
+										console.log(res);
+									}).catch(console.log);
 						}
 					})
 					.catch((error) => console.log(error));
