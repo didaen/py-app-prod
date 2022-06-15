@@ -765,8 +765,6 @@ function userMenjawab() {
 									// JUMLAH PERTANYAAN BERKURANG 1
 									pertanyaanBelumDiisi -= 1;
 		
-									
-		
 									// MENGIRIMKAN JAWABAN BENAR KE DATABASE
 									let postData = new FormData();
 									
@@ -783,17 +781,19 @@ function userMenjawab() {
 											"Content-Type": "application/json"
 										},
 										body: postData
+
 									}).then((res) => {
 										console.log(res);
 									}).catch(console.log);
+
 								} else if(arrayJawabanUser[i] == '') {
 		
 									// APABILA JAWABAN KOSONG TETAP
-									pertanyaan.style.backgroundColor = "";
+									semuaPertanyaan[i].style.backgroundColor = "";
 
 								} else {
 									// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
-									pertanyaan.style.backgroundColor = "#f87171";
+									semuaPertanyaan[i].style.backgroundColor = "#f87171";
 								}
 							}
 	
