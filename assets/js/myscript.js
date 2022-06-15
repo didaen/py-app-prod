@@ -665,3 +665,138 @@ function showAnswers() {
 	}	
 }
 showAnswers();
+
+
+
+// FUNCTION UNTUK MELIHAT JAWABAN BENAR ATAU SALAH
+function userMenjawab() {
+
+	// Seleksi semua elemen dengan class pertanyaan
+	const semuaPertanyaan = document.querySelectorAll(".pertanyaan");
+
+	// Seleksi elemen dengan id durasi kemudian masukkan ke dalam variabel durasi
+	const durasi = document.querySelector("#durasi");
+
+	// Menghitung panjang array semuaPertanyaan kemudian masukkan ke dalam variabel jumlahPertanyaan
+	let jumlahPertanyaan = semuaPertanyaan.length;
+
+	// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
+	let pertanyaanBelumDiisi = jumlahPertanyaan;
+	
+	// untuk masing-masing tiap elemen pada array semuaPertanyaan
+	semuaPertanyaan.forEach(pertanyaan => {
+
+		// Jika kotak pertanyaan ada isinya
+		if(pertanyaan.value !== '') {
+
+			// Maka pertanyaanBelumDiisi jadi berkurang 1
+			pertanyaanBelumDiisi -= 1;
+		}
+	});
+
+	// MENDEKLARASIKAN VARIABEL persenPengerjaan
+	let persenPengerjaan = 0;
+
+	// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
+	semuaPertanyaan.forEach(pertanyaan => {
+
+		// Setiap user melakukan input jawaban
+		pertanyaan.addEventListener("keyup", function (event) {
+
+			// Membuat array kosong arrayIdPertanyaan untuk menyimpan kumpulan id elemen dengan class pertanyaan
+			let arrayIdPertanyaan = [];
+
+			// Membuat array kosong arrayJawabanUser untuk menyimpan kumpulan jawaban user pada input dengan class pertanyaan
+			let arrayJawabanUser = [];
+
+			// Pada tiap elemen class pertanyaan
+			semuaPertanyaan.forEach(pertanyaan => {
+
+				// Masukkan id ke dalam arrayIdPertanyaan
+				arrayIdPertanyaan.push(pertanyaan.id);
+
+				// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
+				arrayJawabanUser.push(pertanyaan.value);
+			});
+
+			// Ketika user memasukkan jawaban pada input dengan class pertanyaan, ambil id-nya
+			let answ = pertanyaan.id;
+			
+			// Ambil value yang dimasukkan oleh user
+			let answValue = pertanyaan.value;
+
+			// FETCH POST jawaban untuk question box dengan id tersebut
+			fetch('https://www.physicsyourself.com/materi/answers', {
+				method: 'POST',
+				credentials: 'same-origin',
+				mode: 'no-cors',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+			})
+				.then(response => response.json())
+				.then(response => {
+					
+					// JIKA USER MENEKAN TOMBOL ENTER
+					if (event.keyCode === 13) {
+
+					// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
+						if (answValue == response[answ]) {
+                                         
+                                                        // Mengisi value dengan jawaban
+                                                        pertanyaan.value = answValue;
+
+							// BGCOLORNYA BERUBAH MENJADI HIJAU
+							pertanyaan.style.backgroundColor = "#a3e635";
+
+							// TAMBAHKAN ATTRIBUTE readonly AGAR TIDAK BISA DIEDIT LAGI.
+							pertanyaan.setAttribute("readonly", "");
+
+							// JUMLAH PERTANYAAN BERKURANG 1
+							pertanyaanBelumDiisi -= 1;
+
+							// persenPengerjaan BERTAMBAH
+							persenPengerjaan =
+								Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
+
+							// WIDTH PROGRESS BAR AKAN BERTAMBAH
+							durasi.style.width = persenPengerjaan + "%";
+
+							// WARNA PROGRESS BAR MENJADI HIJAU
+							durasi.style.backgroundColor = "#a3e635";
+
+							// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
+							durasi.innerHTML = persenPengerjaan + "%";
+
+							// MENGIRIMKAN JAWABAN BENAR KE DATABASE
+							let postData = new FormData();
+							semuaPertanyaan.forEach(pertanyaan => {
+								postData.append(pertanyaan.id, pertanyaan.value);
+							});
+							
+							fetch('https://www.physicsyourself.com/materi/jawabanUser', {
+								method: 'POST',
+								mode: 'no-cors',
+								headers: {
+									"Content-Type": "application/json"
+								},
+								body: postData
+							}).then((res) => {
+								console.log(res);
+							}).catch(console.log);
+						} else {
+
+							// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
+							pertanyaan.style.backgroundColor = "#f87171";
+						}
+					}
+				})
+				.catch((error) => console.log(error));
+
+                event.preventDefault();
+		});
+	});
+	// KEMBALIKAN
+	
+}
