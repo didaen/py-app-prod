@@ -737,13 +737,6 @@ function userMenjawab() {
 								// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
 								arrayJawabanUser.push(pertanyaan.value);
 
-								// Jika kotak pertanyaan ada isinya
-								if(pertanyaan.value !== '') {
-
-									// Maka pertanyaanBelumDiisi jadi berkurang 1
-									pertanyaanBelumDiisi -= 1;
-								}
-
 							});
 
 							console.log(arrayIdPertanyaan);
@@ -806,7 +799,7 @@ function userMenjawab() {
 	
 							console.log(pertanyaanBelumDiisi);
 							console.log(jumlahPertanyaan);
-							
+
 							// persenPengerjaan BERTAMBAH
 							persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
 		
