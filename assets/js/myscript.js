@@ -742,6 +742,7 @@ function userMenjawab() {
 						.then(response => {
 
 							arrayKunciJawaban.push(response[pertanyaan.id]);
+							console.log(arrayKunciJawaban);
 
 						})
 						.catch((error) => console.log(error));
