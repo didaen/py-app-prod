@@ -716,18 +716,6 @@ function userMenjawab() {
 	
 			// Setiap user melakukan input jawaban
 			pertanyaan.addEventListener("keyup", function (event) {
-	
-				// Pada tiap elemen class pertanyaan
-				semuaPertanyaan.forEach(pertanyaan => {
-	
-					// Masukkan id ke dalam arrayIdPertanyaan
-					arrayIdPertanyaan.push(pertanyaan.id);
-	
-					// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
-					arrayJawabanUser.push(pertanyaan.value);
-
-				});
-
 
 				// Ketika user memasukkan jawaban pada input dengan class pertanyaan, ambil id-nya
 				let answ = pertanyaan.id;
@@ -753,8 +741,19 @@ function userMenjawab() {
 						// JIKA USER MENEKAN TOMBOL ENTER
 						if (event.keyCode === 13) {
 
+							// Pada tiap elemen class pertanyaan
+							semuaPertanyaan.forEach(pertanyaan => {
+				
+								// Masukkan id ke dalam arrayIdPertanyaan
+								arrayIdPertanyaan.push(pertanyaan.id);
+				
+								// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
+								arrayJawabanUser.push(pertanyaan.value);
+
+							});
+
 							console.log(arrayIdPertanyaan);
-							
+
 							arrayIdPertanyaan.forEach(kolom => {
 
 								arrayKunciJawaban[nomorIndex] = response[kolom];
