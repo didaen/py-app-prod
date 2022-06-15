@@ -749,24 +749,20 @@ function userMenjawab() {
 					.then(response => {
 
 						let nomorIndex = 0;
-
-						arrayIdPertanyaan.forEach(kolom => {
-
-							arrayKunciJawaban[nomorIndex] = response[kolom];
-
-							nomorIndex++
-						});
-
-						
-					})
-					.catch((error) => console.log(error));
-
-					console.log(arrayKunciJawaban);
 						
 						// JIKA USER MENEKAN TOMBOL ENTER
 						if (event.keyCode === 13) {
+
+							arrayIdPertanyaan.forEach(kolom => {
+
+								arrayKunciJawaban[nomorIndex] = response[kolom];
+								
+								nomorIndex++
+							});
 	
-						// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
+							console.log(arrayKunciJawaban);
+	
+							// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 							if (answValue == response[answ]) {
 											 
 								// Mengisi value dengan jawaban
@@ -816,6 +812,8 @@ function userMenjawab() {
 								pertanyaan.style.backgroundColor = "#f87171";
 							}
 						}
+					})
+					.catch((error) => console.log(error));
 	
 					event.preventDefault();
 			});
