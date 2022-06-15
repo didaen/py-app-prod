@@ -753,6 +753,8 @@ function userMenjawab() {
 							});
 	
 							console.log(arrayKunciJawaban);
+							
+							let postData = new FormData();
 
 							for(let i = 0; i < arrayKunciJawaban.length; i++) {
 
@@ -769,7 +771,7 @@ function userMenjawab() {
 									pertanyaanBelumDiisi -= 1;
 		
 									// MENGIRIMKAN JAWABAN BENAR KE DATABASE
-									let postData = new FormData();
+									
 									
 									postData.append(semuaPertanyaan[i].id, semuaPertanyaan[i].value);
 	
