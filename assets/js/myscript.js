@@ -683,9 +683,6 @@ function userMenjawab() {
 		// Menghitung panjang array semuaPertanyaan kemudian masukkan ke dalam variabel jumlahPertanyaan
 		let jumlahPertanyaan = semuaPertanyaan.length;
 	
-		// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
-		let pertanyaanBelumDiisi = jumlahPertanyaan;
-	
 		// MENDEKLARASIKAN VARIABEL persenPengerjaan
 		let persenPengerjaan = 0;
 		
@@ -753,6 +750,9 @@ function userMenjawab() {
 
 							for(let i = 0; i < arrayKunciJawaban.length; i++) {
 
+								// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
+								let pertanyaanBelumDiisi = jumlahPertanyaan;
+
 								// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 								if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
 		
@@ -791,9 +791,13 @@ function userMenjawab() {
 									// APABILA JAWABAN KOSONG TETAP
 									semuaPertanyaan[i].style.backgroundColor = "";
 
+									pertanyaanBelumDiisi = pertanyaanBelumDiisi;
+
 								} else {
 									// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
 									semuaPertanyaan[i].style.backgroundColor = "#f87171";
+
+									pertanyaanBelumDiisi = pertanyaanBelumDiisi;
 								}
 							}
 	
