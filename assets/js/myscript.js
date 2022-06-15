@@ -161,6 +161,8 @@ function kirimDataCard() {
 				console.log(res);
 			}).catch(console.log);
 		}
+
+		event.preventDefault();
 	});
 }
 
