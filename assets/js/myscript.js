@@ -695,6 +695,9 @@ function userMenjawab() {
 			// Setiap user melakukan input jawaban
 			pertanyaan.addEventListener("keyup", function (event) {
 
+				// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
+				let pertanyaanBelumDiisi = jumlahPertanyaan;
+
 				// Membuat array kosong arrayIdPertanyaan untuk menyimpan kumpulan id elemen dengan class pertanyaan
 				let arrayIdPertanyaan = [];
 			
