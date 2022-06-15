@@ -748,7 +748,12 @@ function userMenjawab() {
 					.then(response => response.json())
 					.then(response => {
 
-						arrayKunciJawaban = response;
+						let nomorIndex = 0;
+
+						arrayIdPertanyaan.forEach(kolom => {
+
+							arrayKunciJawaban[nomorIndex] = response[kolom];
+						});
 
 						console.log(arrayKunciJawaban);
 						
