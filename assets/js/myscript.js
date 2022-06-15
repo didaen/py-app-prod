@@ -683,6 +683,9 @@ function userMenjawab() {
 		// Menghitung panjang array semuaPertanyaan kemudian masukkan ke dalam variabel jumlahPertanyaan
 		let jumlahPertanyaan = semuaPertanyaan.length;
 	
+		// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
+		let pertanyaanBelumDiisi = jumlahPertanyaan;
+	
 		// MENDEKLARASIKAN VARIABEL persenPengerjaan
 		let persenPengerjaan = 0;
 		
@@ -751,7 +754,7 @@ function userMenjawab() {
 							for(let i = 0; i < arrayKunciJawaban.length; i++) {
 
 								// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
-								let pertanyaanBelumDiisi = jumlahPertanyaan;
+								pertanyaanBelumDiisi = jumlahPertanyaan;
 
 								// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 								if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
