@@ -753,9 +753,6 @@ function userMenjawab() {
 
 							for(let i = 0; i < arrayKunciJawaban.length; i++) {
 
-								// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
-								pertanyaanBelumDiisi = jumlahPertanyaan;
-
 								// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 								if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
 		
