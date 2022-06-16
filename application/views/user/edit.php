@@ -31,6 +31,7 @@
                 </div>
 
             </div>
+            <p class="py-1 text-xs italic text-gray-500">Ukuran Max. 2 MB, format .jpg atau .png</p>
             <!-- AKHIR EDIT FOTO PROFIL -->
 
 
