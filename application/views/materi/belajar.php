@@ -82,7 +82,7 @@
                                 </div>
                             <?php else : ?>
 
-                                <div class="white-box overscroll-auto overflow-auto">
+                                <div class="white-box overscroll-auto overflow-auto mb-2">
                                     <div class="equation-box grid">
                                         $$
                                         <?= $pel['isi']; ?>
