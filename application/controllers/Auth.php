@@ -116,7 +116,7 @@ class Auth extends CI_Controller
                     $this->db->insert('user_log', $user_log);
 
                     // Mengarahkan user ke controller user
-                    redirect('user');
+                    redirect('home');
                
                 // Jika passwordnya tidak benar
                 } else {
