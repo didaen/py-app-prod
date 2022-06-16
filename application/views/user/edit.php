@@ -24,7 +24,7 @@
             <div class="space-y-2">
                 <label for="image" class="block text-gray-500">Foto Profil</label>
 
-                <div class="flex flex-col sm:flex-row sm:space-x-4">
+                <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
                     <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" alt="Foto Profil User" class="w-16">
     
                     <input type="file" name="image" id="image" class="text-xs sm:text-sm self-start sm:self-center">
