@@ -6,6 +6,12 @@
 
     <div class="bg-white py-6 px-10 sm:px-16 border-dashed border-l-8 border-r-8 border-blue-1400 w-full">
 
+        <?php if ($this->session->flashdata('gagal_ganti_profil')) : ?>
+            <div class="w-full bg-red-100 text-red-600 border border-red-300 px-3 py-1 mb-4 rounded">
+                <?= $this->session->flashdata('gagal_ganti_profil'); ?>
+            </div>
+        <?php endif; ?>
+
         <!-- REGISTRATION FORM -->
         <?= form_open_multipart('user/editprofil', 'class="space-y-6"'); ?>
 
