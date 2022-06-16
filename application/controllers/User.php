@@ -124,35 +124,56 @@ class User extends CI_Controller
                     // Ganti nama file pada database
                     $this->db->set('image', $new_image);
 
+                    // Mengambil data username yang baru
+                    $username = htmlspecialchars($this->input->post('username', true));
+        
+                    // Ganti username pada database
+                    $this->db->set('username', $username);
+        
                     // Tanggal update
                     $this->db->set('updated_at', date("Y-m-d") . " " . date("H:i:s"));
+        
+                    // Memasukkan $data ke tabel user db py_app
+                    $this->db->where('id', $user_id);
+                    $this->db->update('user');
+        
+                    // Menampilkan pesan dulu sebelum redirect
+                    $this->session->set_flashdata('ganti_profil', 'Profil Anda berhasil diubah.');
+        
+                    // Kembali ke controller Auth saat berhasil
+                    redirect('user');
 
                 } else {
 
                     // Jika gagal tambilkan error
                     echo $this->upload->display_errors();
+
+                    // Kembalikan
+                    redirect('user/editProfil');
                 }
+            } else {
+
+                // Mengambil data username yang baru
+                $username = htmlspecialchars($this->input->post('username', true));
+    
+                // Ganti username pada database
+                $this->db->set('username', $username);
+    
+                // Tanggal update
+                $this->db->set('updated_at', date("Y-m-d") . " " . date("H:i:s"));
+    
+                // Memasukkan $data ke tabel user db py_app
+                $this->db->where('id', $user_id);
+                $this->db->update('user');
+    
+                // Menampilkan pesan dulu sebelum redirect
+                $this->session->set_flashdata('ganti_profil', 'Profil Anda berhasil diubah.');
+    
+                // Kembali ke controller Auth saat berhasil
+                redirect('user');
+
             }
 
-
-            // Mengambil data username yang baru
-            $username = htmlspecialchars($this->input->post('username', true));
-
-            // Ganti username pada database
-            $this->db->set('username', $username);
-
-            // Tanggal update
-            $this->db->set('updated_at', date("Y-m-d") . " " . date("H:i:s"));
-
-            // Memasukkan $data ke tabel user db py_app
-            $this->db->where('id', $user_id);
-            $this->db->update('user');
-
-            // Menampilkan pesan dulu sebelum redirect
-            $this->session->set_flashdata('ganti_profil', 'Profil Anda berhasil diubah.');
-
-            // Kembali ke controller Auth saat berhasil
-            redirect('user');
         }
     }
 
