@@ -148,6 +148,9 @@ class User extends CI_Controller
                     // Jika gagal tambilkan error
                     echo $this->upload->display_errors();
 
+                    // Menampilkan pesan dulu sebelum redirect
+                    $this->session->set_flashdata('gagal_ganti_profil', 'Profil Anda gagal diubah.');
+
                     // Kembalikan
                     redirect('user/editProfil');
                 }
