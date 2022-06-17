@@ -173,7 +173,6 @@ function kirimDataCard() {
 		}
 	});
 }
-kirimDataCard();
 
 
 
