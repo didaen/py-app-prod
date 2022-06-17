@@ -818,6 +818,8 @@ function userMenjawab() {
 									}).then((res) => {
 										console.log(res);
 									}).catch(console.log);
+
+									return;
 						}
 					})
 					.catch((error) => console.log(error));
@@ -826,7 +828,7 @@ function userMenjawab() {
 			});
 		});
 		// KEMBALIKAN
-		return;
+		
 	}
 
 	
