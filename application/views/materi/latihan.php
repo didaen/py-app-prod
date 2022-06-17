@@ -97,7 +97,7 @@
                                         <div style="grid-row-start: <?= $latsol['row_start']; ?>; grid-column-start: <?= $latsol['col_start']; ?>; z-index: 10;">
                                             
                                             <iframe name="form_<?= $box_number; ?>" style="display: none;"></iframe>
-                                            <form method="post" id="form_<?= $box_number; ?>" target="javascript:userMenjawab2();">
+                                            <form method="post" id="form_<?= $box_number; ?>" target="form_<?= $box_number; ?>">
                                                 <input
                                                 type="text"
                                                 class="pertanyaan <?= $latsol['class']; ?>"

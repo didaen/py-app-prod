@@ -838,8 +838,6 @@ function userMenjawab() {
 // FUNCTION UNTUK MELIHAT JAWABAN BENAR ATAU SALAH
 function userMenjawab2() {
 
-	
-
 	// Jika ada class pertanyaan yang mana merupakan class yang ada pada card kategori Latihan Soal
 	if(document.querySelectorAll(".pertanyaan") !== null) {
 
@@ -993,3 +991,4 @@ function userMenjawab2() {
 	
 }
 
+userMenjawab2();
