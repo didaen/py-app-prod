@@ -826,7 +826,7 @@ function userMenjawab() {
 			});
 		});
 		// KEMBALIKAN
-
+		return;
 	}
 
 	
