@@ -684,5 +684,3 @@ function userMenjawab() {
 
 	
 }
-
-userMenjawab();
