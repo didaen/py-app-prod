@@ -838,6 +838,8 @@ function userMenjawab() {
 // FUNCTION UNTUK MELIHAT JAWABAN BENAR ATAU SALAH
 function userMenjawab2() {
 
+	
+
 	// Jika ada class pertanyaan yang mana merupakan class yang ada pada card kategori Latihan Soal
 	if(document.querySelectorAll(".pertanyaan") !== null) {
 
@@ -861,6 +863,8 @@ function userMenjawab2() {
 	
 			// Setiap user melakukan input jawaban
 			pertanyaan.addEventListener("keyup", function (event) {
+
+				event.preventDefault();
 
 				if (event.keyCode === 13) {
 
@@ -978,7 +982,7 @@ function userMenjawab2() {
 						})
 						.catch((error) => console.log(error));
 		
-						event.preventDefault();
+						
 				}
 			});
 		});
@@ -988,4 +992,4 @@ function userMenjawab2() {
 
 	
 }
-userMenjawab2();
+
