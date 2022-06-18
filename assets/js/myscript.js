@@ -794,107 +794,107 @@ function sudahDijawab2() {
 	
 		// MENDEKLARASIKAN VARIABEL persenPengerjaan
 		let persenPengerjaan = 0;
-		
-		// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
+
+		// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
+		let pertanyaanBelumDiisi = jumlahPertanyaan;
+
+		// Membuat array kosong arrayIdPertanyaan untuk menyimpan kumpulan id elemen dengan class pertanyaan
+		let arrayIdPertanyaan = [];
+			
+		// Membuat array kosong arrayJawabanUser untuk menyimpan kumpulan jawaban user pada input dengan class pertanyaan
+		let arrayJawabanUser = [];
+
+		// Pada tiap elemen class pertanyaan
 		semuaPertanyaan.forEach(pertanyaan => {
-	
-			// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
-			let pertanyaanBelumDiisi = jumlahPertanyaan;
-
-			// Membuat array kosong arrayIdPertanyaan untuk menyimpan kumpulan id elemen dengan class pertanyaan
-			let arrayIdPertanyaan = [];
+					
+			// Masukkan id ke dalam arrayIdPertanyaan
+			arrayIdPertanyaan.push(pertanyaan.id);
 				
-			// Membuat array kosong arrayJawabanUser untuk menyimpan kumpulan jawaban user pada input dengan class pertanyaan
-			let arrayJawabanUser = [];
+			// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
+			arrayJawabanUser.push(pertanyaan.value);
 
-			// Membuat array kosong arrayKunciJawaban untuk menyimpan kumpulan kunci jawaban dari FETCH POST
-			let arrayKunciJawaban = [];
+		});
 
-			let nomorIndex = 0;
-							
-			// Pada tiap elemen class pertanyaan
-			semuaPertanyaan.forEach(pertanyaan => {
-					
-				// Masukkan id ke dalam arrayIdPertanyaan
-				arrayIdPertanyaan.push(pertanyaan.id);
-					
-				// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
-				arrayJawabanUser.push(pertanyaan.value);
+		// Membuat array kosong arrayKunciJawaban untuk menyimpan kumpulan kunci jawaban dari FETCH POST
+		let arrayKunciJawaban = [];
 
-			});
-		
-			// FETCH POST jawaban untuk question box dengan id tersebut
-			fetch('https://www.physicsyourself.com/materi/answers', {
-				method: 'POST',
-				credentials: 'same-origin',
-				mode: 'no-cors',
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-				},
-			})
-				.then(response => response.json())
-				.then(response => {
-							
+		let nomorIndex = 0;
+
+		// FETCH POST jawaban untuk question box dengan id tersebut
+		fetch('https://www.physicsyourself.com/materi/answers', {
+			method: 'POST',
+			credentials: 'same-origin',
+			mode: 'no-cors',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+		})
+			.then(response => response.json())
+			.then(response => {
+						
+				// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
+				semuaPertanyaan.forEach(pertanyaan => {
+						
 					console.log(arrayIdPertanyaan);
 					console.log(arrayJawabanUser);
-
+		
 					arrayIdPertanyaan.forEach(kolom => {
-
+		
 						arrayKunciJawaban[nomorIndex] = response[kolom];
-									
+											
 						nomorIndex++
 					});
-		
+				
 					console.log(arrayKunciJawaban);
-
+		
 					for(let i = 0; i < arrayKunciJawaban.length; i++) {
-
+		
 						// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 						if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
-			
+					
 							// BGCOLORNYA BERUBAH MENJADI HIJAU
 							semuaPertanyaan[i].style.backgroundColor = "#a3e635";
-			
+					
 							// TAMBAHKAN ATTRIBUTE readonly AGAR TIDAK BISA DIEDIT LAGI.
 							semuaPertanyaan[i].setAttribute("readonly", "");
-			
+					
 							// JUMLAH PERTANYAAN BERKURANG 1
 							pertanyaanBelumDiisi -= 1;
+				
 		
-
 						} else if(arrayJawabanUser[i] == '') {
-			
+					
 							// APABILA JAWABAN KOSONG TETAP
 							semuaPertanyaan[i].style.backgroundColor = "";
-
+		
 							pertanyaanBelumDiisi = pertanyaanBelumDiisi;
-
+		
 						} else {
 							// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
 							semuaPertanyaan[i].style.backgroundColor = "#f87171";
-
+		
 							pertanyaanBelumDiisi = pertanyaanBelumDiisi;
-
+		
 						}
 					}
-
+		
 					// persenPengerjaan BERTAMBAH
 					persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
-			
+					
 					// WIDTH PROGRESS BAR AKAN BERTAMBAH
 					durasi.style.width = persenPengerjaan + "%";
-
+		
 					// WARNA PROGRESS BAR MENJADI HIJAU
 					durasi.style.backgroundColor = "#a3e635";
-
+		
 					// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
 					durasi.innerHTML = persenPengerjaan + "%";
-							
-				})
-				.catch((error) => console.log(error));		
-			
-		});
+					
+				});
+			})
+			.catch((error) => console.log(error));	
+		
 		// KEMBALIKAN
 		
 	}
