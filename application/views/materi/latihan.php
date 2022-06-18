@@ -41,7 +41,7 @@
         <!-- AKHIR PEMBUNGKUS NOMOR CARD -->
 
         <!-- ___FORM DAN ISI___ -->
-        <div class="flex flex-col text-base text-justify bg-white text-gray-600 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400" id="isi-card">
+        <div class="flex flex-col text-base text-justify bg-white text-gray-600 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400" id="latihan">
 
             
             
