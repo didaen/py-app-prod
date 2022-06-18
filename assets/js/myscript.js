@@ -485,7 +485,7 @@ showAnswers();
 function sudahDijawab() {
 
 	// Jika ada class pertanyaan yang mana merupakan class yang ada pada card kategori Latihan Soal
-	if(document.getElementsByClassName("pertanyaan") !== null) {
+	if(document.getElementsByClassName("pertanyaan") !== null && document.getElementById('judul') == 'Latihan Soal') {
 
 		// Seleksi semua elemen dengan class pertanyaan
 		let semuaPertanyaan = document.querySelectorAll(".pertanyaan");
