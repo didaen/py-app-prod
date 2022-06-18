@@ -1,49 +1,3 @@
-// FUNCTION UNTUK MENAMPILKAN MENAMPILKAN JAWABAN MENJADI READ-ONLY DAN MENGHITUNG PERSENTASE PENGERJAAN CARD
-function sudahDiJawab() {
-
-	// AMBIL SEMUA ELEMEN DENGAN CLASS pertanyaan
-	const semuaPertanyaan = document.querySelectorAll(".pertanyaan");
-
-	// MEMASUKKAN pertanyaan.length ke dalam variabel jumlahPertanyaan
-	let jumlahPertanyaan = semuaPertanyaan.length;
-
-	// NILAI AWAL DARI pertanyaanBelumDiisi sama dengan jumlahPertanyaan
-	let pertanyaanBelumDiisi = jumlahPertanyaan;
-
-	// PADA MASING-MASING ELEMEN
-	semuaPertanyaan.forEach(pertanyaan => {
-
-		// JIKA SUDAH PERNAH DIJAWAB MAKA
-		if(pertanyaan.value !== '') {
-
-			// BGCOLORNYA BERUBAH MENJADI HIJAU
-			pertanyaan.style.backgroundColor = "#a3e635";
-
-			// TAMBAHKAN ATTRIBUTE readonly AGAR TIDAK BISA DIEDIT LAGI.
-			pertanyaan.setAttribute("readonly", "");
-
-			// JUMLAH PERTANYAAN BERKURANG 1
-			pertanyaanBelumDiisi -= 1;
-
-			// persenPengerjaan BERTAMBAH
-			persenPengerjaan =
-				Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
-
-			// WIDTH PROGRESS BAR AKAN BERTAMBAH
-			durasi.style.width = persenPengerjaan + "%";
-
-			// WARNA PROGRESS BAR MENJADI HIJAU
-			durasi.style.backgroundColor = "#a3e635";
-
-			// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
-			durasi.innerHTML = persenPengerjaan + "%";
-		}
-	});
-}
-
-
-
-
 // MEMUNCULKAN NAVIGASI MENU SAAT KLIK IKON HAMBURGER
 function klikNav(checkboxNav) {
 
@@ -689,13 +643,12 @@ function userMenjawab() {
 
 	
 }
-
 userMenjawab();
 
 
 
 // FUNCTION UNTUK MELIHAT JAWABAN BENAR ATAU SALAH
-function sudahDijawab2() {
+function sudahDijawab() {
 
 	// Jika ada class pertanyaan yang mana merupakan class yang ada pada card kategori Latihan Soal
 	if(document.querySelectorAll(".pertanyaan") !== null) {
@@ -819,5 +772,4 @@ function sudahDijawab2() {
 
 	
 }
-
-sudahDijawab2();
+sudahDijawab();
