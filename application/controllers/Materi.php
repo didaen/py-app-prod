@@ -330,7 +330,7 @@ class Materi extends CI_Controller
                     
         }
         
-        $jawabanUser['benar'] = $this->input->post('jawabanBenar');
+        $jawabanUser['benar'] = $arrayJawaban['jawabanBenar'];
         $jawabanUser['total_pertanyaan'] = $total_pertanyaan;
         $jawabanUser['time'] = date("Y-m-d") . " " . date("H:i:s");
 
