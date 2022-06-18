@@ -482,7 +482,7 @@ showAnswers();
 
 
 // FUNCTION UNTUK MELIHAT JAWABAN BENAR ATAU SALAH
-function sudahDijawab2() {
+function sudahDijawab() {
 
 	// Jika ada class pertanyaan yang mana merupakan class yang ada pada card kategori Latihan Soal
 	if(document.querySelectorAll(".pertanyaan") !== null) {
@@ -604,12 +604,12 @@ function sudahDijawab2() {
 
 	
 }
-sudahDijawab2();
+sudahDijawab();
 
 
 
 // FUNCTION UNTUK MELIHAT JAWABAN BENAR ATAU SALAH
-function userMenjawab2() {
+function userMenjawab() {
 
 	// Jika ada class pertanyaan yang mana merupakan class yang ada pada card kategori Latihan Soal
 	if(document.querySelectorAll(".pertanyaan") !== null) {
@@ -770,7 +770,7 @@ function userMenjawab2() {
 
 	
 }
-userMenjawab2();
+userMenjawab();
 
 function kosong() {
 
