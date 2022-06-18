@@ -648,9 +648,10 @@ function userMenjawab() {
 		
 							console.log(pertanyaanBelumDiisi);
 							console.log(jumlahPertanyaan);
+							let jawabanBenar = jumlahPertanyaan - pertanyaanBelumDiisi;
 
 							// Mengirimkan data pertanyaan yang terisi dan jumlah pertanyaan
-							postData.append('jawabanBenar', jumlahPertanyaan - pertanyaanBelumDiisi);
+							postData.append('jawabanBenar', jawabanBenar);
 
 							postData.append('jumlahPertanyaan', jumlahPertanyaan);
 
