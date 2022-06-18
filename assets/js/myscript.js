@@ -107,7 +107,7 @@ function kirimDataCard() {
 					},
 					body: postData
 				}).then((res) => {
-					console.log(res);
+					res;
 				}).catch(console.log);
 	
 			event.preventDefault();
@@ -331,7 +331,7 @@ function tombolReset() {
 					},
 					body: postData
 				}).then((res) => {
-					console.log(res);
+					res;
 				}).catch(console.log);
 
 				location.reload();
@@ -387,7 +387,7 @@ function showAnswers() {
 						},
 						body: postData
 					}).then((res) => {
-						console.log(res);
+						res;
 					}).catch(console.log);
 
 					// FETCH POST UNTUK MENGAMBI JAWABAN PADA MYSQL
@@ -538,9 +538,6 @@ function sudahDijawab() {
 			.then(response => response.json())
 			.then(response => {
 						
-						
-				console.log(arrayIdPertanyaan);
-				console.log(arrayJawabanUser);
 		
 				arrayIdPertanyaan.forEach(kolom => {
 		
@@ -549,7 +546,6 @@ function sudahDijawab() {
 					nomorIndex++
 				});
 				
-				console.log(arrayKunciJawaban);
 		
 				for(let i = 0; i < arrayKunciJawaban.length; i++) {
 		
@@ -675,9 +671,6 @@ function userMenjawab() {
 		
 							});
 				
-								
-							console.log(arrayIdPertanyaan);
-							console.log(arrayJawabanUser);
 			
 							arrayIdPertanyaan.forEach(kolom => {
 			
@@ -685,8 +678,6 @@ function userMenjawab() {
 										
 								nomorIndex++
 							});
-			
-							console.log(arrayKunciJawaban);
 									
 							let postData = new FormData();
 			
@@ -724,14 +715,12 @@ function userMenjawab() {
 								}
 							}
 			
-							console.log(pertanyaanBelumDiisi);
-							console.log(jumlahPertanyaan);
 							let jawabanBenar = jumlahPertanyaan - pertanyaanBelumDiisi;
 			
 							// Mengirimkan data pertanyaan yang terisi dan jumlah pertanyaan
 							postData.append('jawabanBenar', jawabanBenar);
 			
-							postData.append('jumlahPertanyaan', jumlahPertanyaan);
+
 			
 							// persenPengerjaan BERTAMBAH
 							persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
@@ -754,7 +743,7 @@ function userMenjawab() {
 								body: postData
 			
 								}).then((res) => {
-									console.log(res);
+									res;
 								}).catch(console.log);
 								
 						}
