@@ -71,3 +71,5 @@
         </div>
     </div>
 </div>
+
+<div class="hidden" id="peringatan"></div>
