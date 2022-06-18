@@ -833,8 +833,7 @@ function sudahDijawab2() {
 			.then(response => response.json())
 			.then(response => {
 						
-				// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
-				semuaPertanyaan.forEach(pertanyaan => {
+				
 						
 					console.log(arrayIdPertanyaan);
 					console.log(arrayJawabanUser);
@@ -891,7 +890,7 @@ function sudahDijawab2() {
 					// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
 					durasi.innerHTML = persenPengerjaan + "%";
 					
-				});
+				
 			})
 			.catch((error) => console.log(error));	
 		
