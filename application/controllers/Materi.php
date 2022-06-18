@@ -258,7 +258,7 @@ class Materi extends CI_Controller
 
 
     // Method ini untuk mengambil kunci jawaban tiap question box yang akan digunakan untuk pencocokan jawaban
-    public function answers()
+    public function py_anw()
     {
         
         $answers = $this->_answers();
