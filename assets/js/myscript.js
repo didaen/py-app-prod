@@ -833,62 +833,61 @@ function sudahDijawab2() {
 			.then(response => response.json())
 			.then(response => {
 						
-				
 						
-					console.log(arrayIdPertanyaan);
-					console.log(arrayJawabanUser);
+				console.log(arrayIdPertanyaan);
+				console.log(arrayJawabanUser);
 		
-					arrayIdPertanyaan.forEach(kolom => {
+				arrayIdPertanyaan.forEach(kolom => {
 		
-						arrayKunciJawaban[nomorIndex] = response[kolom];
+					arrayKunciJawaban[nomorIndex] = response[kolom];
 											
-						nomorIndex++
-					});
+					nomorIndex++
+				});
 				
-					console.log(arrayKunciJawaban);
+				console.log(arrayKunciJawaban);
 		
-					for(let i = 0; i < arrayKunciJawaban.length; i++) {
+				for(let i = 0; i < arrayKunciJawaban.length; i++) {
 		
-						// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
-						if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
+					// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
+					if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
 					
-							// BGCOLORNYA BERUBAH MENJADI HIJAU
-							semuaPertanyaan[i].style.backgroundColor = "#a3e635";
+						// BGCOLORNYA BERUBAH MENJADI HIJAU
+						semuaPertanyaan[i].style.backgroundColor = "#a3e635";
 					
-							// TAMBAHKAN ATTRIBUTE readonly AGAR TIDAK BISA DIEDIT LAGI.
-							semuaPertanyaan[i].setAttribute("readonly", "");
+						// TAMBAHKAN ATTRIBUTE readonly AGAR TIDAK BISA DIEDIT LAGI.
+						semuaPertanyaan[i].setAttribute("readonly", "");
 					
-							// JUMLAH PERTANYAAN BERKURANG 1
-							pertanyaanBelumDiisi -= 1;
+						// JUMLAH PERTANYAAN BERKURANG 1
+						pertanyaanBelumDiisi -= 1;
 				
 		
-						} else if(arrayJawabanUser[i] == '') {
+					} else if(arrayJawabanUser[i] == '') {
 					
-							// APABILA JAWABAN KOSONG TETAP
-							semuaPertanyaan[i].style.backgroundColor = "";
+						// APABILA JAWABAN KOSONG TETAP
+						semuaPertanyaan[i].style.backgroundColor = "";
 		
-							pertanyaanBelumDiisi = pertanyaanBelumDiisi;
+						pertanyaanBelumDiisi = pertanyaanBelumDiisi;
 		
-						} else {
-							// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
-							semuaPertanyaan[i].style.backgroundColor = "#f87171";
+					} else {
+						// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
+						semuaPertanyaan[i].style.backgroundColor = "#f87171";
 		
-							pertanyaanBelumDiisi = pertanyaanBelumDiisi;
+						pertanyaanBelumDiisi = pertanyaanBelumDiisi;
 		
-						}
 					}
+				}
 		
-					// persenPengerjaan BERTAMBAH
-					persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
+				// persenPengerjaan BERTAMBAH
+				persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
 					
-					// WIDTH PROGRESS BAR AKAN BERTAMBAH
-					durasi.style.width = persenPengerjaan + "%";
+				// WIDTH PROGRESS BAR AKAN BERTAMBAH
+				durasi.style.width = persenPengerjaan + "%";
 		
-					// WARNA PROGRESS BAR MENJADI HIJAU
-					durasi.style.backgroundColor = "#a3e635";
+				// WARNA PROGRESS BAR MENJADI HIJAU
+				durasi.style.backgroundColor = "#a3e635";
 		
-					// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
-					durasi.innerHTML = persenPengerjaan + "%";
+				// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
+				durasi.innerHTML = persenPengerjaan + "%";
 					
 				
 			})
@@ -922,124 +921,125 @@ function userMenjawab2() {
 	
 		// MENDEKLARASIKAN VARIABEL persenPengerjaan
 		let persenPengerjaan = 0;
-		
-		// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
-		semuaPertanyaan.forEach(pertanyaan => {
-	
-			// Setiap user melakukan input jawaban
-			pertanyaan.addEventListener("keyup", function (event) {
 
-				event.preventDefault();
-
-				if (event.keyCode === 13) {
-
-					// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
-					let pertanyaanBelumDiisi = jumlahPertanyaan;
-
-					// Membuat array kosong arrayIdPertanyaan untuk menyimpan kumpulan id elemen dengan class pertanyaan
-					let arrayIdPertanyaan = [];
+		// FETCH POST jawaban untuk question box dengan id tersebut
+		fetch('https://www.physicsyourself.com/materi/answers', {
+			method: 'POST',
+			credentials: 'same-origin',
+			mode: 'no-cors',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+		})
+			.then(response => response.json())
+			.then(response => {
 				
-					// Membuat array kosong arrayJawabanUser untuk menyimpan kumpulan jawaban user pada input dengan class pertanyaan
-					let arrayJawabanUser = [];
-
-					// Membuat array kosong arrayKunciJawaban untuk menyimpan kumpulan kunci jawaban dari FETCH POST
-					let arrayKunciJawaban = [];
-
-					let nomorIndex = 0;
-							
-					// Pada tiap elemen class pertanyaan
-					semuaPertanyaan.forEach(pertanyaan => {
-					
-						// Masukkan id ke dalam arrayIdPertanyaan
-						arrayIdPertanyaan.push(pertanyaan.id);
-					
-						// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
-						arrayJawabanUser.push(pertanyaan.value);
-
-					});
+				// PADA TIAP-TIAP ELEMENT CLASS PERTANYAAN
+				semuaPertanyaan.forEach(pertanyaan => {
+			
+					// Setiap user melakukan input jawaban
+					pertanyaan.addEventListener("keyup", function (event) {
 		
-					// FETCH POST jawaban untuk question box dengan id tersebut
-					fetch('https://www.physicsyourself.com/materi/answers', {
-						method: 'POST',
-						credentials: 'same-origin',
-						mode: 'no-cors',
-						headers: {
-							'Accept': 'application/json',
-							'Content-Type': 'application/json'
-						},
-					})
-						.then(response => response.json())
-						.then(response => {
+						event.preventDefault();
+		
+						if (event.keyCode === 13) {
+		
+							// Nilai awal dari pertanyaanBelumDiisi sama dengan jumlahPertanyaan
+							let pertanyaanBelumDiisi = jumlahPertanyaan;
+		
+							// Membuat array kosong arrayIdPertanyaan untuk menyimpan kumpulan id elemen dengan class pertanyaan
+							let arrayIdPertanyaan = [];
+						
+							// Membuat array kosong arrayJawabanUser untuk menyimpan kumpulan jawaban user pada input dengan class pertanyaan
+							let arrayJawabanUser = [];
+		
+							// Membuat array kosong arrayKunciJawaban untuk menyimpan kumpulan kunci jawaban dari FETCH POST
+							let arrayKunciJawaban = [];
+		
+							let nomorIndex = 0;
+									
+							// Pada tiap elemen class pertanyaan
+							semuaPertanyaan.forEach(pertanyaan => {
 							
+								// Masukkan id ke dalam arrayIdPertanyaan
+								arrayIdPertanyaan.push(pertanyaan.id);
+							
+								// Masukkan jawaban yang diinput user ke dalam arrayJawabanUser
+								arrayJawabanUser.push(pertanyaan.value);
+		
+							});
+				
+								
 							console.log(arrayIdPertanyaan);
 							console.log(arrayJawabanUser);
-
+			
 							arrayIdPertanyaan.forEach(kolom => {
-
+			
 								arrayKunciJawaban[nomorIndex] = response[kolom];
-									
+										
 								nomorIndex++
 							});
-		
+			
 							console.log(arrayKunciJawaban);
-								
+									
 							let postData = new FormData();
-
+			
 							for(let i = 0; i < arrayKunciJawaban.length; i++) {
-
+			
 								// JIKA JAWABAN YANG DIINPUT OLEH USER SAMA DENGAN jawabanBenar
 								if (arrayJawabanUser[i] == arrayKunciJawaban[i]) {
-			
+				
 									// BGCOLORNYA BERUBAH MENJADI HIJAU
 									semuaPertanyaan[i].style.backgroundColor = "#a3e635";
-			
+				
 									// TAMBAHKAN ATTRIBUTE readonly AGAR TIDAK BISA DIEDIT LAGI.
 									semuaPertanyaan[i].setAttribute("readonly", "");
-			
+				
 									// JUMLAH PERTANYAAN BERKURANG 1
 									pertanyaanBelumDiisi -= 1;
-				
+					
 									postData.append(semuaPertanyaan[i].id, semuaPertanyaan[i].value);
-		
-
-								} else if(arrayJawabanUser[i] == '') {
 			
+			
+								} else if(arrayJawabanUser[i] == '') {
+				
 									// APABILA JAWABAN KOSONG TETAP
 									semuaPertanyaan[i].style.backgroundColor = "";
-
+			
 									pertanyaanBelumDiisi = pertanyaanBelumDiisi;
-
+			
 								} else {
-										// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
+									// APABILA JAWABAN SALAH BGCOLOR BERUBAH JADI MERAH
 									semuaPertanyaan[i].style.backgroundColor = "#f87171";
-
+			
 									pertanyaanBelumDiisi = pertanyaanBelumDiisi;
-
+			
 									postData.append(semuaPertanyaan[i].id, semuaPertanyaan[i].value);
 								}
 							}
-		
+			
 							console.log(pertanyaanBelumDiisi);
 							console.log(jumlahPertanyaan);
 							let jawabanBenar = jumlahPertanyaan - pertanyaanBelumDiisi;
-
+			
 							// Mengirimkan data pertanyaan yang terisi dan jumlah pertanyaan
 							postData.append('jawabanBenar', jawabanBenar);
-
+			
 							postData.append('jumlahPertanyaan', jumlahPertanyaan);
-
+			
 							// persenPengerjaan BERTAMBAH
 							persenPengerjaan = Math.round((1 - pertanyaanBelumDiisi / jumlahPertanyaan) * 100);
-			
+				
 							// WIDTH PROGRESS BAR AKAN BERTAMBAH
 							durasi.style.width = persenPengerjaan + "%";
-
+			
 							// WARNA PROGRESS BAR MENJADI HIJAU
 							durasi.style.backgroundColor = "#a3e635";
-
+			
 							// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
 							durasi.innerHTML = persenPengerjaan + "%";
-
+			
 							fetch('https://www.physicsyourself.com/materi/jawabanUser', {
 								method: 'POST',
 								mode: 'no-cors',
@@ -1047,18 +1047,18 @@ function userMenjawab2() {
 								"Content-Type": "application/json"
 								},
 								body: postData
-
+			
 								}).then((res) => {
 									console.log(res);
 								}).catch(console.log);
-							
-						})
-						.catch((error) => console.log(error));
+								
+						}
+					});
+				});
+				
+			})
+			.catch((error) => console.log(error));
 		
-						
-				}
-			});
-		});
 		// KEMBALIKAN
 		
 	}
