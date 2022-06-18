@@ -526,7 +526,7 @@ function sudahDijawab() {
 		let nomorIndex = 0;
 
 		// FETCH POST jawaban untuk question box dengan id tersebut
-		fetch('https://www.physicsyourself.com/materi/answers', {
+		fetch('https://www.physicsyourself.com/materi/py_anw', {
 			method: 'POST',
 			credentials: 'same-origin',
 			mode: 'no-cors',
@@ -628,7 +628,7 @@ function userMenjawab() {
 		let persenPengerjaan = 0;
 
 		// FETCH POST jawaban untuk question box dengan id tersebut
-		fetch('https://www.physicsyourself.com/materi/answers', {
+		fetch('https://www.physicsyourself.com/materi/py_anw', {
 			method: 'POST',
 			credentials: 'same-origin',
 			mode: 'no-cors',
