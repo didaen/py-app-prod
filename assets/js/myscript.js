@@ -1066,3 +1066,7 @@ function userMenjawab2() {
 	
 }
 userMenjawab2();
+
+function kosong() {
+	
+}
