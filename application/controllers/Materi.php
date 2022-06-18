@@ -330,11 +330,9 @@ class Materi extends CI_Controller
                     
         }
         
-        $jawabanUser = [
-            'benar' => $this->input->post('jawabanBenar'),
-            'total_pertanyaan' => $total_pertanyaan,
-            'time' => date("Y-m-d") . " " . date("H:i:s")
-        ];
+        $jawabanUser['benar'] = $this->input->post('jawabanBenar');
+        $jawabanUser['total_pertanyaan'] = $total_pertanyaan;
+        $jawabanUser['time'] = date("Y-m-d") . " " . date("H:i:s");
 
         $this->db->insert('card_answer_user', $jawabanUser);
             
