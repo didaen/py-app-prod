@@ -650,7 +650,7 @@ function userMenjawab() {
 							console.log(jumlahPertanyaan);
 
 							// Mengirimkan data pertanyaan yang terisi dan jumlah pertanyaan
-							postData.append('pertanyaanBenar', jumlahPertanyaan - pertanyaanBelumDiisi);
+							postData.append('jawabanBenar', jumlahPertanyaan - pertanyaanBelumDiisi);
 
 							postData.append('jumlahPertanyaan', jumlahPertanyaan);
 
