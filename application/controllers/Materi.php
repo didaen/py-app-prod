@@ -323,16 +323,16 @@ class Materi extends CI_Controller
             'card' => $data['belajar']['card_number'],    
         ];
 
+        $jawabanUser['benar'] = $arrayJawaban['jawabanBenar'];
+        $jawabanUser['total_pertanyaan'] = $total_pertanyaan;
+        $jawabanUser['time'] = date("Y-m-d") . " " . date("H:i:s");
+
         // Membuat array associative
         for ($i = 1; $i <= $total_pertanyaan; $i++) {
             $idPertanyaan = "answ_" . $i;
             $jawabanUser[$idPertanyaan] = $arrayJawaban[$idPertanyaan];
                     
         }
-        
-        $jawabanUser['benar'] = $arrayJawaban['jawabanBenar'];
-        $jawabanUser['total_pertanyaan'] = $total_pertanyaan;
-        $jawabanUser['time'] = date("Y-m-d") . " " . date("H:i:s");
 
         $this->db->insert('card_answer_user', $jawabanUser);
             
