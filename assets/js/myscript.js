@@ -641,6 +641,8 @@ function userMenjawab() {
 									semuaPertanyaan[i].style.backgroundColor = "#f87171";
 
 									pertanyaanBelumDiisi = pertanyaanBelumDiisi;
+
+									postData.append(semuaPertanyaan[i].id, semuaPertanyaan[i].value);
 								}
 							}
 		
