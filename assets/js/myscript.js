@@ -5,6 +5,7 @@ window.addEventListener( "pageshow", function ( event ) {
 	if ( historyTraversal ) {
 	  // Handle page restore.
 	  location.reload(true);
+	  sudahDijawab();
 	}
   });
 
