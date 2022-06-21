@@ -124,15 +124,15 @@
 	}
 
 	.pertanyaan {
-		@apply w-5 h-5 text-center bg-gray-300 focus:bg-yellow-200 shadow-sm focus:outline-none;
+		@apply text-center bg-gray-300 focus:bg-yellow-200 shadow-sm focus:outline-none;
 	}
 
 	.pertanyaan-tk1 {
-		@apply text-xl;
+		@apply w-5 h-5 text-xl;
 	}
 
 	.pertanyaan-tk2 {
-		@apply text-lg;
+		@apply w-3 h-3 text-sm;
 	}
 
 	.input {
