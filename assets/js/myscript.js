@@ -1,3 +1,13 @@
+// Function yang akan mereload setiap hit BACK dari browser
+
+var perfEntries = performance.getEntriesByType("navigation");
+
+if (perfEntries[0].type === "back_forward") {
+    location.reload(true);
+}
+
+
+
 // MEMUNCULKAN NAVIGASI MENU SAAT KLIK IKON HAMBURGER
 function klikNav(checkboxNav) {
 
@@ -764,3 +774,4 @@ userMenjawab();
 function kosong() {
 
 }
+
