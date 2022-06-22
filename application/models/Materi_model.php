@@ -206,7 +206,7 @@ class Materi_model extends CI_model
     // Method untuk memanggil jenis atau kategori suatu card termasuk belajar atau latihan
     public function getJenisCard($materi_id, $sub_materi_id, $card_number)
     {
-        $this->db->select('jenis_card', 'judul_card');
+        $this->db->select('jenis_card, judul_card');
         $this->db->from('3_card_category');
         $this->db->where('materi', $materi_id);
         $this->db->where('sub_materi', $sub_materi_id);
