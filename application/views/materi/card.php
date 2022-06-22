@@ -13,9 +13,11 @@
             <label class="block mb-1" for="card">Pilih Card : </label>
             <div class="flex flex-col space-y-4">
                 <select class="block h-10 px-2 rounded border-2 outline-none bg-white" id="card" name="card-number">
-                    <?php for ($i = 1; $i <= $card['total_card']; $i++) : ?>
-                        <option value="<?= $i; ?>"><?= $i; ?></option>
-                    <?php endfor; ?>
+                    <?php $i = 1; ?>
+                    <?php foreach ($info_card as $info) : ?>
+                        <option value="<?= $i; ?>"><?= $i; ?> : <?= $info['judul_card']; ?></option>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
                 </select>
                 <div class="flex justify-end">
                     <button type="submit" name="pilih-card" class="btn" id="pilih-card" onclick="klikGantiAction()">Pilih</button>
