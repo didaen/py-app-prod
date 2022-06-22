@@ -39,6 +39,23 @@ class Materi_model extends CI_model
         ])->row_array();
     }
 
+
+
+    // Menambahkan method ini untuk menampilkan informasi card pada menu dropdown
+    public function getInfoCardByMateriAndSubMateriId($materi_id, $sub_materi_id)
+    {
+        $this->db->select('*');
+        $this->db->from('3_card_category');
+        $this->db->where('materi', $materi_id);
+        $this->db->where('sub_materi', $sub_materi_id);
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
     
 
     // Method untuk mendapatkan total pertanyaan sesuai materi id, sub materi id, dan card number
