@@ -1,3 +1,7 @@
+if ( window.history.replaceState ) {
+	window.history.replaceState( null, null, window.location.href );
+}
+
 // Function yang akan mereload setiap hit BACK dari browser
 
 window.addEventListener( "pageshow", function ( event ) {
