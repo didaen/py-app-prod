@@ -15,7 +15,7 @@
                 <select class="block h-10 px-2 rounded border-2 outline-none bg-white" id="card" name="card-number">
                     <?php $i = 1; ?>
                     <?php foreach ($info_card as $info) : ?>
-                        <option value="<?= $i; ?>"><?= $i; ?> : <?= $info['judul_card']; ?></option>
+                        <option value="<?= $i; ?>"><?= $i; ?>. <?= $info['judul_card']; ?></option>
                         <?php $i++; ?>
                     <?php endforeach; ?>
                 </select>
