@@ -280,7 +280,7 @@
                 <div class="flex flex-row items-center space-x-2">
 
                     <!-- SELECT -->
-                    <select class="w-full h-6 px-2 rounded outline-none bg-white" id="card-internal" name="card-number">
+                    <select class="w-full h-6 px-2 rounded outline-none bg-white" id="card-internal" name="card-number" value="<?= $belajar['card_number']; ?>">
                         <?php $i = 1; ?>
                         <?php foreach ($info_card as $info) : ?>
                             <option value="<?= $i; ?>"><?= $i; ?>. <?= $info['judul_card']; ?></option>
