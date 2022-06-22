@@ -208,6 +208,9 @@ class Materi extends CI_Controller
         ];
         $this->db->insert('user_learning_log', $data['belajar']);
 
+        // Mengambil data informasi card untuk dikirim ke view
+        $data['info_card'] = $this->Materi_model->getInfoCardByMateriAndSubMateriId($materi_id, $sub_materi_id);
+
         // Ambil kategori card dari database
         $jenis_card = $this->Materi_model->getJenisCard($materi_id, $sub_materi_id, $card_number);
         $kategori_card = $jenis_card['jenis_card'];
