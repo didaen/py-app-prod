@@ -120,6 +120,8 @@ class Materi extends CI_Controller
         // Mengambil value dari name='sub_materi' yang berupa id sub materi kemudian memasukkannya ke variabel sub_materi_id
         $data['card'] = $this->Materi_model->getTotalCardByMateriIdAndSubMateriId($materi_id, $sub_materi_id);
 
+        $data['info_card'] = $this->Materi_model->getInfoCardByMateriAndSubMateriId($materi_id, $sub_materi_id);
+
         // Semua data di yang di dapatkan di atas, dimasukkan di array data belajar
         $data['belajar'] = [
             'sub_materi_id' => $sub_materi_id,
