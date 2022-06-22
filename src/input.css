@@ -132,7 +132,7 @@
 	}
 
 	.pertanyaan-tk2 {
-		@apply w-4 h-4 text-sm;
+		@apply w-4 h-5 text-sm;
 	}
 
 	.input {
