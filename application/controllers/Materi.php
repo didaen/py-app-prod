@@ -215,7 +215,7 @@ class Materi extends CI_Controller
         $jenis_card = $this->Materi_model->getJenisCard($materi_id, $sub_materi_id, $card_number);
         $kategori_card = $jenis_card['jenis_card'];
         $data['judul_card'] = $jenis_card['judul_card'];
-        var_dump($data['judul_card']);
+        var_dump($jenis_card);
 
         // Jika jenis cardnya belajar atau == 1
         if($kategori_card == '1') {
