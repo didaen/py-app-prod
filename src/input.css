@@ -128,7 +128,7 @@
 	}
 
 	.pertanyaan-tk1 {
-		@apply w-6 h-6 text-xl;
+		@apply w-5 h-5 text-xl;
 	}
 
 	.pertanyaan-tk2 {
