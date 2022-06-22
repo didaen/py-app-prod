@@ -279,9 +279,11 @@
 
                     <!-- SELECT -->
                     <select class="w-full h-6 px-2 rounded outline-none bg-white" id="card-internal" name="card-number">
-                        <?php for ($i = 1; $i <= $belajar['total_card']; $i++) : ?>
-                            <option value="<?= $i; ?>"><?= $i; ?></option>
-                        <?php endfor; ?>
+                        <?php $i = 1; ?>
+                        <?php foreach ($info_card as $info) : ?>
+                            <option value="<?= $i; ?>"><?= $i; ?>. <?= $info['judul_card']; ?></option>
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
                     </select>
                     <!-- AKHIR SELECT -->
 
