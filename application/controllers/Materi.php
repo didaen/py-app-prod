@@ -371,6 +371,8 @@ class Materi extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $user_id = $data['user']['id'];
         $data['belajar'] = $this->User_model->getRecentLearningActivity($user_id);
+
+        $total_pertanyaan = $this->session->userdata('total_pertanyaan');
             
             
         $dataJawabanDihapus = [
@@ -380,15 +382,6 @@ class Materi extends CI_Controller
             'sub_materi' => $data['belajar']['sub_materi_id'],
             'card' => $data['belajar']['card_number'],    
         ];
-
-
-        // Membuat array associative
-        for ($i = 1; $i <= 40; $i++) {
-            $idPertanyaan = "answ_" . $i;
-            $jawabanUser[$idPertanyaan] = $arrayJawaban[$idPertanyaan];
-                    
-        }
-        
 
         // Waktu user menjawab
         $dataJawabanDihapus['time'] = date("Y-m-d") . " " . date("H:i:s");
