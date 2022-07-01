@@ -63,9 +63,9 @@
                         
                         <?php if($latsol['kategori'] == '1') : ?>
 
-                                <p class="mb-4">
+                                <div class="mb-4">
                                     <?= $latsol['isi']; ?>
-                                </p>
+                                </div>
 
                         <?php elseif($latsol['kategori'] == '2') : ?>
 
@@ -225,7 +225,7 @@
 
                 <!-- PEMBUNGKUS PROGRESS BAR -->
                 <div class="col-start-1 col-end-4 sm:grow flex flex-col justify-center px-4 text-xs bg-gray-400 text-center rounded">
-                    <p>Progress pengerjaan</p>
+                    <div>Progress pengerjaan</div>
 
                     <!-- KOTAK WARNA ABU PROGRESS BAR -->
                     <div class="bungkus bg-gray-400 p-1 rounded-full">
