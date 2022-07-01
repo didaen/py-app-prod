@@ -445,9 +445,9 @@ function showAnswers() {
 
 									kunciPerBaris += 
 									`
-										<p>
+										<div>
 											${res['isi']}
-										</p>
+										</div>
 									`;
 
 								} else {
