@@ -203,8 +203,8 @@
                 <div class="w-2/3"></div>
             </div>
 
-            <div class="pertanyaan-tk1"></div>
-            <div class="pertanyaan-tk2"></div>
+            <div class="hidden pertanyaan-tk1"></div>
+            <div class="hidden pertanyaan-tk2"></div>
             <!-- AKHIR IV DISPLAY NONE -->
 
         </div>
