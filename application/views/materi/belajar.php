@@ -190,15 +190,15 @@
                 <!-- AKHIR TEMPLATE LATIHAN SOAL -->
 
             <!-- DIV DISPLAY NONE -->
-            <div class="flex flex-row">
+            <div class="hidden">
                 <div class="w-1/2"></div>
                 <div class="w-1/2"></div>
             </div>
-            <div class="flex flex-row">
+            <div class="hidden">
                 <div class="w-1/4"></div>
                 <div class="w-1/4"></div>
             </div>
-            <div class="flex flex-row">
+            <div class="hidden">
                 <div class="w-1/3"></div>
                 <div class="w-2/3"></div>
             </div>
