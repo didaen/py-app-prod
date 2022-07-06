@@ -154,7 +154,7 @@
                 <div>
 
                     <!-- TOMBOL TUNJUKKAN JAWABAN -->
-                    <div class="mt-10 flex flex-row justify-end">
+                    <div class="flex flex-row justify-end">
                         <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-300" id="tunjukkan-jawaban">
                             Tunjukkan jawaban
                         </button>
