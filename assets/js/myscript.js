@@ -796,7 +796,7 @@ function klikKey(checkboxKey) {
 	if (checkboxKey.checked) {
 
 		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
-		document.getElementById("keyboard").style.display = "flex";
+		document.getElementById("keyboard").style.display = "grid";
 
 		// JIKA CHECKBOX TIDAK TERCENTANG
 	} else {
