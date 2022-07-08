@@ -156,22 +156,20 @@
                     <!-- TOMBOL TUNJUKKAN JAWABAN -->
                     <div class="flex flex-row justify-end">
 
-                        <!-- CHECKBOX TOGGLE MENU -->
-                        <input type="checkbox" class="w-7 h-7 absolute -left-1 z-10 opacity-100" id="checkbox-key" onchange="klikKey(this)" autocomplete="off">
-                        <!-- AKHIR CHECKBOX TOGGLE MENU -->
-
                         <!-- KEYBOARD -->
                         <div class="flex flex-row mt-1 mb-1 items-center border border-white rounded w-32">
-                            <input type="checkbox" class="form-checkbox toggle-keyboard w-5 h-5 absolute z-10 opacity-0 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0 cursor-pointer" id="checkbox-nav" onchange="klikKey(this)" autocomplete="off">
+
                             <div class="flex w-6 flex-row bg-gray-200" id="logo-keyboard">
                                 <img src="<?= base_url(); ?>assets/img/keyboard.png" alt="Keyboard Greek Alphabeth" class="w-4 mx-auto">
                             </div>
+                            
                             <div class="flex flex-row text-xs font-bold text-blue-1300 mx-auto">
                                 <div>Greek Alphabeth</div>
                             </div>
 
                         </div>
-                        
+
                         <div class="text-base bg-gray-100 text-center rounded p-1 border-2 border-white hidden" id="keyboard">
                             <div class="grid grid-cols-13 lg:grid-cols-25 italic items-center katex-math-italic">
                                 <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="2">2</div>
