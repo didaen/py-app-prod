@@ -806,3 +806,29 @@ function klikKey(checkboxKey) {
 	}
 }
 
+
+// EVENT BINDING UNTUK MEMASUKKAN HASIL YANG DIKLIK KE DALAM INPUT
+function greekKeyboard() {
+	if(document.getElementById("keyboard") !== null) {
+
+		const keyboard = document.getElementById("keyboard");
+
+		const latihan = document.getElementById("latihan");
+
+		let pertanyaanDiklik = '';
+
+		latihan.addEventListener('click', function(event) {
+
+			if(event.target.classList.contains('pertanyaan'))
+			{
+
+				keyboard.addEventListener('click', function(event2) {
+					event.target.value = event2.target.value;
+				});
+			}
+		});
+	}
+}
+
+greekKeyboard();
+
