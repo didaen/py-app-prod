@@ -154,7 +154,7 @@
                 <div>
 
                     <!-- TOMBOL TUNJUKKAN JAWABAN -->
-                    <div class="flex flex-row justify-end">
+                    <div class="flex flex-row justify-between">
 
                         <!-- TOGGLE KEYBOARD -->
                         <div class="flex flex-row mt-1 mb-1 items-center border border-white rounded w-32">
