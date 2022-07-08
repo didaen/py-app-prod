@@ -155,6 +155,18 @@
 
                     <!-- TOMBOL TUNJUKKAN JAWABAN -->
                     <div class="flex flex-row justify-end">
+
+                        <!-- CHECKBOX TOGGLE MENU -->
+                        <input type="checkbox" class="w-7 h-7 absolute -left-1 z-10 opacity-0" id="checkbox-key" onchange="klikKey(this)" autocomplete="off">
+                        <!-- AKHIR CHECKBOX TOGGLE MENU -->
+
+                        <div class="flex w-6 flex-row bg-gray-200" id="logo-keyboard">
+                            <img src="<?= base_url(); ?>assets/img/keyboard.png" alt="Keyboard Greek Alphabeth" class="w-4 mx-auto">
+                        </div>
+                        <div class="flex flex-row text-xs font-bold text-blue-1300 mx-auto">
+                            <div>Greek Alphabeth</div>
+                        </div>
+
                         <button type="submit" name="tunjukkan-jawaban" class="px-4 py-1 text-sm bg-gray-500 hover:bg-gray-400 text-white rounded transition duration-300" id="tunjukkan-jawaban">
                             Tunjukkan jawaban
                         </button>
