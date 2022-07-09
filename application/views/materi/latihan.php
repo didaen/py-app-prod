@@ -26,14 +26,14 @@
                 <h1 class="text-lg" id="card-number-judul">
                     <?= $belajar['card_number']; ?>
                 </h1>
-                <input type="hidden" class="greek-alphabet" value="a" id="card-number" value="<?= $belajar['card_number']; ?>" />
+                <input type="hidden" id="card-number" value="<?= $belajar['card_number']; ?>" />
             </div>
             <!-- AKHIR NOMOR CARD -->
 
             <!-- JUDUL -->
             <div class="flex flex-col justify-center text-white text-lg text-center ml-4">
                 <div><?= $judul; ?></div>
-                <input type="hidden" class="greek-alphabet" value="/" id="judul" value="<?= $judul; ?>" />
+                <input type="hidden" id="judul" value="<?= $judul; ?>" />
             </div>
             <!-- AKHIR JUDUL -->
 
@@ -180,132 +180,58 @@
                     <!-- KEYBOARD -->
                     <div class="text-base bg-gray-100 text-center rounded p-1 border-2 border-white mt-2 hidden" id="keyboard">
                         <div class="grid grid-cols-13 lg:grid-cols-25 italic items-center katex-math-italic">
-                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="2">
-                                2
-                            </button>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="β"/>
-                                β
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="γ"/>
-                                γ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="δ"/>
-                                δ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ε"/>
-                                ε
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ζ"/>
-                                ζ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="η"/>
-                                η
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="θ"/>
-                                θ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ι"/>
-                                ι
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="κ"/>
-                                κ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="λ"/>
-                                λ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="μ"/>
-                                μ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ν"/>
-                                ν
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ξ"/>
-                                ξ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="o"/>
-                                o
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="π"/>
-                                π
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ρ"/>
-                                ρ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ς"/>
-                                ς
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="σ"/>
-                                σ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="τ"/>
-                                τ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="υ"/>
-                                υ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ϕ"/>
-                                ϕ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="χ"/>
-                                χ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ψ"/>
-                                ψ
-                            </div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
-                                <input type="hidden" class="greek-alphabet" value="ω"/>
-                                ω
-                            </div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="2">2</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="β">β</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="γ">γ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="δ">δ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ε">ε</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ζ">ζ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="η">η</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="θ">θ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ι">ι</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="κ">κ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="λ">λ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="μ">μ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ν">ν</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ξ">ξ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="o">o</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="π">π</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ρ">ρ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ς">ς</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="σ">σ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="τ">τ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="υ">υ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ϕ">ϕ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="χ">χ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ψ">ψ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ω">ω</div>
                         </div>
                         <div class="grid grid-cols-13 lg:grid-cols-25 items-center times-new-roman">
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="A">A</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Β">Β</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Γ">Γ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Δ">Δ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ε">Ε</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ζ">Ζ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Η">Η</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Θ">Θ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ι">Ι</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Κ">Κ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Λ">Λ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Μ">Μ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ν">Ν</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ξ">Ξ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ο">Ο</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Π">Π</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ρ">Ρ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="A">A</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Β">Β</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Γ">Γ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Δ">Δ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ε">Ε</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ζ">Ζ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Η">Η</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Θ">Θ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ι">Ι</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Κ">Κ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Λ">Λ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Μ">Μ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ν">Ν</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ξ">Ξ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ο">Ο</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Π">Π</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ρ">Ρ</div>
                             <div></div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Σ">Σ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Τ">Τ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white text-sm" value="$\Upsilon$">$\Upsilon$</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Φ">Φ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Χ">Χ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ψ">Ψ</div>
-                            <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ω">Ω</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Σ">Σ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Τ">Τ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white text-sm" value="$\Upsilon$">$\Upsilon$</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Φ">Φ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Χ">Χ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ψ">Ψ</div>
+                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ω">Ω</div>
                         </div>
                     </div>
                     <!-- AKHIR KEYBOARD -->
@@ -357,9 +283,9 @@
 
         <!-- FORM DROPDOWN -->
         <form method="post" id="form-card-internal">
-            <input type="hidden" class="greek-alphabet" value="l" name="materi-id" id="materi-id" value="<?= $belajar['materi_id'] ?>" />
-            <input type="hidden" class="greek-alphabet" value="i" name="sub-materi-id" id="sub-materi-id" value="<?= $belajar['sub_materi_id'] ?>" />
-            <input type="hidden" class="greek-alphabet" value="v" name="total-card" id="total-card" value="<?= $belajar['total_card'] ?>" />
+            <input type="hidden" name="materi-id" id="materi-id" value="<?= $belajar['materi_id'] ?>" />
+            <input type="hidden" name="sub-materi-id" id="sub-materi-id" value="<?= $belajar['sub_materi_id'] ?>" />
+            <input type="hidden" name="total-card" id="total-card" value="<?= $belajar['total_card'] ?>" />
 
             <!-- PEMBUNGKUS PROGRESS BAR DAN TOMBOL-TOMBOL -->
             <div class="w-full grid grid-rows-2 gap-2 sm:gap-0 grid-cols-3 sm:flex sm:flex-row mt-2">
