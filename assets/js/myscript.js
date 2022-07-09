@@ -834,6 +834,8 @@ function greekKeyboard() {
 
 		pertanyaanIni.focus();
 
+		pertanyaanIni.style.backgroundColor = "#fef08a";
+
 		event.preventDefault();
 	})
 	
