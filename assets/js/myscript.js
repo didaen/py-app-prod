@@ -811,18 +811,20 @@ function klikKey(checkboxKey) {
 
 // EVENT BINDING UNTUK MEMASUKKAN HASIL YANG DIKLIK KE DALAM INPUT
 function greekKeyboard() {
+
 	if(document.getElementById("keyboard") !== null) {
 
-		const keyboard = document.getElementById("keyboard");
+		let keyboard = document.getElementById("keyboard");
 
-		const latihan = document.getElementById("latihan");
+		let latihan = document.getElementById("latihan");
 
-		let pertanyaanDiklik = '';
+		let pertanyaanIni = '';
 
 		latihan.addEventListener('click', function(event) {
 
-			if(event.target.classList.contains('pertanyaan'))
-			{
+			if(event.target.classList.contains('pertanyaan')) {
+				
+				pertanyaanIni = event.target;
 
 				keyboard.addEventListener('click', function(event2) {
 					event2.preventDefault();
