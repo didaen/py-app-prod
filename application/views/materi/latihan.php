@@ -180,7 +180,7 @@
                     <!-- KEYBOARD -->
                     <div class="text-base bg-gray-100 text-center rounded p-1 border-2 border-white mt-2 hidden" id="keyboard">
                         <div class="grid grid-cols-13 lg:grid-cols-25 italic items-center katex-math-italic">
-                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="2" onclick="greekKeyboard()">
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="2">
                                 2
                             </button>
                             <div class="bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white">
