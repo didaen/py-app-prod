@@ -183,29 +183,29 @@
                         <div class="grid grid-cols-13 lg:grid-cols-25 italic items-center katex-math-italic">
                             <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="2">2</button>
                             <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="β">β</button>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="γ">γ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="δ">δ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ε">ε</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ζ">ζ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="η">η</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="θ">θ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ι">ι</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="κ">κ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="λ">λ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="μ">μ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ν">ν</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ξ">ξ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="o">o</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="π">π</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ρ">ρ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ς">ς</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="σ">σ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="τ">τ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="υ">υ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ϕ">ϕ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="χ">χ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ψ">ψ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ω">ω</div>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="γ">γ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="δ">δ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ε">ε</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ζ">ζ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="η">η</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="θ">θ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ι">ι</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="κ">κ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="λ">λ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="μ">μ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ν">ν</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ξ">ξ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="o">o</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="π">π</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ρ">ρ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ς">ς</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="σ">σ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="τ">τ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="υ">υ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ϕ">ϕ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="χ">χ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ψ">ψ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ω">ω</button>
                         </div>
                         <div class="grid grid-cols-13 lg:grid-cols-25 items-center times-new-roman">
                             <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="A">A</div>
