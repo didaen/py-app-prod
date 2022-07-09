@@ -788,3 +788,21 @@ function kosong() {
 
 }
 
+
+
+// MEMUNCULKAN NAVIGASI MENU SAAT KLIK IKON HAMBURGER
+function klikKey(checkboxKey) {
+
+	// JIKA CHECKBOX TERCENTANG
+	if (checkboxKey.checked) {
+
+		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
+		document.getElementById("keyboard").style.display = "grid";
+
+		// JIKA CHECKBOX TIDAK TERCENTANG
+	} else {
+
+		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
+		document.getElementById("keyboard").style.display = "";
+	}
+}
