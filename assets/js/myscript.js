@@ -831,5 +831,3 @@ function greekKeyboard() {
 	}
 }
 
-greekKeyboard();
-
