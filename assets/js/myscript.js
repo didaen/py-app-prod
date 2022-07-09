@@ -821,8 +821,6 @@ function greekKeyboard() {
 
 		latihan.addEventListener('click', function(event) {
 
-			event.preventDefault();
-
 			if(event.target.classList.contains('pertanyaan'))
 			{
 
