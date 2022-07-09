@@ -812,13 +812,13 @@ function klikKey(checkboxKey) {
 // EVENT BINDING UNTUK MEMASUKKAN HASIL YANG DIKLIK KE DALAM INPUT
 function greekKeyboard() {
 
-	let latihan = document.getElementById("latihan");
+	let question = document.getElementById("question");
 
 	let keyboard = document.getElementById("keyboard");
 
 	let pertanyaanIni = '';
 
-	latihan.addEventListener('click', function(event) {
+	question.addEventListener('click', function(event) {
 
 		if(event.target.classList.contains('pertanyaan')) {
 			pertanyaanIni = event.target;
