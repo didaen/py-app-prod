@@ -106,6 +106,7 @@
                                                 value="<?= $jawaban_user['answ_' . $box_number] ?>"
                                                 data-nomer-form="<?= $box_number; ?>"
                                                 autocomplete="off"
+                                                onclick="greekKeyboard()"
                                                 />
                                             </form>
                                         </div>
