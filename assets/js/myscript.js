@@ -838,5 +838,3 @@ function greekKeyboard() {
 		});
 	}
 }
-
-greekKeyboard();
