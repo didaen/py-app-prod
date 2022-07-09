@@ -181,7 +181,7 @@
                     <div class="text-base bg-gray-100 text-center rounded p-1 border-2 border-white mt-2 hidden" id="keyboard">
                         <div class="grid grid-cols-13 lg:grid-cols-25 italic items-center katex-math-italic">
                             <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="2">2</button>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="β">β</div>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="β">β</button>
                             <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="γ">γ</div>
                             <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="δ">δ</div>
                             <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ε">ε</div>
