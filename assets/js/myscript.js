@@ -819,11 +819,17 @@ function greekKeyboard() {
 
 		latihan.addEventListener('click', function(event) {
 
+			let pertanyaanValue = event.target.value;
+
 			if(event.target.classList.contains('pertanyaan'))
 			{
 
 				keyboard.addEventListener('click', function(event2) {
-					event.target.value = event2.target.value;
+
+					if(event2.target.classList.contains('greek-alphabet')) {
+
+						pertanyaanValue = event2.target.value;
+					}
 				});
 			}
 		});
