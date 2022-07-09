@@ -340,6 +340,11 @@ function tombolReset() {
 		resetButton.addEventListener("click", function (event) {
 			resetConfirm = confirm("Apakah Anda yakin ingin menghapus semua jawaban pada card ini?");
 			if (resetConfirm) {
+
+				// Reload halaman
+
+				location.reload();
+
 				// MENGIRIMKAN JAWABAN BENAR KE DATABASE
 				let postData = new FormData();
 				semuaPertanyaan.forEach(pertanyaan => {
@@ -357,7 +362,7 @@ function tombolReset() {
 					res;
 				}).catch(console.log);
 
-				location.reload();
+	
 			}
 			event.preventDefault();
 		});
