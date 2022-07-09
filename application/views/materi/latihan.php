@@ -208,31 +208,31 @@
                             <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="ω">ω</button>
                         </div>
                         <div class="grid grid-cols-13 lg:grid-cols-25 items-center times-new-roman">
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="A">A</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Β">Β</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Γ">Γ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Δ">Δ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ε">Ε</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ζ">Ζ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Η">Η</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Θ">Θ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ι">Ι</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Κ">Κ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Λ">Λ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Μ">Μ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ν">Ν</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ξ">Ξ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ο">Ο</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Π">Π</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ρ">Ρ</div>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="A">A</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Β">Β</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Γ">Γ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Δ">Δ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ε">Ε</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ζ">Ζ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Η">Η</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Θ">Θ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ι">Ι</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Κ">Κ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Λ">Λ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Μ">Μ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ν">Ν</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ξ">Ξ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ο">Ο</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Π">Π</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ρ">Ρ</button>
                             <div></div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Σ">Σ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Τ">Τ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white text-sm" value="$\Upsilon$">$\Upsilon$</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Φ">Φ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Χ">Χ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ψ">Ψ</div>
-                            <div class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ω">Ω</div>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Σ">Σ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Τ">Τ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white text-sm" valuebutton\Upsilon$">$\Upsilon$</div>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Φ">Φ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Χ">Χ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ψ">Ψ</button>
+                            <button type="button" class="greek-alphabet bg-gray-200 border border-white rounded hover:bg-gray-300 hover:text-white" value="Ω">Ω</button>
                         </div>
                     </div>
                     <!-- AKHIR KEYBOARD -->
