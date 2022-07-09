@@ -823,6 +823,7 @@ function greekKeyboard() {
 			{
 
 				keyboard.addEventListener('click', function(event2) {
+					console.log(event2.target.value);
 					event.target.value = event2.target.value;
 				});
 			}
