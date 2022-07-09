@@ -832,6 +832,8 @@ function greekKeyboard() {
 
 		pertanyaanIni.value = event.target.value;
 
+		pertanyaanIni.focus();
+
 		event.preventDefault();
 	})
 	
