@@ -812,31 +812,28 @@ function klikKey(checkboxKey) {
 // EVENT BINDING UNTUK MEMASUKKAN HASIL YANG DIKLIK KE DALAM INPUT
 function greekKeyboard() {
 
-	if(document.getElementById("keyboard") !== null) {
+	let latihan = document.getElementById("latihan");
 
-		let keyboard = document.getElementById("keyboard");
+	let keyboard = document.getElementById("keyboard");
 
-		let latihan = document.getElementById("latihan");
+	let pertanyaanIni = '';
 
-		let pertanyaanIni = '';
+	latihan.addEventListener('click', function(event) {
 
-		latihan.addEventListener('click', function(event) {
+		if(event.target.classList.contains('pertanyaan')) {
+			pertanyaanIni = event.target;
+		}
 
-			if(event.target.classList.contains('pertanyaan')) {
-				
-				pertanyaanIni = event.target;
+		event.preventDefault();
+		
+	});
 
-				keyboard.addEventListener('click', function(event2) {
-					event2.preventDefault();
+	keyboard.addEventListener('click', function(event) {
 
-					console.log(event2.target.value);
-					event.target.value = event2.target.value;
+		pertanyaanIni.value = event.target.value;
 
-					
-				});
+		event.preventDefault();
+	})
+	
 
-				event.preventDefault();
-			}
-		});
-	}
 }
