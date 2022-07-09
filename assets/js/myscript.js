@@ -832,6 +832,8 @@ function greekKeyboard() {
 
 					
 				});
+
+				event.preventDefault();
 			}
 		});
 	}
