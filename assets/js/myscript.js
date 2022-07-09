@@ -821,12 +821,18 @@ function greekKeyboard() {
 
 		latihan.addEventListener('click', function(event) {
 
+			event.preventDefault();
+
 			if(event.target.classList.contains('pertanyaan'))
 			{
 
 				keyboard.addEventListener('click', function(event2) {
+					event2.preventDefault();
+
 					console.log(event2.target.value);
 					event.target.value = event2.target.value;
+
+					
 				});
 			}
 		});
