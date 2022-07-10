@@ -293,7 +293,7 @@
 
                 <!-- TOMBOL RESET -->
                 <div class="row-start-2 sm:flex-none">
-                    <button class="btn-kecil-merah" id="reset">
+                    <button class="btn-kecil-merah" id="reset" onclick="tombolReset()">
                         Reset
                     </button>
                 </div>
