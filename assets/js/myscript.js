@@ -361,9 +361,14 @@ function tombolReset() {
 						
 			}
 			event.preventDefault();
+
+			// Tunggu 1 detik
+			setTimeout(() => {
+				window.location.reload()
+			}, 1000);
 	
 			// Reload halaman
-			window.location.reload();
+			
 		});
 	
 	}
