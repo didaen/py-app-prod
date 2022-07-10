@@ -352,7 +352,7 @@ function insertDataPembelajaranKosong() {
 
 
 // Tombol Reset untuk mengilangkan SEMUA JAWABAN pada card tersebut atau untuk mereset CARD
-async function tombolReset() {
+function tombolReset() {
 
 	const resetButton =  document.getElementById("reset");
 	const semuaPertanyaan = document.querySelectorAll(".pertanyaan");
@@ -361,7 +361,7 @@ async function tombolReset() {
 		resetConfirm = confirm("Apakah Anda yakin ingin menghapus semua jawaban pada card ini?");
 		if (resetConfirm) {
 
-			await insertDataPembelajaranKosong();
+			insertDataPembelajaranKosong();
 	
 			// Reload halaman
 			window.location.reload();
