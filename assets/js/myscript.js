@@ -330,6 +330,20 @@ sembunyikanLanjutkanBelajarBtn();
 
 
 
+function insertDataPembelajaranKosong() {
+	return fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
+		method: 'POST',
+		mode: 'no-cors',
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: postData
+	}).then((res) => {
+		res;
+	}).catch(console.log);
+}
+
+
 // Tombol Reset untuk mengilangkan SEMUA JAWABAN pada card tersebut atau untuk mereset CARD
 function tombolReset() {
 
@@ -347,16 +361,7 @@ function tombolReset() {
 					postData.append(pertanyaan.id, pertanyaan.value = "");
 				});
 				
-				fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
-					method: 'POST',
-					mode: 'no-cors',
-					headers: {
-						"Content-Type": "application/json"
-					},
-					body: postData
-				}).then((res) => {
-					res;
-				}).catch(console.log);
+				
 
 	
 				// Reload halaman
