@@ -354,27 +354,23 @@ function insertDataPembelajaranKosong() {
 // Tombol Reset untuk mengilangkan SEMUA JAWABAN pada card tersebut atau untuk mereset CARD
 async function tombolReset() {
 
-	if(document.getElementById("reset") !== null) {
-		const resetButton =  document.getElementById("reset");
-		const semuaPertanyaan = document.querySelectorAll(".pertanyaan");
+	const resetButton =  document.getElementById("reset");
+	const semuaPertanyaan = document.querySelectorAll(".pertanyaan");
 
-		resetButton.addEventListener("click", function (event) {
-			resetConfirm = confirm("Apakah Anda yakin ingin menghapus semua jawaban pada card ini?");
-			if (resetConfirm) {
+	resetButton.addEventListener("click", function (event) {
+		resetConfirm = confirm("Apakah Anda yakin ingin menghapus semua jawaban pada card ini?");
+		if (resetConfirm) {
 
-				await insertDataPembelajaranKosong();
+			await insertDataPembelajaranKosong();
 	
-				// Reload halaman
-
-				window.location.reload();
+			// Reload halaman
+			window.location.reload();
 				
-			}
-			event.preventDefault();
-		});
-	}
-}
+		}
+		event.preventDefault();
 
-tombolReset();
+	});
+}
 
 
 
