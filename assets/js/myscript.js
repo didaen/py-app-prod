@@ -330,7 +330,14 @@ sembunyikanLanjutkanBelajarBtn();
 
 
 
-function insertDataPembelajaranKosong(postData) {
+function insertDataPembelajaranKosong() {
+
+	// MENGIRIMKAN JAWABAN BENAR KE DATABASE
+	let postData = new FormData();
+	semuaPertanyaan.forEach(pertanyaan => {
+		postData.append(pertanyaan.id, pertanyaan.value = "");
+	});
+
 	return fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
 		method: 'POST',
 		mode: 'no-cors',
@@ -355,14 +362,7 @@ async function tombolReset() {
 			resetConfirm = confirm("Apakah Anda yakin ingin menghapus semua jawaban pada card ini?");
 			if (resetConfirm) {
 
-				// MENGIRIMKAN JAWABAN BENAR KE DATABASE
-				let postData = new FormData();
-				semuaPertanyaan.forEach(pertanyaan => {
-					postData.append(pertanyaan.id, pertanyaan.value = "");
-				});
-				
-				
-				await insertDataPembelajaranKosong(postData);
+				await insertDataPembelajaranKosong();
 	
 				// Reload halaman
 
