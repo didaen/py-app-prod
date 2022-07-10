@@ -346,7 +346,7 @@ function tombolReset() {
 				postData.append(pertanyaan.id, pertanyaan.value = "");
 			});
 
-			return fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
+			fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
 				method: 'POST',
 				mode: 'no-cors',
 				headers: {
