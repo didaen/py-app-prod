@@ -362,10 +362,10 @@ function tombolReset() {
 			}
 			event.preventDefault();
 	
+			// Reload halaman
+			window.location.reload();
 		});
 	
-		// Reload halaman
-		window.location.reload();
 	}
 
 }
