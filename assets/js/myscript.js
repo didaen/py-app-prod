@@ -330,7 +330,7 @@ sembunyikanLanjutkanBelajarBtn();
 
 
 
-function insertDataPembelajaranKosong() {
+function insertDataPembelajaranKosong(postData) {
 	return fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
 		method: 'POST',
 		mode: 'no-cors',
@@ -345,7 +345,7 @@ function insertDataPembelajaranKosong() {
 
 
 // Tombol Reset untuk mengilangkan SEMUA JAWABAN pada card tersebut atau untuk mereset CARD
-function tombolReset() {
+async function tombolReset() {
 
 	if(document.getElementById("reset") !== null) {
 		const resetButton =  document.getElementById("reset");
@@ -362,7 +362,7 @@ function tombolReset() {
 				});
 				
 				
-
+				await insertDataPembelajaranKosong(postData);
 	
 				// Reload halaman
 
