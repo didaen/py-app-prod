@@ -333,39 +333,45 @@ sembunyikanLanjutkanBelajarBtn();
 // Tombol Reset untuk mengilangkan SEMUA JAWABAN pada card tersebut atau untuk mereset CARD
 function tombolReset() {
 
-	const resetButton =  document.getElementById("reset");
-	const semuaPertanyaan = document.querySelectorAll(".pertanyaan");
+	if (document.getElementById("reset") != null) {
 
-	resetButton.addEventListener("click", function (event) {
-		resetConfirm = confirm("Apakah Anda yakin ingin menghapus semua jawaban pada card ini?");
-		if (resetConfirm) {
+		const resetButton =  document.getElementById("reset");
+		const semuaPertanyaan = document.querySelectorAll(".pertanyaan");
+	
+		resetButton.addEventListener("click", function (event) {
+			resetConfirm = confirm("Apakah Anda yakin ingin menghapus semua jawaban pada card ini?");
+			if (resetConfirm) {
+	
+				// MENGIRIMKAN JAWABAN BENAR KE DATABASE
+				let postData = new FormData();
+				semuaPertanyaan.forEach(pertanyaan => {
+					postData.append(pertanyaan.id, pertanyaan.value = "");
+				});
+	
+				fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
+					method: 'POST',
+					mode: 'no-cors',
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: postData
+				}).then((res) => {
+					res;
+				}).catch(console.log);
+						
+			}
+			event.preventDefault();
+	
+		});
+	
+		// Reload halaman
+		window.location.reload();
+	}
 
-			// MENGIRIMKAN JAWABAN BENAR KE DATABASE
-			let postData = new FormData();
-			semuaPertanyaan.forEach(pertanyaan => {
-				postData.append(pertanyaan.id, pertanyaan.value = "");
-			});
-
-			fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
-				method: 'POST',
-				mode: 'no-cors',
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: postData
-			}).then((res) => {
-				res;
-			}).catch(console.log);
-				
-		}
-		event.preventDefault();
-
-	});
-
-	// Reload halaman
-	window.location.reload();
 }
 
+// Menjalankan function
+tombolReset();
 
 
 
