@@ -356,14 +356,14 @@ function tombolReset() {
 			}).then((res) => {
 				res;
 			}).catch(console.log);
-	
-			// Reload halaman
-			window.location.reload();
 				
 		}
 		event.preventDefault();
 
 	});
+
+	// Reload halaman
+	window.location.reload();
 }
 
 
