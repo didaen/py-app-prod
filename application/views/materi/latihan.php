@@ -54,7 +54,6 @@
                 <div class="flex flex-col" id="question">
                     
                     <?php $j = 0; ?>
-                    <?php $persamaan = false; ?>
 
                     <?php foreach($latihan_soal as $latsol) : ?>
 
@@ -62,6 +61,8 @@
                         <?php $i = (int)$latsol['no_soal']; ?>
                         
                         <?php if($latsol['kategori'] == '1') : ?>
+                            
+                            <?php $persamaan = false; ?>
 
                                 <div class="mb-4">
                                     <?= $latsol['isi']; ?>
