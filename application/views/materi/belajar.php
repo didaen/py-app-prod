@@ -57,7 +57,7 @@
                         <?php if($pel['layout'] == '1') : ?>
 
                             <?php if($pel['kategori'] == '1') : ?>
-                                <div class="flex flex-col mb-4">
+                                <div class="flex flex-col mb-8">
                                     <div>
                                         <?= $pel['isi']; ?>
                                     </div>
