@@ -167,7 +167,7 @@
                             </div>
                             
                             <div class="flex flex-row text-xs font-bold text-blue-1300 mx-auto">
-                                <label for="checkbox-key">Greek Alphabeth</label>
+                                <label for="checkbox-key">Greek Alphabet</label>
                             </div>
 
                         </div>
