@@ -160,14 +160,14 @@
 
                         <!-- TOGGLE KEYBOARD -->
                         <div class="flex flex-row mt-1 mb-1 items-center border border-white rounded w-32">
-                            <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0 cursor-pointer" id="checkbox-nav" onchange="klikKey(this)" autocomplete="off">
+                            <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0 cursor-pointer" id="checkbox-key" onchange="klikKey(this)" autocomplete="off">
 
                             <div class="flex w-6 flex-row bg-gray-200" id="logo-keyboard">
                                 <img src="<?= base_url(); ?>assets/img/keyboard.png" alt="Keyboard Greek Alphabeth" class="w-4 mx-auto">
                             </div>
                             
                             <div class="flex flex-row text-xs font-bold text-blue-1300 mx-auto">
-                                <div>Greek Alphabeth</div>
+                                <label for="checkbox-key">Greek Alphabeth</label>
                             </div>
 
                         </div>
