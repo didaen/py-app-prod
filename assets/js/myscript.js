@@ -872,3 +872,23 @@ function klikCpl(checkboxKey) {
 		document.getElementById("cpl").style.display = "";
 	}
 }
+
+
+
+
+// MEMUNCULKAN NAVIGASI CPL SAAT KLIK TOMBOL SHOW
+function klikCpmk(checkboxKey) {
+
+	// JIKA CHECKBOX TERCENTANG
+	if (checkboxKey.checked) {
+
+		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
+		document.getElementById("cpmk").style.display = "block";
+
+		// JIKA CHECKBOX TIDAK TERCENTANG
+	} else {
+
+		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
+		document.getElementById("cpmk").style.display = "";
+	}
+}
