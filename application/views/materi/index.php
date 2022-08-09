@@ -7,7 +7,7 @@
 
         <!-- CPL -->
         <div class="mb-4">
-            <div class="flex flex-row justify-between">
+            <div class="flex flex-row justify-between space-x-4">
 
                 <div>
                     Graduate learning outcome (GLO)
@@ -16,7 +16,7 @@
                 <div>
 
                     <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="cpl" onchange="klikCpl(this)" autocomplete="off" />
-                    <label for="cpl" class="text-xs cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
+                    <label for="cpl" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
                 </div>
 
             </div>
