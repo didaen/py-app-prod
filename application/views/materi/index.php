@@ -31,7 +31,7 @@
                     Graduate learning outcome (GLO)
                 </div>
 
-                <div class="flex flex-col">
+                <div class="flex flex-col pt-2">
 
                     <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="cpl-btn" onchange="klikCpl(this)" autocomplete="off" />
                     <label for="cpl-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
