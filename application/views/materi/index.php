@@ -6,7 +6,7 @@
 
 
         <!-- MATERI -->
-        <form action="<?= base_url(); ?>materi/sub_materi" method="post">
+        <form action="<?= base_url(); ?>materi/sub_materi" method="post" class="mb-8">
             <label class="block mb-1" for="sub_materi">Pilih Materi : </label>
             <div class="flex flex-col space-y-4">
                 <select class="block h-10 px-2 rounded border-2 outline-none bg-white" id="materi" name="materi">
@@ -74,7 +74,7 @@
 
                 <div class="flex flex-col justify-center">
 
-                    <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="cpmk-btn" onchange="klikCpl(this)" autocomplete="off" />
+                    <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="cpmk-btn" onchange="klikCpmk(this)" autocomplete="off" />
                     <label for="cpmk-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
                 </div>
 
