@@ -865,11 +865,17 @@ function klikCpl(checkboxKey) {
 		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
 		document.getElementById("cpl").style.display = "block";
 
+		// GANTI TULISAN show menjadi hide
+		document.getElementById("label-cpl").innerHTML = "hide";
+
 		// JIKA CHECKBOX TIDAK TERCENTANG
 	} else {
 
 		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
 		document.getElementById("cpl").style.display = "";
+
+		// GANTI TULISAN hide menjadi show
+		document.getElementById("label-cpl").innerHTML = "show";
 	}
 }
 
