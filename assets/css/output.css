@@ -1767,6 +1767,11 @@ body {
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
+.active\:bg-blue-500:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
 .active\:text-white:active {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
