@@ -110,7 +110,7 @@
             <div class="flex flex-row justify-between space-x-4">
 
                 <div class="mb-4">
-                    Course Description)
+                    Course Description
                 </div>
 
                 <div class="flex flex-col justify-center">
@@ -143,12 +143,21 @@
 
         <!-- SUBJECT MATTER -->
         <div class="mb-4">
+            <div class="flex flex-row justify-between space-x-4">
 
-            <p>
-                Subject Matter
-            </p>
+                <div class="mb-4">
+                    Subject Matter
+                </div>
+
+                <div class="flex flex-col justify-center">
+
+                    <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="sm-btn" onchange="klikSm(this)" autocomplete="off" />
+                    <label for="sm-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
+                </div>
+
+            </div>
     
-            <div class="white-box overscroll-auto overflow-auto text-sm">
+            <div class="white-box overscroll-auto overflow-auto text-sm hidden" id="sm">
     
                 <div class="equation-box grid">                         
                                   
