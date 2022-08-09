@@ -912,3 +912,23 @@ function klikCd(checkboxKey) {
 		document.getElementById("cd").style.display = "";
 	}
 }
+
+
+
+
+// MEMUNCULKAN COURSE DESCRIPTION SAAT KLIK TOMBOL SHOW
+function klikSm(checkboxKey) {
+
+	// JIKA CHECKBOX TERCENTANG
+	if (checkboxKey.checked) {
+
+		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
+		document.getElementById("sm").style.display = "block";
+
+		// JIKA CHECKBOX TIDAK TERCENTANG
+	} else {
+
+		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
+		document.getElementById("sm").style.display = "";
+	}
+}
