@@ -40,12 +40,13 @@ class Materi extends CI_Controller
         // Ambil semua course description dalam database
         $data['course_desc'] = $this->Materi_model->getCourseDescByMateriId($materi_id);
 
+        // Ambil semua subject matter dalam database
+        $data['materi'] = $this->Materi_model->getAllMateri();
+
         // Ambil semua materi pembelajaran dalam database
         $data['subject_matter'] = $this->Materi_model->getSubjectMatterByMateriId($materi_id);
 
-        // Ambil semua subject matter dalam database
-        $data['cpmk'] = $this->Materi_model->getAllMateri();
-
+        
         // Judul
         $data['judul'] = 'Materi';
 
