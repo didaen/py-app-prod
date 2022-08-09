@@ -29,8 +29,22 @@ class Materi extends CI_Controller
         // Mengambil data user login dari database berdasarkan session untuk keperluan data user login
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
+        $materi_id = 1;
+
+        // Ambil semua cpl pembelajaran dalam database
+        $data['cpl'] = $this->Materi_model->getCplByMateriId($materi_id);
+
+        // Ambil semua cpmk pembelajaran dalam database
+        $data['cpmk'] = $this->Materi_model->getCpmkByMateriId($materi_id);
+
+        // Ambil semua course description dalam database
+        $data['course_desc'] = $this->Materi_model->getCourseDescByMateriId($materi_id);
+
         // Ambil semua materi pembelajaran dalam database
-        $data['materi'] = $this->Materi_model->getAllMateri();
+        $data['subject_matter'] = $this->Materi_model->getSubjectMatterByMateriId($materi_id);
+
+        // Ambil semua subject matter dalam database
+        $data['cpmk'] = $this->Materi_model->getAllMateri();
 
         // Judul
         $data['judul'] = 'Materi';
