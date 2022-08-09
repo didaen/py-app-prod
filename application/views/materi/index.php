@@ -80,17 +80,13 @@
     
                 <div class="equation-box grid">                         
                                   
-                    <?php foreach ($course_desc as $cd) : ?>
-                        <div class="flex flex-row mb-4">
+                    <div class="flex flex-row mb-4">
     
-                            <div >
-                                <?= $cd['course_desc']; ?>
-                            </div>
-    
+                        <div >
+                            <?= $course_desc['course_desc']; ?>
                         </div>
-                        
-                        <?php $nomer++; ?>
-                    <?php endforeach; ?>
+    
+                    </div>
     
                 </div>
                                     
