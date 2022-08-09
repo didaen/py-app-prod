@@ -13,8 +13,11 @@
                     Graduate learning outcome (GLO)
                 </div>
 
-                <input type="checkbox" class="w-5 h-5 absolute z-10 cursor-pointer" id="cpl" onchange="klikCpl(this)" autocomplete="off" />
-                <label for="cpl" class="btn-kecil">show</label>
+                <div>
+
+                    <input type="checkbox" class="w-5 h-5 absolute z-10 cursor-pointer" id="cpl" onchange="klikCpl(this)" autocomplete="off" />
+                    <label for="cpl" class="px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
+                </div>
 
             </div>
     
