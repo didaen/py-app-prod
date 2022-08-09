@@ -862,7 +862,7 @@ function klikCpl(checkboxKey) {
 	// JIKA CHECKBOX TERCENTANG
 	if (checkboxKey.checked) {
 
-		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
+		// AMBIL ELEMENT DENGAN ID cpl, LALU DISPLAY GANTI block
 		document.getElementById("cpl").style.display = "block";
 
 		// GANTI TULISAN show menjadi hide
@@ -888,14 +888,20 @@ function klikCpmk(checkboxKey) {
 	// JIKA CHECKBOX TERCENTANG
 	if (checkboxKey.checked) {
 
-		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
+		// AMBIL ELEMENT DENGAN ID cpmk, LALU DISPLAY GANTI BLOCK
 		document.getElementById("cpmk").style.display = "block";
+
+		// GANTI TULISAN show menjadi hide
+		document.getElementById("label-cpmk").innerHTML = "hide";
 
 		// JIKA CHECKBOX TIDAK TERCENTANG
 	} else {
 
 		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
 		document.getElementById("cpmk").style.display = "";
+
+		// GANTI TULISAN hide menjadi show
+		document.getElementById("label-cpmk").innerHTML = "show";
 	}
 }
 
@@ -908,14 +914,20 @@ function klikCd(checkboxKey) {
 	// JIKA CHECKBOX TERCENTANG
 	if (checkboxKey.checked) {
 
-		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
+		// AMBIL ELEMENT DENGAN ID cd, LALU DISPLAY GANTI BLOCK
 		document.getElementById("cd").style.display = "block";
+
+		// GANTI TULISAN show menjadi hide
+		document.getElementById("label-cd").innerHTML = "hide";
 
 		// JIKA CHECKBOX TIDAK TERCENTANG
 	} else {
 
 		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
 		document.getElementById("cd").style.display = "";
+
+		// GANTI TULISAN hide menjadi show
+		document.getElementById("label-cd").innerHTML = "show";
 	}
 }
 
@@ -928,13 +940,19 @@ function klikSm(checkboxKey) {
 	// JIKA CHECKBOX TERCENTANG
 	if (checkboxKey.checked) {
 
-		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
+		// AMBIL ELEMENT DENGAN ID sm, LALU DISPLAY GANTI BLOCK
 		document.getElementById("sm").style.display = "block";
+
+		// GANTI TULISAN show menjadi hide
+		document.getElementById("label-sm").innerHTML = "hide";
 
 		// JIKA CHECKBOX TIDAK TERCENTANG
 	} else {
 
 		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
 		document.getElementById("sm").style.display = "";
+
+		// GANTI TULISAN hide menjadi show
+		document.getElementById("label-sm").innerHTML = "show";
 	}
 }
