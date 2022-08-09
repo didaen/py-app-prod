@@ -17,13 +17,13 @@
                 <div class="equation-box grid">                         
                                   
                     <?php $nomer = 1; ?>
-                    <?php foreach ($cpl as $cpl) : ?>
+                    <?php foreach ($cpl as $cplku) : ?>
                         <div class="flex flex-row mb-4">
                             <div class="pr-4">
                                 <?= $nomer; ?>.
                             </div>
                             <div >
-                                <?= $cpl['cpl']; ?>
+                                <?= $cplku['cpl']; ?>
                             </div>
                         </div>
                         
