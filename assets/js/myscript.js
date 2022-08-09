@@ -869,6 +869,6 @@ function klikCpl(checkboxKey) {
 	} else {
 
 		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
-		document.getElementById("keyboard").style.display = "";
+		document.getElementById("cpl").style.display = "";
 	}
 }
