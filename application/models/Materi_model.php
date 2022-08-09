@@ -3,6 +3,45 @@
 class Materi_model extends CI_model
 {
 
+
+
+    
+    // METHOD INI UNTUK MENAMPILKAN CPL
+    public function getCplByMateriId($materi_id)
+    {
+        return $this->db->get_where('cpl', ['materi' => $materi_id])->row_array();
+    }
+
+
+
+
+    // METHOD INI UNTUK MENAMPILKAN CPMK
+    public function getCpmkByMateriId($materi_id)
+    {
+        return $this->db->get_where('cpmk', ['materi' => $materi_id])->row_array();
+    }
+
+
+
+
+    // METHOD INI UNTUK MENAMPILKAN COURSE DESCRIPTION
+    public function getCourseDescByMateriId($materi_id)
+    {
+        return $this->db->get_where('course_desc', ['materi' => $materi_id])->row_array();
+    }
+
+
+
+
+    // METHOD INI UNTUK MENAMPILKAN SUBJECT MATTER
+    public function getSubjectMatterByMateriId($materi_id)
+    {
+        return $this->db->get_where('subject_matter', ['materi' => $materi_id])->row_array();
+    }
+    
+
+
+
     // METHOD INI UNTUK MENAMPILKAN SELURUH MATERI
     public function getAllMateri()
     {
@@ -10,11 +49,18 @@ class Materi_model extends CI_model
         return $this->db->get('materi')->result_array();
     }
 
+
+
+
+
     // METHOD UNTUK MENDAPATKAN NAMA MATERI BERDASARKAN ID MATERI
     public function getMateriNameById($materi_id)
     {
         return $this->db->get_where('materi', ['id' => $materi_id])->row_array();
     }
+
+
+
 
     // METHOD INI UNTUK MENAMPILKAN SUBMATERI DARI MATERI YANG DIPILIH
     public function getSubMateriByMateriId($materi_id)
@@ -23,11 +69,17 @@ class Materi_model extends CI_model
         return $this->db->get_where('1_sub_materi', ['materi' => $materi_id])->result_array();
     }
 
+
+
+
     // METHOD UNTUK MENDAPATKAN NAMA SUB MATERI BERDASARKAN ID SUB MATERI
     public function getSubMateriNameById($sub_materi_id)
     {
         return $this->db->get_where('1_sub_materi', ['id' => $sub_materi_id])->row_array();
     }
+
+
+
 
     // METHOD INI UNTUK MENAMPILKAN JUMLAH CARD BERDASARKAN ID MATERI DAN ID SUB MATERI
     public function getTotalCardByMateriIdAndSubMateriId($materi_id, $sub_materi_id)
@@ -38,6 +90,7 @@ class Materi_model extends CI_model
             'sub_materi' => $sub_materi_id
         ])->row_array();
     }
+
 
 
 
@@ -56,6 +109,7 @@ class Materi_model extends CI_model
         }
     }
 
+
     
 
     // Method untuk mendapatkan total pertanyaan sesuai materi id, sub materi id, dan card number
@@ -73,6 +127,8 @@ class Materi_model extends CI_model
             return false;
         }
     }
+
+
 
 
     // Method untuk mendapatkan jawaban sesui materi id, sub materi id, dan card number
@@ -99,6 +155,9 @@ class Materi_model extends CI_model
             return false;
         }
     }
+
+
+
 
     // Method ini untuk mengambil jawaban user jika ada
     public function getJawabanCardUser($user_id, $materi_id, $sub_materi_id, $card_number, $total_pertanyaan)
@@ -129,6 +188,7 @@ class Materi_model extends CI_model
 
 
 
+
     // Method untuk mengambil jumlah klik yang telah user lakukan untuk membuka kuncu jawaban
     public function getJumlahKlik($username, $materi_id, $sub_materi_id, $card) 
     {
@@ -146,6 +206,7 @@ class Materi_model extends CI_model
             return false;
         }
     }
+
 
 
 
@@ -167,6 +228,7 @@ class Materi_model extends CI_model
 
 
 
+
     // Method untuk mengambil materi dalam card
     public function getMateriCard($materi_id, $sub_materi_id, $card)
     {
@@ -182,6 +244,7 @@ class Materi_model extends CI_model
             return false;
         }
     }
+
 
 
 
@@ -203,6 +266,7 @@ class Materi_model extends CI_model
 
 
 
+
     // Method untuk memanggil jenis atau kategori suatu card termasuk belajar atau latihan
     public function getJenisCard($materi_id, $sub_materi_id, $card_number)
     {
@@ -218,6 +282,9 @@ class Materi_model extends CI_model
             return false;
         }
     }
+
+
+
 
     // Method untuk memanggil jenis atau kategori suatu card termasuk belajar atau latihan
     public function getKeteranganJenisCard($jenis_card)
