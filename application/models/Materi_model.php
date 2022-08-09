@@ -9,7 +9,7 @@ class Materi_model extends CI_model
     // METHOD INI UNTUK MENAMPILKAN CPL
     public function getCplByMateriId($materi_id)
     {
-        return $this->db->get_where('cpl', ['materi' => $materi_id])->row_array();
+        return $this->db->get_where('cpl', ['materi' => $materi_id])->result_array();
     }
 
 
@@ -18,7 +18,7 @@ class Materi_model extends CI_model
     // METHOD INI UNTUK MENAMPILKAN CPMK
     public function getCpmkByMateriId($materi_id)
     {
-        return $this->db->get_where('cpmk', ['materi' => $materi_id])->row_array();
+        return $this->db->get_where('cpmk', ['materi' => $materi_id])->result_array();
     }
 
 
@@ -33,22 +33,21 @@ class Materi_model extends CI_model
 
 
 
-    // METHOD INI UNTUK MENAMPILKAN SUBJECT MATTER
-    public function getSubjectMatterByMateriId($materi_id)
-    {
-        return $this->db->get_where('subject_matter', ['materi' => $materi_id])->row_array();
-    }
-    
-
-
-
     // METHOD INI UNTUK MENAMPILKAN SELURUH MATERI
     public function getAllMateri()
     {
         // Method
         return $this->db->get('materi')->result_array();
     }
-
+    
+    
+    
+    
+    // METHOD INI UNTUK MENAMPILKAN SUBJECT MATTER
+    public function getSubjectMatterByMateriId($materi_id)
+    {
+        return $this->db->get_where('subject_matter', ['materi' => $materi_id])->result_array();
+    }
 
 
 
