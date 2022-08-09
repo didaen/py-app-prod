@@ -107,18 +107,27 @@
 
         <!-- COURSE DESCRIPTION -->
         <div class="mb-4">
+            <div class="flex flex-row justify-between space-x-4">
 
-            <p>
-                Course Description
-            </p>
+                <div class="mb-4">
+                    Course Description)
+                </div>
+
+                <div class="flex flex-col justify-center">
+
+                    <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="cd-btn" onchange="klikCd(this)" autocomplete="off" />
+                    <label for="cd-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
+                </div>
+
+            </div>
     
-            <div class="white-box overscroll-auto overflow-auto text-sm">
+            <div class="white-box overscroll-auto overflow-auto text-sm hidden" id="cd">
     
                 <div class="equation-box grid">                         
                                   
                     <div class="flex flex-row mb-4">
     
-                        <div >
+                        <div class="text-justify">
                             <?= $course_desc['course_desc']; ?>
                         </div>
     
