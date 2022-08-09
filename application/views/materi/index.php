@@ -7,10 +7,16 @@
 
         <!-- CPL -->
         <div class="mb-4">
+            <div class="flex flex-row justify-between">
 
-            <p>
-                Graduate learning outcome (GLO)
-            </p>
+                <div>
+                    Graduate learning outcome (GLO)
+                </div>
+
+                <input type="checkbox" class="w-5 h-5 absolute z-10 cursor-pointer" id="cpl" onchange="klikCpl(this)" autocomplete="off" />
+                <label for="cpl" class="btn-kecil">show</label>
+
+            </div>
     
             <div class="white-box overscroll-auto overflow-auto text-sm">
     
