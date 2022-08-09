@@ -33,7 +33,6 @@ class Materi extends CI_Controller
 
         // Ambil semua cpl pembelajaran dalam database
         $data['cpl'] = $this->Materi_model->getCplByMateriId($materi_id);
-        var_dump($data['cpl']);
 
         // Ambil semua cpmk pembelajaran dalam database
         $data['cpmk'] = $this->Materi_model->getCpmkByMateriId($materi_id);
