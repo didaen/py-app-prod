@@ -876,7 +876,7 @@ function klikCpl(checkboxKey) {
 
 
 
-// MEMUNCULKAN NAVIGASI CPL SAAT KLIK TOMBOL SHOW
+// MEMUNCULKAN NAVIGASI CPMK SAAT KLIK TOMBOL SHOW
 function klikCpmk(checkboxKey) {
 
 	// JIKA CHECKBOX TERCENTANG
@@ -890,5 +890,25 @@ function klikCpmk(checkboxKey) {
 
 		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
 		document.getElementById("cpmk").style.display = "";
+	}
+}
+
+
+
+
+// MEMUNCULKAN COURSE DESCRIPTION SAAT KLIK TOMBOL SHOW
+function klikCd(checkboxKey) {
+
+	// JIKA CHECKBOX TERCENTANG
+	if (checkboxKey.checked) {
+
+		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAY GANTI FLEX
+		document.getElementById("cd").style.display = "block";
+
+		// JIKA CHECKBOX TIDAK TERCENTANG
+	} else {
+
+		// AMBIL ELEMENT DENGAN ID keyboard, LALU DISPLAYNYA DIKOSONGI
+		document.getElementById("cd").style.display = "";
 	}
 }
