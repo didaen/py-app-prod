@@ -75,7 +75,7 @@
                 <div class="flex flex-col">
 
                     <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="cpmk-btn" onchange="klikCpmk(this)" autocomplete="off" />
-                    <label for="cpmk-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
+                    <label for="cpmk-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 active:bg-blue-500 focus:bg-blue-500 text-white text-center rounded transition duration-300">show</label>
                 </div>
 
             </div>
@@ -116,7 +116,7 @@
                 <div class="flex flex-col">
 
                     <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="cd-btn" onchange="klikCd(this)" autocomplete="off" />
-                    <label for="cd-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
+                    <label for="cd-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 active:bg-blue-500 focus:bg-blue-500 text-white text-center rounded transition duration-300">show</label>
                 </div>
 
             </div>
@@ -152,7 +152,7 @@
                 <div class="flex flex-col">
 
                     <input type="checkbox" class="w-5 h-5 absolute z-10 opacity-0" id="sm-btn" onchange="klikSm(this)" autocomplete="off" />
-                    <label for="sm-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 text-white text-center rounded transition duration-300">show</label>
+                    <label for="sm-btn" class="text-sm cursor-pointer px-1 bg-blue-500 hover:bg-blue-400 active:bg-blue-500 focus:bg-blue-500 text-white text-center rounded transition duration-300">show</label>
                 </div>
 
             </div>
