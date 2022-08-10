@@ -1525,6 +1525,10 @@ body {
   padding-right: 2.5rem;
 }
 
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
 .pr-4 {
   padding-right: 1rem;
 }
@@ -1535,10 +1539,6 @@ body {
 
 .pb-0 {
   padding-bottom: 0px;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
 }
 
 .text-center {
@@ -1757,19 +1757,14 @@ body {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
-.active\:bg-blue-1100:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(88 133 175 / var(--tw-bg-opacity));
-}
-
-.active\:bg-blue-400:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
-
 .active\:bg-blue-500:active {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.active\:bg-blue-1100:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(88 133 175 / var(--tw-bg-opacity));
 }
 
 .active\:text-white:active {
@@ -1812,10 +1807,6 @@ body {
 
   .sm\:flex-row {
     flex-direction: row;
-  }
-
-  .sm\:justify-start {
-    justify-content: flex-start;
   }
 
   .sm\:gap-0 {
