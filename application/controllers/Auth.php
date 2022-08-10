@@ -33,7 +33,7 @@ class Auth extends CI_Controller
         if($this->session->userdata('email')) {
 
             // Apabila user kembali ke controller auth, kembalikan ke controller user
-            redirect('user');
+            redirect('home');
         }
 
 
