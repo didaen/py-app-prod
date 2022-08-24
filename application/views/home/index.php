@@ -10,7 +10,7 @@
                 <div class="flex flex-row justify-end space-x-2">
                     <a href="<?= base_url('materi'); ?>" class="btn-kecil bg-indigo-600 hover:bg-indigo-500 text-gray-200">Belajar dulu</a>
                     <a href="https://www.youtube.com/channel/UC9hGq1nEAfPOvn4U41JLNSA" target=”_blank” class="btn-kecil bg-orange-600 hover:bg-orange-500 text-gray-200">Tutorial</a>
-                    <a href="#" class="btn-kecil">Isi angket</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScpewjOpN11Mm3miZkz1JHIlapnFrQlVwOeMo8IjQk6LpQtkA/viewform?usp=sf_link" target=”_blank” class="btn-kecil">Isi angket</a>
                 </div>
             </div>
 
@@ -22,7 +22,7 @@
         <div class="flex flex-col justify-end space-y-2 sm:space-x-2">
             <a href="<?= base_url('materi'); ?>" class="btn-kecil bg-indigo-600 hover:bg-indigo-500">Belajar dulu</a>
             <a href="https://www.youtube.com/channel/UC9hGq1nEAfPOvn4U41JLNSA" target=”_blank” class="btn-kecil bg-orange-600 hover:bg-orange-500">Tutorial</a>
-            <a href="#" class="btn-kecil">Isi angket</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScpewjOpN11Mm3miZkz1JHIlapnFrQlVwOeMo8IjQk6LpQtkA/viewform?usp=sf_link" target=”_blank” class="btn-kecil">Isi angket</a>
         </div>
     </div>
 
