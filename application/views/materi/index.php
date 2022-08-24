@@ -28,7 +28,7 @@
             <div class="flex flex-row justify-between space-x-4">
 
                 <div class="mb-4">
-                    Graduate learning outcome (GLO)
+                    Capaian Pembelajaran Lulusan (CPL)
                 </div>
 
                 <div class="flex flex-col pt-2">
@@ -69,7 +69,7 @@
             <div class="flex flex-row justify-between space-x-4">
 
                 <div class="mb-4">
-                    Course learning outcome (CLO)
+                    Capaian Pembelajaran Mata Kuliah (CPMK)
                 </div>
 
                 <div class="flex flex-col">
@@ -110,7 +110,7 @@
             <div class="flex flex-row justify-between space-x-4">
 
                 <div class="mb-4">
-                    Course Description
+                    Deskripsi Mata Kuliah
                 </div>
 
                 <div class="flex flex-col">
@@ -146,7 +146,7 @@
             <div class="flex flex-row justify-between space-x-4">
 
                 <div class="mb-4">
-                    Subject Matter
+                    Materi Pembelajaran
                 </div>
 
                 <div class="flex flex-col">
