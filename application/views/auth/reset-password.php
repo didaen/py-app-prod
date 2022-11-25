@@ -29,18 +29,18 @@
             <div class="flex flex-col space-y-5">
 
                 <div>
-                    <label for="password1" class="text-gray-500">Password Baru</label>
+                    <label for="password1" class="text-gray-700">Password Baru</label>
 
                     <input type="password" class="flex-1 w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="password1" id="password1">
 
-                    <p class="py-1 text-xs italic text-gray-500">Min. 6 karakter</p>
+                    <p class="py-1 text-xs italic text-gray-700">Min. 6 karakter</p>
 
                     <!-- Jika terdapat error pada field Password akan ditampilkan di sini -->
                     <?= form_error('password1', '<p class="text-sm text-red-600 italic">', '</p>'); ?>
                 </div>
 
                 <div>
-                    <label for="password2" class="text-gray-500">Ulangi Password</label>
+                    <label for="password2" class="text-gray-700">Ulangi Password</label>
 
                     <input type="password" class="flex-1 w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="password2" id="password2">
 
