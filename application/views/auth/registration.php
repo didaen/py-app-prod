@@ -17,11 +17,11 @@
         <form method="post" action="<?= base_url('auth/registration'); ?>" class="space-y-5">
 
             <div>
-                <label for="username" class="block text-gray-500">Username</label>
+                <label for="username" class="block text-gray-700">Username</label>
 
                 <input type="text" class="w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="username" id="username" placeholder="Dida_En97" value="<?= set_value('username'); ?>">
 
-                <p class="py-1 text-xs italic text-gray-500">Huruf, angka, dash ( - ), dan underscore ( _ )</p>
+                <p class="py-1 text-xs italic text-gray-700">Huruf, angka, dash ( - ), dan underscore ( _ )</p>
 
                 <!-- Jika terdapat error pada field Username akan ditampilkan di sini -->
                 <?= form_error('username', '<p class="text-sm text-red-600 italic">', '</p>'); ?>
@@ -30,7 +30,7 @@
 
             <div>
 
-                <label for="nim" class="block text-gray-500">NIM</label>
+                <label for="nim" class="block text-gray-700">NIM</label>
 
                 <input type="text" class="w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="nim" id="nim" placeholder="4201415035" value="<?= set_value('nim'); ?>">
 
@@ -41,7 +41,7 @@
 
             <div>
 
-                <label for="email" class="block text-gray-500">Email</label>
+                <label for="email" class="block text-gray-700">Email</label>
 
                 <input type="text" class="w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="email" id="email" placeholder="firda@gmail.com" value="<?= set_value('email'); ?>">
 
@@ -54,11 +54,11 @@
 
                 <div>
 
-                    <label for="password1" class="text-gray-500">Password</label>
+                    <label for="password1" class="text-gray-700">Password</label>
 
                     <input type="password" class="flex-1 w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="password1" id="password1">
 
-                    <p class="py-1 text-xs italic text-gray-500">Min. 6 karakter</p>
+                    <p class="py-1 text-xs italic text-gray-700">Min. 6 karakter</p>
 
                     <!-- Jika terdapat error pada field Password akan ditampilkan di sini -->
                     <?= form_error('password1', '<p class="text-sm text-red-600 italic">', '</p>'); ?>
@@ -68,7 +68,7 @@
 
                 <div>
 
-                    <label for="password2" class="text-gray-500">Ulangi Password</label>
+                    <label for="password2" class="text-gray-700">Ulangi Password</label>
 
                     <input type="password" class="flex-1 w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="password2" id="password2">
 
