@@ -29,7 +29,7 @@
             <!-- EMAIL -->
             <div>
 
-                <label for="email" class="block text-gray-500">Email</label>
+                <label for="email" class="block text-gray-700">Email</label>
 
                 <input type="text" class="input" name="email" id="email" value="<?= set_value('email'); ?>">
 
