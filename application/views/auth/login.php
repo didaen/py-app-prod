@@ -83,7 +83,7 @@
 
             <div>
 
-                <label for="username" class="block text-gray-500">Username</label>
+                <label for="username" class="block text-gray-700">Username</label>
 
                 <input type="text" class="input" name="username" id="username" value="<?= set_value('username'); ?>">
 
@@ -93,7 +93,7 @@
             </div>
 
             <div>
-                <label for="password" class="block text-gray-500">Password</label>
+                <label for="password" class="block text-gray-700">Password</label>
 
                 <input type="password" class="input" name="password" id="password" value="<?= set_value('password'); ?>">
 
