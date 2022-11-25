@@ -60,7 +60,7 @@
 <body>
 
     <!-- PEMBUNGKUS HEADER, ISI DENGAN FOOTER -->
-    <div class="lg:w-3/5 flex flex-col min-h-screen mx-auto justify-between bg-blue-1600">
+    <div class="lg:w-3/5 flex flex-col min-h-screen mx-auto justify-between bg-blue-1700">
 
 
         <!-- LATAR BELAKANG BIRU MUDA -->
