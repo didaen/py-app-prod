@@ -7,75 +7,75 @@
 	@font-face {
 		font-family: "Lovelo-LineBold";
 		font-style: bold;
-		src: url("https://www.physicsyourself.com/assets/fonts/Lovelo-LineBold.woff")
+		src: url("http://localhost/py-app-prod/assets/fonts/Lovelo-LineBold.woff")
 			format("woff");
 	}
 
 	@font-face {
 		font-family: "Lovelo-LineBold";
 		font-style: bold;
-		src: url("https://www.physicsyourself.com/assets/fonts/Lovelo-LineBold.woff2")
+		src: url("http://localhost/py-app-prod/assets/fonts/Lovelo-LineBold.woff2")
 			format("woff2");
 	}
 
 	@font-face {
 		font-family: "KaTeX_Math-Italic";
 		font-style: italic;
-		src: url("https://www.physicsyourself.com/assets/fonts/KaTeX_Math-Italic.woff")
+		src: url("http://localhost/py-app-prod/assets/fonts/KaTeX_Math-Italic.woff")
 			format("woff");
 	}
 
 	@font-face {
 		font-family: "KaTeX_Math-Italic";
 		font-style: italic;
-		src: url("https://www.physicsyourself.com/assets/fonts/KaTeX_Math-Italic.woff2")
+		src: url("http://localhost/py-app-prod/assets/fonts/KaTeX_Math-Italic.woff2")
 			format("woff2");
 	}
 
 	@font-face {
 		font-family: "KaTeX_Main-Regular";
 		font-style: normal;
-		src: url("https://www.physicsyourself.com/assets/fonts/KaTeX_Main-Regular.woff")
+		src: url("http://localhost/py-app-prod/assets/fonts/KaTeX_Main-Regular.woff")
 			format("woff");
 	}
 
 	@font-face {
 		font-family: "KaTeX_Main-Regular";
 		font-style: normal;
-		src: url("https://www.physicsyourself.com/assets/fonts/KaTeX_Main-Regular.woff2")
+		src: url("http://localhost/py-app-prod/assets/fonts/KaTeX_Main-Regular.woff2")
 			format("woff2");
 	}
 
 	@font-face {
 		font-family: "KaTeX_Main-Italic";
 		font-style: normal;
-		src: url("https://www.physicsyourself.com/assets/fonts/KaTeX_Main-Italic.woff")
+		src: url("http://localhost/py-app-prod/assets/fonts/KaTeX_Main-Italic.woff")
 			format("woff");
 	}
 
 	@font-face {
 		font-family: "KaTeX_Main-Italic";
 		font-style: normal;
-		src: url("https://www.physicsyourself.com/assets/fonts/KaTeX_Main-Italic.woff2")
+		src: url("http://localhost/py-app-prod/assets/fonts/KaTeX_Main-Italic.woff2")
 			format("woff2");
 	}
 
 	@font-face {
 		font-family: "KaTeX_Main-Bold";
 		font-style: bold;
-		src: url("https://www.physicsyourself.com/assets/fonts/KaTeX_Main-Bold.woff")
+		src: url("http://localhost/py-app-prod/assets/fonts/KaTeX_Main-Bold.woff")
 			format("woff");
 	}
 
 	@font-face {
 		font-family: "KaTeX_Main-Bold";
 		font-style: bold;
-		src: url("https://www.physicsyourself.com/assets/fonts/KaTeX_Main-Bold.woff2")
+		src: url("http://localhost/py-app-prod/assets/fonts/KaTeX_Main-Bold.woff2")
 			format("woff2");
 	}
 
 	body {
-		background-image: url("https://www.physicsyourself.com/assets/img/memphis.png");
+		background-image: url("http://localhost/py-app-prod/assets/img/memphis.png");
 		background-attachment: fixed;
 	}
 
