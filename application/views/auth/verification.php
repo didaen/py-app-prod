@@ -33,7 +33,7 @@
 
             <div>
 
-                <label for="token" class="block text-gray-500">Kode Verifikasi</label>
+                <label for="token" class="block text-gray-700">Kode Verifikasi</label>
 
                 <input type="text" class="input" name="token" id="token">
 
