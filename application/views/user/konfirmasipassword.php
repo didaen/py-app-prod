@@ -18,7 +18,7 @@
             <!-- PASSWORD DAN ULANGI PASSWORD -->
             <div class="flex flex-col">
 
-                <label for="password1" class="text-gray-500">Password lama</label>
+                <label for="password1" class="text-gray-700">Password lama</label>
 
                 <input type="password" class="flex-1 w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="password" id="password">
 
