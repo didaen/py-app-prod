@@ -4,7 +4,7 @@
     <h2 class="w-full bg-gray-300 text-lg font-bold text-blue-1300 text-center py-3">Edit Profil</h2>
     <!-- AKHIR JUDUL EDIT PROFIL -->
 
-    <div class="bg-white py-6 px-10 sm:px-16 border-dashed border-l-8 border-r-8 border-blue-1400 w-full">
+    <div class="bg-white py-6 px-10 sm:px-16 border-dashed border-l-8 border-r-8 border-blue-1700 w-full">
 
         <?php if ($this->session->flashdata('gagal_ganti_profil')) : ?>
             <div class="w-full bg-red-100 text-red-600 border border-red-300 px-3 py-1 mb-4 rounded">

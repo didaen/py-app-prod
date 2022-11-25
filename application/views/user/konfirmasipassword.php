@@ -4,7 +4,7 @@
     <h2 class="w-full bg-gray-300 text-lg font-bold text-blue-1300 text-center py-3">Ubah Password</h2>
     <!-- AKHIR JUDUL EDIT PROFIL -->
 
-    <div class="w-full bg-white py-6 px-10 sm:px-16 border-dashed border-l-8 border-r-8 border-blue-1400">
+    <div class="w-full bg-white py-6 px-10 sm:px-16 border-dashed border-l-8 border-r-8 border-blue-1700">
 
         <?php if ($this->session->flashdata('salah_password')) : ?>
             <div class="w-full bg-red-100 text-red-600 border border-red-300 px-3 py-1 mb-4 rounded">
