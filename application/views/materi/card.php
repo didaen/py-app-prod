@@ -3,7 +3,7 @@
 
     <h1 class="bg-gray-300 text-lg font-bold text-blue-1300 text-center py-3">Card Sub Materi</h1>
 
-    <div class="bg-white text-gray-700 rounded px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400">
+    <div class="bg-white text-gray-700 rounded px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1700">
 
         <form method="post" id="form-card">
             <input type="hidden" name="materi-id" value="<?= $card['materi'] ?>" />
