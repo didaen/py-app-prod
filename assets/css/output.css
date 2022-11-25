@@ -516,8 +516,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 body {
-  background-image: url("http://[::1]/py-app-prod/assets/img/memphis.png");
-  background-attachment: fixed;
+  background-color: #b6cddb;
 }
 
 /* STYLE */
@@ -1611,11 +1610,6 @@ body {
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .text-blue-600 {
