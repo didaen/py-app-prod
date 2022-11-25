@@ -41,7 +41,7 @@
         <!-- AKHIR PEMBUNGKUS NOMOR CARD -->
 
         <!-- ___FORM DAN ISI___ -->
-        <div class="flex flex-col text-base text-justify bg-white text-gray-600 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400" id="belajar">
+        <div class="flex flex-col text-base text-justify bg-white text-gray-700 px-4 sm:px-8 py-8 border-dashed border-l-8 border-r-8 border-blue-1400" id="belajar">
 
             
             
@@ -232,7 +232,7 @@
     <div>
 
         <!-- PERINGATAN APABILA ADA SCROLLBAR -->
-        <div class="w-full text-gray-600 bg-red-300 hidden text-center text-sm px-4 py-2" id="peringatan">
+        <div class="w-full text-gray-700 bg-red-300 hidden text-center text-sm px-4 py-2" id="peringatan">
             Persamaan masih panjang. Geser kotak di atas.
         </div>
         <!-- AKHIR PERINGATAN APABILA ADA SCROLLBAR -->
@@ -268,7 +268,7 @@
             <!-- AKHIR PEMBUNGKUS PROGRESS BAR DAN TOMBOL-TOMBOL -->
 
             <!-- MENU DROPDOWN -->
-            <div class="my-5 px-4 sm:px-8 py-4 text-gray-600">
+            <div class="my-5 px-4 sm:px-8 py-4 text-gray-700">
 
                 <!-- LABEL PILIH CARD -->
                 <label class="block text-sm mb-1" for="card-internal">
