@@ -24,7 +24,7 @@
                 <div>
                     <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" alt="Pengembang" class="w-20 sm:w-28">
                 </div>
-                <div class="sm:flex flex-row items-center gap-4 text-gray-600 hidden">
+                <div class="sm:flex flex-row items-center gap-4 text-gray-700 hidden">
                     <div class="font-medium">
                         <div>Username</div>
                         <div>Role</div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="block sm:hidden text-gray-600 text-center">
+                    <div class="block sm:hidden text-gray-700 text-center">
                         <div class="font-medium">Username</div>
                         <div><?= $user['username']; ?></div>
                         <div class="font-medium">Role</div>
