@@ -17,7 +17,7 @@
 
             <!-- USERNAME -->
             <div>
-                <label for="username" class="block text-gray-500">Username</label>
+                <label for="username" class="block text-gray-700">Username</label>
 
                 <input type="text" class="w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200" name="username" id="username" value="<?= $user['username']; ?>">
 
@@ -28,7 +28,7 @@
 
             <!-- EDIT FOTO PROFIL -->
             <div class="space-y-2">
-                <label for="image" class="block text-gray-500">Foto Profil</label>
+                <label for="image" class="block text-gray-700">Foto Profil</label>
 
                 <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
                     <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" alt="Foto Profil User" class="w-16">
@@ -37,7 +37,7 @@
                 </div>
 
             </div>
-            <p class="py-1 text-xs italic text-gray-500">Ukuran Max. 2 MB, format .jpg atau .png</p>
+            <p class="py-1 text-xs italic text-gray-700">Ukuran Max. 2 MB, format .jpg atau .png</p>
             <!-- AKHIR EDIT FOTO PROFIL -->
 
 
