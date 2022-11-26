@@ -9,7 +9,7 @@
 
     <!-- FOOTER WEB -->
     <div class="w-full p-2 bg-blue-1300 text-white text-sm text-center">
-        Copyright 2019 by Firda Nur Baiti
+        Copyright 2021 by Firda Nur Baiti
     </div>
     <!-- AKHIR FOOTER WEB -->
 
