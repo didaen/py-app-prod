@@ -220,9 +220,12 @@ class Auth extends CI_Controller
             // Membuat variabel email
             $email = htmlspecialchars($this->input->post('email', true));
 
+            // Membuat variabel username untuk mengatasi user yg lupa username
+            $username = htmlspecialchars($this->input->post('username', true));
+
             // Jika data berhasil ditambahkan
             $data = [
-                'username' => htmlspecialchars($this->input->post('username', true)),
+                'username' => $username,
 
                 'nim' => htmlspecialchars($this->input->post('nim', true)),
 
@@ -285,7 +288,7 @@ class Auth extends CI_Controller
                         $this->db->insert('user_token', $user_token);
             
                         // Mengirimkan Email
-                        $this->_sendEmail($email, $token, 'verify');
+                        $this->_sendEmail($email, $username, $token, 'verify');
             
                         // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
                         $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode verifikasi.');
@@ -310,7 +313,7 @@ class Auth extends CI_Controller
                     $this->db->insert('user_token', $user_token);
         
                     // Mengirimkan Email
-                    $this->_sendEmail($email, $token, 'verify');
+                    $this->_sendEmail($email, $username, $token, 'verify');
         
                     // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
                     $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode verifikasi.');
@@ -335,7 +338,7 @@ class Auth extends CI_Controller
                 $this->db->insert('user_token', $user_token);
     
                 // Mengirimkan Email
-                $this->_sendEmail($email, $token, 'verify');
+                $this->_sendEmail($email, $username, $token, 'verify');
     
                 // Menampilkan pesan flas AKHUB BARU BERHASIL DIBUAT dulu sebelum redirect
                 $this->session->set_flashdata('akun_baru', 'Selamat! Anda sudah berhasil membuat akun. Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode verifikasi.');
@@ -383,6 +386,9 @@ class Auth extends CI_Controller
             // Jika variabel user ada ada valid atau terbentuk
             if($user) {
                 
+                // Membuat variabel username
+                $username = $user['username'];
+
                 // Membuat 6 angka random
                 $token = rand(111111,999999);
 
@@ -426,7 +432,7 @@ class Auth extends CI_Controller
                             $this->db->insert('user_token', $user_token);
 
                             // Kirim email dengan type 'forgot' yang khusus untuk menangani forgot password
-                            $this->_sendEmail($email, $token, 'forgot');
+                            $this->_sendEmail($email, $username, $token, 'forgot');
 
                             // Tampilkan pesan berhasil forgot password
                             $this->session->set_flashdata('forgot_berhasil', 'Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode untuk memperbarui password Anda.');
@@ -447,7 +453,7 @@ class Auth extends CI_Controller
                         $this->db->insert('user_token', $user_token);
 
                         // Kirim email dengan type 'forgot' yang khusus untuk menangani forgot password
-                        $this->_sendEmail($email, $token, 'forgot');
+                        $this->_sendEmail($email, $username, $token, 'forgot');
 
                         // Tampilkan pesan berhasil forgot password
                         $this->session->set_flashdata('forgot_berhasil', 'Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode untuk memperbarui password Anda.');
@@ -468,7 +474,7 @@ class Auth extends CI_Controller
                     $this->db->insert('user_token', $user_token);
 
                     // Kirim email dengan type 'forgot' yang khusus untuk menangani forgot password
-                    $this->_sendEmail($email, $token, 'forgot');
+                    $this->_sendEmail($email, $username, $token, 'forgot');
 
                     // Tampilkan pesan berhasil forgot password
                     $this->session->set_flashdata('forgot_berhasil', 'Silahkan <strong>cek kotak masuk email Anda/spam</strong> untuk mendapatkan kode untuk memperbarui password Anda.');
@@ -494,7 +500,7 @@ class Auth extends CI_Controller
 
     
     // Method untuk MENGIRIM EMAIL
-    private function _sendEmail($email, $token, $type)
+    private function _sendEmail($email, $username, $token, $type)
     {
         $dataEmail = $this->Auth_model->getDataEmail();
 
@@ -531,7 +537,7 @@ class Auth extends CI_Controller
             $this->email->subject('Verifikasi Akun');
     
             // Isi dari email
-            $this->email->message('<b>Selamat datang di PHYSICS YOURSELF.</b><br><br>Kode verifikasi Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
+            $this->email->message('<b>Selamat datang ' . $username . ' di PHYSICS YOURSELF.</b><br><br>Kode verifikasi Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
 
         } else if($type == 'forgot') {
 
@@ -539,7 +545,7 @@ class Auth extends CI_Controller
             $this->email->subject('Reset Password');
     
             // Isi dari email
-            $this->email->message('<b>Terima kasih sudah belajar di PHYSICS YOURSELF.</b><br><br>Ini adalah kode verifikasi untuk memperbarui password Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
+            $this->email->message('<b>Terima kasih ' . $username . ' sudah belajar di PHYSICS YOURSELF.</b><br><br>Ini adalah kode verifikasi untuk memperbarui password Anda : <b>' . $token . '</b><br><br>Silahkan hubungi admin lewat email ini jika ada kendala atau pertanyaan. Terima kasih.');
         }
 
 
