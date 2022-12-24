@@ -8,7 +8,7 @@
             <div class="font-medium">
                 <div>Nama</div>
                 <div>Email</div>
-                <div>Intagram</div>
+                <div>Instagram</div>
             </div>
             <div>
                 <div>:</div>
@@ -18,7 +18,7 @@
             <div>
                 <div>Firda Nur Baiti</div>
                 <div>physicsyourself@gmail.com</div>
-                <div>@didaen</div>
+                <div><a style="color: #60a5fa;" href="https://www.instagram.com/didaen/" target="_blank">@didaen</a></div>
             </div>
         </div>
         <div>
@@ -27,8 +27,8 @@
                 <div>Firda Nur Baiti</div>
                 <div class="font-medium">Email</div>
                 <div>physicsyourself@gmail.com</div>
-                <div class="font-medium">Intagram</div>
-                <div>@didaen</div>
+                <div class="font-medium">Instagram</div>
+                <div><a style="color: #60a5fa;" href="https://www.instagram.com/didaen/" target="_blank">@didaen</a></div>
             </div>
         </div>
     </div>
