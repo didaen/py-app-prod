@@ -277,8 +277,8 @@
     <div>
 
         <!-- PERINGATAN APABILA ADA SCROLLBAR -->
-        <div class="w-full text-gray-700 bg-red-300 hidden text-center text-sm px-4 py-2" id="peringatan">
-            Persamaan masih panjang. Geser kotak di atas.
+        <div class="w-full inline text-gray-700 bg-red-300 hidden text-center text-sm px-4 py-2" id="peringatan">
+            <a style="display: inline; color: #fff; font-weight: bold; text-decoration: underline;" href="https://youtu.be/5x2QFdnJh9A" target="_blank">Geser</a> untuk menampilkan seluruh persamaan.
         </div>
         <!-- AKHIR PERINGATAN APABILA ADA SCROLLBAR -->
     
