@@ -741,9 +741,19 @@ body {
   border-color: rgb(65 114 159 / var(--tw-border-opacity));
 }
 
+.tautan {
+  font-weight: 700;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.tautan:visited {
+  color: rgb(88 28 135 );
+}
+
 .tautan:hover {
   --tw-text-opacity: 1;
-  color: rgb(127 29 29 / var(--tw-text-opacity));
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .visible {

@@ -139,6 +139,6 @@
 	}
 
 	.tautan {
-		@apply hover:text-red-900;
+		@apply hover:text-blue-500 underline font-bold visited:text-purple-900;
 	}
 }
