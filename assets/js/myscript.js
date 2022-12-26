@@ -122,7 +122,7 @@ function kirimDataCard() {
 				postData.append('card_number', cardNumber.value);
 				
 				// FETCH POST UNTUK MENYIMPAN DATA KE TABEL user_learning_log untuk menyimpan data pembelajaran terakhir user
-				fetch('https://www.physicsyourself.com/materi/dataPembelajaranTerakhir', {
+				fetch('http://[::1]/materi/dataPembelajaranTerakhir', {
 					method: 'POST',
 					mode: 'no-cors',
 					headers: {
@@ -348,7 +348,7 @@ function tombolReset() {
 					postData.append(pertanyaan.id, pertanyaan.value = "");
 				});
 	
-				fetch('https://www.physicsyourself.com/materi/hapusJawabanCard', {
+				fetch('http://[::1]/materi/hapusJawabanCard', {
 					method: 'POST',
 					mode: 'no-cors',
 					headers: {
@@ -395,7 +395,7 @@ function showAnswers() {
 		// Ketika element tersebut diklik
 		showAnswersBtn.addEventListener("click", function(event){
 			
-			fetch('https://www.physicsyourself.com/materi/klikTunjukkanJawabanTersimpan', {
+			fetch('http://[::1]/materi/klikTunjukkanJawabanTersimpan', {
 				method: 'POST',
 				credentials: 'same-origin',
 				mode: 'no-cors',
@@ -413,7 +413,7 @@ function showAnswers() {
 					postData.append("klik_tersimpan", klikTersimpan);
 					postData.append("jumlah_klik", 1);
 
-					fetch('https://www.physicsyourself.com/materi/userLihatJawaban', {
+					fetch('http://[::1]/materi/userLihatJawaban', {
 						method: 'POST',
 						mode: 'no-cors',
 						headers: {
@@ -429,7 +429,7 @@ function showAnswers() {
 					let kunciPerBaris = '';
 
 
-					fetch('https://www.physicsyourself.com/materi/tunjukkanKunciJawaban', {
+					fetch('http://[::1]/materi/tunjukkanKunciJawaban', {
 						method: 'POST',
 						credentials: 'same-origin',
 						mode: 'no-cors',
@@ -560,7 +560,7 @@ function sudahDijawab() {
 		let nomorIndex = 0;
 
 		// FETCH POST jawaban untuk question box dengan id tersebut
-		fetch('https://www.physicsyourself.com/materi/py_anw', {
+		fetch('http://[::1]/materi/py_anw', {
 			method: 'POST',
 			credentials: 'same-origin',
 			mode: 'no-cors',
@@ -658,7 +658,7 @@ function userMenjawab() {
 		let persenPengerjaan = 0;
 
 		// FETCH POST jawaban untuk question box dengan id tersebut
-		fetch('https://www.physicsyourself.com/materi/py_anw', {
+		fetch('http://[::1]/materi/py_anw', {
 			method: 'POST',
 			credentials: 'same-origin',
 			mode: 'no-cors',
@@ -768,7 +768,7 @@ function userMenjawab() {
 							// TULISAN PADA PROGRESS BAR AKAN MENJADI BERTAMBAH
 							durasi.innerHTML = persenPengerjaan + "%";
 			
-							fetch('https://www.physicsyourself.com/materi/jawabanUser', {
+							fetch('http://[::1]/materi/jawabanUser', {
 								method: 'POST',
 								mode: 'no-cors',
 								headers: {
