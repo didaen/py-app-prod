@@ -137,4 +137,8 @@
 	.input {
 		@apply w-full border-b-2 border-gray-200 px-3 py-1 outline-none focus:border-blue-1200;
 	}
+
+	.tautan {
+		@apply hover:text-red-900;
+	}
 }

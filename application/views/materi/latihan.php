@@ -251,6 +251,7 @@
             <div class="katex-bold"></div>
             <div class="katex-math-italic"></div>
             <div class="times-new-roman"></div>
+            <div class="tautan"></div>
             <!-- AKHIR DISPLAY HIDDEN -->
 
         </div>

@@ -741,6 +741,11 @@ body {
   border-color: rgb(65 114 159 / var(--tw-border-opacity));
 }
 
+.tautan:hover {
+  --tw-text-opacity: 1;
+  color: rgb(127 29 29 / var(--tw-text-opacity));
+}
+
 .visible {
   visibility: visible;
 }
