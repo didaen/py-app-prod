@@ -100,7 +100,7 @@ class User extends CI_Controller
             // Cek jika config gambar
             if($upload_image) {
                 $config['upload_path'] = './assets/img/profile';
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'jpeg|jpg|png';
                 $config['max_size'] = '2048';
 
                 $this->load->library('upload', $config);
@@ -146,13 +146,13 @@ class User extends CI_Controller
                 } else {
 
                     // Jika gagal tambilkan error
-                    echo $this->upload->display_errors();
+                    $error = ['error' => $this->upload->display_errors()];
 
                     // Menampilkan pesan dulu sebelum redirect
-                    $this->session->set_flashdata('gagal_ganti_profil', 'Profil Anda gagal diubah.');
+                    $this->session->set_flashdata('gagal_ganti_profil', 'Profil Anda gagal diubah. ' . $error['error']);
 
                     // Kembalikan
-                    redirect('user/editProfil');
+                    redirect('user/editProfil', 'refresh');
                 }
             } else {
 
