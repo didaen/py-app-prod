@@ -1,8 +1,8 @@
-Hello, this is Dida En.
+LlHello, this is Dida En.
 
 I make this web using CodeIgniter 3 in PHP 7.2 environment.
 
-If you are going to fork this repo, you need to follow these :
+If you are going to fork this repo, you need to follow this :
 
 1. Download the database on assets/db
 2. Go to application/config/database.php and change the database information
